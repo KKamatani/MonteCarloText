@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 メトロポリス・ヘイスティングス法 | 練習問題 : モンテカルロ統計計算</title>
+  <meta name="description" content="Chapter 6 メトロポリス・ヘイスティングス法 | 練習問題 : モンテカルロ統計計算" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 メトロポリス・ヘイスティングス法 | 練習問題 : モンテカルロ統計計算" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 メトロポリス・ヘイスティングス法 | 練習問題 : モンテカルロ統計計算" />
+  
+  
+  
+
+<meta name="author" content="鎌谷 研吾 (Kengo Kamatani, ISM and JST CREST)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tab-5.html"/>
+<link rel="next" href="tab-error.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">モンテカルロ統計計算</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Readme</a></li>
+<li class="chapter" data-level="1" data-path="tab-1.html"><a href="tab-1.html"><i class="fa fa-check"></i><b>1</b> 序論</a></li>
+<li class="chapter" data-level="2" data-path="tab-2.html"><a href="tab-2.html"><i class="fa fa-check"></i><b>2</b> 乱数</a></li>
+<li class="chapter" data-level="3" data-path="tab-3.html"><a href="tab-3.html"><i class="fa fa-check"></i><b>3</b> 積分法</a></li>
+<li class="chapter" data-level="4" data-path="tab-4.html"><a href="tab-4.html"><i class="fa fa-check"></i><b>4</b> マルコフ連鎖</a></li>
+<li class="chapter" data-level="5" data-path="tab-5.html"><a href="tab-5.html"><i class="fa fa-check"></i><b>5</b> ギブスサンプリング</a></li>
+<li class="chapter" data-level="6" data-path="tab-6.html"><a href="tab-6.html"><i class="fa fa-check"></i><b>6</b> メトロポリス・ヘイスティングス法</a></li>
+<li class="chapter" data-level="7" data-path="tab-error.html"><a href="tab-error.html"><i class="fa fa-check"></i><b>7</b> エラータム</a><ul>
+<li class="chapter" data-level="7.1" data-path="tab-error.html"><a href="tab-error.html#例2.3について-20200511"><i class="fa fa-check"></i><b>7.1</b> 例2.3について　(20200511)</a></li>
+<li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#定義6.1-p169-について-20200511"><i class="fa fa-check"></i><b>7.2</b> 定義6.1 p169 について (20200511)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://sites.google.com/view/kengokamatani/home">鎌谷研吾</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">練習問題 : モンテカルロ統計計算</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tab-6" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> メトロポリス・ヘイスティングス法</h1>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-98" class="exercise"><strong>Exercise 6.1  </strong></span>メトロポリス・ヘイスティングス法の採択関数<span class="math inline">\(\alpha(x,y)\)</span>の代わりに
+<span class="math display">\[
+\beta(x,y)=\frac{\pi(y)q(y,x)}{\pi(x)q(x,y)+\pi(y)q(y,x)}
+\]</span>
+を用いても定理6.1，定理6.2と同じ仮定のもと，同じ結論が従うことを示せ．
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> メトロポリス・ヘイスティングスカーネルの<span class="math inline">\(\alpha(x,y)\)</span>を<span class="math inline">\(\beta(x,y)\)</span>でおきかえたマルコフカーネルを<span class="math inline">\(P\)</span>と書く．
+まず定理6.1と同じ結論が従うことをみよう．
+定理6.1の証明と同じように，
+<span class="math display">\[
+\int_{x\in A, y\in B}\pi(x)q(x,y)\beta(x,y)\mathrm{d}x\mathrm{d}y=
+   \int_{x\in A, y\in B}\pi(y)q(y,x)\beta(y,x)\mathrm{d}x\mathrm{d}y
+\]</span>
+を示せば良い．被積分関数に注目すると
+<span class="math display">\[
+\pi(x)q(x,y)\beta(x,y)=
+   \frac{\pi(y)q(y,x)\pi(x)q(x,y)}{\pi(x)q(x,y)+\pi(y)q(y,x)}
+\]</span>
+となり<span class="math inline">\(x, y\)</span>について対称な関数であることがわかる．だから，<span class="math inline">\(x, y\)</span>を入れ替えても同じ値であり，この事実から示したい等式がわかる．したがって<span class="math inline">\(P\)</span>は<span class="math inline">\(\Pi\)</span>-対称であり，定理4.8より<span class="math inline">\(\Pi\)</span>-不変でもある．</p>
+つぎに定理6.2を示そう．これについても定理6.2の証明とまったく同じように<span class="math inline">\(\beta(x,y)&gt;0\ (x,y\in E)\)</span>であることから
+<span class="math display">\[
+P(x, A)\ge \int_Aq(x,y)\beta(x,y)\mathrm{d}y=:k(x,y)&gt;0
+\]</span>
+によって定理4.6から結論が従う．よって<span class="math inline">\(P\)</span>はエルゴード的．
+</div>
+
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> 本問のように作られたマルコフカーネルを，しばしばバーカーカーネル(See <a href="https://www.publish.csiro.au/ph/PH650119">Barker 1965</a>)という．中心極限定理の漸近分散の観点から，バーカーカーネルは必ずメトロポリス・ヘイスティングスカーネルより良くない(See <a href="https://projecteuclid.org/euclid.aoap/1027961031">Tierney 1998</a>)．しかし<span class="math inline">\(\beta(x,y)\)</span>は微分可能性など，関数としてよりなめらかなため，理論的に解析しやすい．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-101" class="exercise"><strong>Exercise 6.2  </strong></span>例6.1で紹介された二つの独立型メトロポリス・ヘイスティングス法のそれぞれに対し，式(6.1)で定義される<span class="math inline">\(M\)</span>を計算せよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 定義から
+<span class="math display">\[
+M=C\sqrt{2\pi}\sup_{x\in\mathbb{R}^d}\frac{1}{1+\theta^2}=C\sqrt{2\pi}. 
+\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-103" class="exercise"><strong>Exercise 6.3  </strong></span>独立型メトロポリス・ヘイスティングス法を
+<span class="math inline">\(\Pi=\mathcal{N}(0,1)\)</span>, <span class="math inline">\(Q=\mathcal{C}(0,1)\)</span>としたものと，
+<span class="math inline">\(\Pi=\mathcal{C}(0,1)\)</span>, <span class="math inline">\(Q=\mathcal{N}(0,1)\)</span>としたものを実装し，結果を比較せよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 実際に，ふたつのメトロポリス・ヘイスティングス法から，長さ<code>N</code>のサンプルを生成し，経路図と採択率，事項相関図を生成してみよう．
+</div>
+
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tab-6.html#cb32-1"></a>N &lt;-<span class="st"> </span><span class="fl">1e5</span> <span class="co"># No. of iteration</span></span>
+<span id="cb32-2"><a href="tab-6.html#cb32-2"></a>N1 &lt;-<span class="st"> </span><span class="fl">1e3</span> <span class="co"># No. of iteration for trajectory plot</span></span>
+<span id="cb32-3"><a href="tab-6.html#cb32-3"></a>lag &lt;-<span class="st"> </span><span class="dv">25</span> <span class="co"># Lag of MCMCs</span></span>
+<span id="cb32-4"><a href="tab-6.html#cb32-4"></a></span>
+<span id="cb32-5"><a href="tab-6.html#cb32-5"></a>pi1 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">dnorm</span>(x) <span class="co"># Target #1</span></span>
+<span id="cb32-6"><a href="tab-6.html#cb32-6"></a>q1 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">dcauchy</span>(x) <span class="co"># Proposal #1</span></span>
+<span id="cb32-7"><a href="tab-6.html#cb32-7"></a>w1 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">pi1</span>(x)<span class="op">/</span><span class="kw">q1</span>(x) <span class="co"># Ratio #1</span></span>
+<span id="cb32-8"><a href="tab-6.html#cb32-8"></a>w2 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="dv">1</span><span class="op">/</span><span class="kw">w1</span>(x) <span class="co"># Ratio #2</span></span>
+<span id="cb32-9"><a href="tab-6.html#cb32-9"></a></span>
+<span id="cb32-10"><a href="tab-6.html#cb32-10"></a>vec1 &lt;-<span class="st"> </span><span class="kw">numeric</span>(N) <span class="co"># Output #1</span></span>
+<span id="cb32-11"><a href="tab-6.html#cb32-11"></a>vec2 &lt;-<span class="st"> </span><span class="kw">numeric</span>(N) <span class="co"># Output #2</span></span>
+<span id="cb32-12"><a href="tab-6.html#cb32-12"></a></span>
+<span id="cb32-13"><a href="tab-6.html#cb32-13"></a>x0 &lt;-<span class="st"> </span><span class="kw">numeric</span>(<span class="dv">1</span>) <span class="co"># Initial value</span></span>
+<span id="cb32-14"><a href="tab-6.html#cb32-14"></a></span>
+<span id="cb32-15"><a href="tab-6.html#cb32-15"></a><span class="co"># MCMC #1</span></span>
+<span id="cb32-16"><a href="tab-6.html#cb32-16"></a>x &lt;-<span class="st"> </span>x0</span>
+<span id="cb32-17"><a href="tab-6.html#cb32-17"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
+<span id="cb32-18"><a href="tab-6.html#cb32-18"></a>  y &lt;-<span class="st"> </span><span class="kw">rcauchy</span>(<span class="dv">1</span>)</span>
+<span id="cb32-19"><a href="tab-6.html#cb32-19"></a>  <span class="cf">if</span>(<span class="kw">runif</span>(<span class="dv">1</span>) <span class="op">&lt;</span><span class="st"> </span><span class="kw">w1</span>(y)<span class="op">/</span><span class="kw">w1</span>(x)){</span>
+<span id="cb32-20"><a href="tab-6.html#cb32-20"></a>    x &lt;-<span class="st"> </span>y</span>
+<span id="cb32-21"><a href="tab-6.html#cb32-21"></a>  }</span>
+<span id="cb32-22"><a href="tab-6.html#cb32-22"></a>  vec1[i] &lt;-<span class="st"> </span>x</span>
+<span id="cb32-23"><a href="tab-6.html#cb32-23"></a>}</span>
+<span id="cb32-24"><a href="tab-6.html#cb32-24"></a></span>
+<span id="cb32-25"><a href="tab-6.html#cb32-25"></a><span class="co"># MCMC #2</span></span>
+<span id="cb32-26"><a href="tab-6.html#cb32-26"></a>x &lt;-<span class="st"> </span>x0</span>
+<span id="cb32-27"><a href="tab-6.html#cb32-27"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
+<span id="cb32-28"><a href="tab-6.html#cb32-28"></a>  y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1</span>)</span>
+<span id="cb32-29"><a href="tab-6.html#cb32-29"></a>  <span class="cf">if</span>(<span class="kw">runif</span>(<span class="dv">1</span>) <span class="op">&lt;</span><span class="st"> </span><span class="kw">w2</span>(y)<span class="op">/</span><span class="kw">w2</span>(x)){</span>
+<span id="cb32-30"><a href="tab-6.html#cb32-30"></a>    x &lt;-<span class="st"> </span>y</span>
+<span id="cb32-31"><a href="tab-6.html#cb32-31"></a>  }</span>
+<span id="cb32-32"><a href="tab-6.html#cb32-32"></a>  vec2[i] &lt;-<span class="st"> </span>x</span>
+<span id="cb32-33"><a href="tab-6.html#cb32-33"></a>}</span>
+<span id="cb32-34"><a href="tab-6.html#cb32-34"></a></span>
+<span id="cb32-35"><a href="tab-6.html#cb32-35"></a>data.fr &lt;-<span class="st"> </span><span class="kw">melt</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(vec1, vec2), <span class="dt">m =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span>N,<span class="dv">2</span>), <span class="dt">method =</span> <span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="dt">each=</span>N))), <span class="dt">id =</span><span class="kw">c</span>(<span class="st">&quot;m&quot;</span>,<span class="st">&quot;method&quot;</span>))</span>
+<span id="cb32-36"><a href="tab-6.html#cb32-36"></a><span class="kw">ggplot</span>(<span class="kw">subset</span>(data.fr, m <span class="op">&lt;</span><span class="st"> </span>N1), <span class="kw">aes</span>(<span class="dt">x =</span> m, <span class="dt">y =</span> value, <span class="dt">color=</span>method)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Trajectory plot&quot;</span>)</span></code></pre></div>
+<p><img src="bayes-computation_files/figure-html/exercise_6.3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tab-6.html#cb33-1"></a><span class="kw">paste</span>(<span class="st">&quot;Acceptance probability #1&quot;</span>, <span class="kw">sum</span>(<span class="kw">diff</span>(<span class="kw">c</span>(x,vec1))<span class="op">!=</span><span class="dv">0</span>)<span class="op">/</span>N)</span></code></pre></div>
+<pre><code>## [1] &quot;Acceptance probability #1 0.70507&quot;</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="tab-6.html#cb35-1"></a><span class="kw">paste</span>(<span class="st">&quot;Acceptance probability #2&quot;</span>, <span class="kw">sum</span>(<span class="kw">diff</span>(<span class="kw">c</span>(x,vec2))<span class="op">!=</span><span class="dv">0</span>)<span class="op">/</span>N)</span></code></pre></div>
+<pre><code>## [1] &quot;Acceptance probability #2 0.77516&quot;</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tab-6.html#cb37-1"></a>acf1 &lt;-<span class="st"> </span><span class="kw">acf</span>(vec1, <span class="dt">lag =</span> lag, <span class="dt">plot =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb37-2"><a href="tab-6.html#cb37-2"></a>acf2 &lt;-<span class="st"> </span><span class="kw">acf</span>(vec2, <span class="dt">lag =</span> lag, <span class="dt">plot =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb37-3"><a href="tab-6.html#cb37-3"></a></span>
+<span id="cb37-4"><a href="tab-6.html#cb37-4"></a>M &lt;-<span class="st"> </span><span class="kw">length</span>(acf1<span class="op">$</span>lag)</span>
+<span id="cb37-5"><a href="tab-6.html#cb37-5"></a></span>
+<span id="cb37-6"><a href="tab-6.html#cb37-6"></a>data.fr &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">lag =</span> <span class="kw">rep</span>(<span class="kw">as.vector</span>(acf1<span class="op">$</span>lag),<span class="dv">2</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="kw">as.vector</span>(acf1<span class="op">$</span>acf), <span class="kw">as.vector</span>(acf2<span class="op">$</span>acf)), <span class="dt">z =</span> <span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">each=</span>M)))</span>
+<span id="cb37-7"><a href="tab-6.html#cb37-7"></a><span class="kw">ggplot</span>(data.fr , <span class="kw">aes</span>(<span class="dt">x =</span> lag, <span class="dt">y =</span> y, <span class="dt">fill=</span>z)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(), <span class="dt">alpha=</span><span class="fl">1.0</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Acf plot&quot;</span>)</span></code></pre></div>
+<p><img src="bayes-computation_files/figure-html/exercise_6.3-2.png" width="672" /></p>
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> 前者は一様エルゴード的，後者はそうでないことが知られる．自己相関関数の推移をみるかぎり，理論的な結果と整合的である．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-106" class="exercise"><strong>Exercise 6.4  </strong></span><span class="math inline">\(\mathbb{R}^d\)</span>上の確率測度<span class="math inline">\(\Pi\)</span>に対し，確率密度関数<span class="math inline">\(\pi(x)\)</span>があるとする．メトロポリス・ヘイスティングス法で
+正の実数<span class="math inline">\(\rho,\sigma\)</span>で<span class="math inline">\(0&lt;\rho&lt;1\)</span>なるものに対し，
+<span class="math inline">\(Q(x,\cdot)=\mathcal{N}(\rho^{1/2}x, (1-\rho)\sigma^2I_d)\)</span>とする．
+このとき採択関数が
+<span class="math display">\[
+\alpha(x,y)=\min\left\{1,\frac{\pi(y)\phi_\sigma(x)}{\pi(x)\phi_\sigma(y)}\right\}
+\]</span>
+で与えられることを示せ．ただし，<span class="math inline">\(\phi_\sigma(x)\)</span>は<span class="math inline">\(\mathcal{N}(0,\sigma^2 I_d)\)</span>の確率密度関数とする．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> メトロポリス・ヘイスティングス法の採択関数の定義とみくらべて
+<span class="math display">\[
+  \frac{q(y,x)}{q(x,y)}=\frac{\phi_\sigma(x)}{\phi_\sigma(y)}
+\]</span>
+であること，すなわち
+<span class="math display">\[
+\phi_\sigma(x)q(x,y)=\phi_\sigma(y)q(y,x)
+\]</span>
+を示せば良い．ただし<span class="math inline">\(q(x,y)\)</span>は<span class="math inline">\(Q(x,\cdot)=\mathcal{N}(\rho^{1/2}x, (1-\rho)\sigma^2I_d)\)</span>の確率密度関数
+<span class="math display">\[
+q(x,y)=\frac{1}{\sqrt{2\pi\sigma^2(1-\rho)}}\exp\left(-\frac{(y-\rho^{1/2}x)^2}{2\sigma^2(1-\rho)}\right)
+\]</span>
+である．いっぽう，
+<span class="math display">\[\begin{align*}
+\phi_\sigma(x)q(x,y)=\frac{1}{2\pi\sigma^2\sqrt{(1-\rho)}}\exp\left(-\frac{x^2+y^2-2\rho^{1/2}xy}{2\sigma^2(1-\rho)}\right)
+\end{align*}\]</span>
+となり，これは<span class="math inline">\(x, y\)</span>を入れ替えても同じ値になる．よって<span class="math inline">\(\phi_\sigma(x)q(x,y)=\phi_\sigma(y)q(y,x)\)</span>が示され，結論が従う．
+</div>
+
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> 上で紹介したマルコフカーネルは，しばしば<a href="https://en.wikipedia.org/wiki/Preconditioned_Crank–Nicolson_algorithm">preconditioned Crank-Nikolsonカーネル</a>とよばれ，高次元で，正規分布を事前分布として用いるときの解析に有効である(See <a href="https://www.cs.toronto.edu/~radford/ftp/val6gp.pdf">Neal 1998</a>, <a href="https://projecteuclid.org/euclid.ss/1377696944">Cotter et al 2013</a>)．関連するアルゴリズムとして，<a href="http://proceedings.mlr.press/v9/murray10a.html">Elliptical slice sampling</a>がある．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-109" class="exercise"><strong>Exercise 6.5  </strong></span>定理6.4を証明せよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 定理6.2よりただちにしたがう．なぜなら<span class="math inline">\(q(x,y)=\gamma(y-x)&gt;0\)</span>となるからだ．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-111" class="exercise"><strong>Exercise 6.6  </strong></span>定理6.6を示せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 略
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-113" class="exercise"><strong>Exercise 6.7  </strong></span>ハミルトン方程式の離散近似は様々な方法がある．
+オイラー法は
+<span class="math display">\[\begin{align*}
+x_h&amp;=x_0+h\left(\frac{\partial H}{\partial w}\right)(x_0, w_0), \\
+w_h&amp;=w_0-h\left(\frac{\partial H}{\partial x}\right)(x_0, w_0)
+\end{align*}\]</span>
+で定義される．ただし，正の実数<span class="math inline">\(h\)</span>はステップ幅．ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
+<span class="math display">\[
+H(x_h,w_h)-H(x_0, w_0)
+\]</span>
+を<span class="math inline">\(H(x_0,w_0)\)</span>を用いて表せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
+H(x_h, w_h)-H(x_0,w_0)&amp;=
+  (x_0+hW_0)^2+(w_0-hx_0)\\
+&amp;=(x_0^2+w_0^2)+h^2(x_0^2+w_0^2)\\
+&amp;=(1+h^2)H(x_0, w_0)
+\end{align*}\]</span>
+とあらわせる．
+</div>
+
+
+<div class="remark">
+ <span class="remark"><em>Remark. </em></span> 上の結果から，オイラー法を繰り返すと，<span class="math inline">\(k=1,2,\ldots\)</span>にたいし
+<span class="math display">\[
+H(x_{kh},w_{kh})=(1+h^2)^kH(x_0, w_0)  
+\]</span>
+となり，指数的にハミルトニアンが大きくなってしまう．ハミルトニアン方程式の解はハミルトニアンを変えないから，これはオイラー法による近似の誤差がとても大きいことを示している．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-116" class="exercise"><strong>Exercise 6.8  </strong></span>同様に修正されたオイラー法では，
+ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
+<span class="math display">\[
+H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)
+\]</span>
+を示せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 略
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 同様に馬跳び法の場合，ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
+<span class="math display">\[
+\begin{pmatrix}
+    x_h\\
+    w_h
+\end{pmatrix}
+=A_h \begin{pmatrix}
+    x_0\\
+    w_0
+\end{pmatrix}
+\]</span>
+となる行列<span class="math inline">\(A_h\)</span>を求めよ．
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> ３つのステップを行列で表すと，それぞれ
+<span class="math display">\[\begin{align*}
+\begin{pmatrix}
+1&amp;h/2
+\\
+0&amp;1
+\end{pmatrix}, 
+\begin{pmatrix}
+0&amp;1
+\\
+-h&amp;1
+\end{pmatrix},
+\begin{pmatrix}
+1&amp;h/2
+\\
+0&amp;1
+\end{pmatrix}
+\end{align*}\]</span>
+をひだりから縦ベクトル<span class="math inline">\((x,w)\)</span>に作用させることに対応する．よって求める行列は
+<span class="math display">\[\begin{align*}
+\begin{pmatrix}
+1&amp;h/2
+\\
+0&amp;1
+\end{pmatrix}~ 
+\begin{pmatrix}
+1&amp;0
+\\
+-h&amp;1
+\end{pmatrix}~
+\begin{pmatrix}
+1&amp;h/2
+\\
+0&amp;1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1-h^2/2&amp;h+h^3/2
+\\
+-h&amp;1-h^2/2
+\end{pmatrix}. 
+\end{align*}\]</span></p>
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tab-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tab-error.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bayes-computation.pdf", "bayes-computation.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

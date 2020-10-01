@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算</title>
+  <meta name="description" content="Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算" />
+  
+  
+  
+
+<meta name="author" content="鎌谷 研吾 (Kengo Kamatani, ISM and JST CREST)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tab-3.html"/>
+<link rel="next" href="tab-5.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">モンテカルロ統計計算</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Readme</a></li>
+<li class="chapter" data-level="1" data-path="tab-1.html"><a href="tab-1.html"><i class="fa fa-check"></i><b>1</b> 序論</a></li>
+<li class="chapter" data-level="2" data-path="tab-2.html"><a href="tab-2.html"><i class="fa fa-check"></i><b>2</b> 乱数</a></li>
+<li class="chapter" data-level="3" data-path="tab-3.html"><a href="tab-3.html"><i class="fa fa-check"></i><b>3</b> 積分法</a></li>
+<li class="chapter" data-level="4" data-path="tab-4.html"><a href="tab-4.html"><i class="fa fa-check"></i><b>4</b> マルコフ連鎖</a></li>
+<li class="chapter" data-level="5" data-path="tab-5.html"><a href="tab-5.html"><i class="fa fa-check"></i><b>5</b> ギブスサンプリング</a></li>
+<li class="chapter" data-level="6" data-path="tab-6.html"><a href="tab-6.html"><i class="fa fa-check"></i><b>6</b> メトロポリス・ヘイスティングス法</a></li>
+<li class="chapter" data-level="7" data-path="tab-error.html"><a href="tab-error.html"><i class="fa fa-check"></i><b>7</b> エラータム</a><ul>
+<li class="chapter" data-level="7.1" data-path="tab-error.html"><a href="tab-error.html#例2.3について-20200511"><i class="fa fa-check"></i><b>7.1</b> 例2.3について　(20200511)</a></li>
+<li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#定義6.1-p169-について-20200511"><i class="fa fa-check"></i><b>7.2</b> 定義6.1 p169 について (20200511)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://sites.google.com/view/kengokamatani/home">鎌谷研吾</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">練習問題 : モンテカルロ統計計算</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tab-4" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> マルコフ連鎖</h1>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-53" class="exercise"><strong>Exercise 4.1  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(N\)</span>は正の整数とする．また<span class="math inline">\(x\)</span>は<span class="math inline">\(0\le x\le N\)</span>なる整数とする．ライト・フィッシャーモデルに対し<span class="math inline">\(\mathbb{E}[X_{m+1}|X_m=x]\)</span>および<span class="math inline">\(\operatorname{Var}(X_{m+1}|X_m=x)\)</span>を求めよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_{m+1}\)</span>は<span class="math inline">\(X_m=x\)</span>で条件つけたもと<span class="math inline">\(\mathcal{B}(N, x/N)\)</span>に従う．よって二項分布の性質より
+<span class="math display">\[\begin{align*}
+\mathbb{E}[X_{m+1}|X_m=x]&amp;=N\frac{x}{N}=x\\
+\operatorname{Var}[X_{m+1}|X_m=x]&amp;=N\frac{x}{N}\left(1-\frac{x}{N}\right)=N^{-1}x(N-x)
+\end{align*}\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercise 4.2  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\(x\)</span>は<span class="math inline">\(0\le x\le N\)</span>なる整数とする．ライト・フィッシャーモデルにたいし，
+<span class="math display">\[
+ \mathbb{E}[X_m(N-X_m)|X_m=x]=(1-N^{-1})x(N-x) 
+\]</span>
+を示せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 条件つき期待値，分散の計算から
+<span class="math display">\[\begin{align*}
+\mathbb{E}[X_m(N-X_m)|X_m=x]&amp;=N\mathbb{E}[X_{m+1}|X_m=x]-\mathbb{E}[X_{m+1}^2|X_m=x]\\
+&amp;=N\mathbb{E}[X_{m+1}|X_m=x]-(\operatorname{V}[X_{m+1}|X_m=x]+\mathbb{E}[X_{m+1}|X_m=x]^2)\\
+&amp;=Nx-(N^{-1}x(N-x)+x^2)=(1-N^{-1})x(N-x) 
+\end{align*}\]</span>
+を得る．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-57" class="exercise"><strong>Exercise 4.3  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(N\)</span>は正の整数とする．ライト・フィッシャーモデルに対し<span class="math inline">\(\operatorname{Cov}(X_{m+1}, X_m)=\operatorname{Var}(X_m)\)</span>を示せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
+\mathbb{E}[X_{m+1}|X_m=x]=x
+\end{align*}\]</span>
+だから，任意の<span class="math inline">\(m=0,1,\ldots\)</span>にたいし，<span class="math inline">\(\mathbb{E}[X_m]=\mathbb{E}[X_0]\)</span>かつ，
+<span class="math display">\[\begin{align*}
+\mathbb{E}[X_{m+1}X_m]
+&amp;=\sum_{x=0}^N\mathbb{E}[X_{m+1}|X_m=x]~x~\mathbb{P}(X_m=x)\\
+&amp;=\sum_{x=0}^N~x^2~\mathbb{P}(X_m=x)\\
+&amp;=\mathbb{E}[X_m^2].
+\end{align*}\]</span>
+よって
+<span class="math display">\[\begin{align*}
+\operatorname{Cov}(X_{m+1},X_m)&amp;=\mathbb{E}[(X_{m+1}-x)(X_m-x)]\\
+&amp;=\mathbb{E}[X_{m+1}X_m]-x^2\\
+&amp;=\mathbb{E}[X_m^2]-x^2\\
+&amp;=\operatorname{Var}[X_m]. 
+\end{align*}\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-59" class="exercise"><strong>Exercise 4.4  </strong></span>ライト・フィッシャーモデルに対し
+<span class="math display">\[
+\lim_{m\rightarrow\infty}\operatorname{Var}(X_m)=N\mathbb{E}[X_0]-\mathbb{E}[X_0]^2
+\]</span>
+であることを示せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 定理4.1の証明の中で
+<span class="math display">\[
+\mathbb{E}[X_m(N-X_m)]=(1-N^{-1})^m\mathbb{E}[X_0(N-X_0)]
+\]</span>
+がえられている．したがって<span class="math inline">\(m\rightarrow\infty\)</span>として
+<span class="math display">\[
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m(N-X_m)]=0
+\]</span>
+である．よって<span class="math inline">\(\mathbb{E}[X_m]=\mathbb{E}[X_0]\)</span>より
+<span class="math display">\[
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m^2]=N\mathbb{E}[X_0]. 
+\]</span>
+ゆえに
+<span class="math display">\[\begin{align*}
+\lim_{m\rightarrow\infty}\operatorname{Var}[X_m]&amp;=
+   \lim_{m\rightarrow\infty}(\mathbb[X_m^2]-\mathbb{E}[X_m]^2)\\
+&amp;=N\mathbb{E}[X_0]-\mathbb{E}[X_0]^2. 
+\end{align*}\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-61" class="exercise"><strong>Exercise 4.5  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(x\)</span>は実数とする．
+自己回帰過程に対し，
+<span class="math inline">\(\mathbb{E}[X_{m+1}|X_m=x]\)</span>および<span class="math inline">\(\operatorname{Var}(X_{m+1}|X_m=x)\)</span>を求めよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 式(4.1)より
+<span class="math display">\[\begin{align*}
+\mathbb{E}[X_{m+1}|X_m=x]&amp;=\mathbb{E}[\mu+\alpha(X_m-\mu)+W_m|X_m=x]\\
+&amp;=\mu+\alpha(x-\mu). 
+\end{align*}\]</span>
+また
+<span class="math display">\[\begin{align*}
+\operatorname{Var}[X_{m+1}|X_m=x]&amp;=\operatorname{Var}[\mu+\alpha(X_m-\mu)+W_m|X_m=x]\\
+&amp;=\operatorname{Var}[W_m|X_m=x]=\sigma^2. 
+\end{align*}\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 4.6  </strong></span>各<span class="math inline">\(m=1,2,\ldots\)</span>について<span class="math inline">\(\mu_m,\mu\)</span>は実数，<span class="math inline">\(\sigma^2_m, \sigma^2\)</span>は正の実数とする．また，<span class="math inline">\(\mu_m\rightarrow\mu, \sigma^2_m\rightarrow\sigma^2\)</span>とする．このとき，
+<span class="math display">\[\begin{align*}
+\mathcal{N}(\mu_m,\sigma^2_m)~\longrightarrow~\mathcal{N}(\mu,\sigma^2)
+\end{align*}\]</span>
+となることを示せ（特性関数が収束することを見ればいい）．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 確率分布の収束は，その特性関数の収束と同値である．正規分布<span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>の特性関数は
+<span class="math display">\[
+\varphi(t)=\exp\left(\mu t\mathbf{i}-\frac{\sigma^2}{2}t^2\right)
+\]</span>
+であるから，
+<span class="math display">\[
+\exp\left(\mu_m t\mathbf{i}-\frac{\sigma_m^2}{2}t^2\right)
+ \longrightarrow
+ \exp\left(\mu t\mathbf{i}-\frac{\sigma^2}{2}t^2\right)
+\]</span>
+より結論を得る．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 4.7  </strong></span><span class="math inline">\(x, \lambda\)</span>は正の実数，<span class="math inline">\(m\)</span>は正の整数とする．確率分布<span class="math inline">\(G=\mathcal{N}(0,1)\)</span>としたときの<span class="math inline">\(\mathbb{R}_+\)</span>上のランダムウォークにたいし，
+<span class="math display">\[
+\mathbb{E}[\exp(-\lambda X_{m+1})|X_m=x]
+\]</span>
+を求めよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_m=x\)</span>のもと，<span class="math inline">\(X_{m+1}=\max\{0, x+W_{m+1}\}\)</span>で<span class="math inline">\(W_{m+1}\)</span>は標準正規分布に従う．
+<span class="math display">\[\begin{align*}
+\exp(-\lambda X_{m+1})=
+\begin{cases}
+1&amp;\mathrm{if}\ W_{m+1}\le -x\\
+\exp(-\lambda(x+W_{m+1})&amp;\mathrm{if}\ W_{m+1}&gt;-x
+\end{cases}
+\end{align*}\]</span>
+である．したがって，
+<span class="math display">\[\begin{align*}
+\mathbb{E}[\exp(-\lambda X_{m+1})|X_m=x]&amp;=
+  \mathbb{P}(W_{m+1}\le -x)+\int_{-x}^\infty\exp(-\lambda(x+w))\frac{1}{\sqrt{2\pi}}\exp(-w^2/2)\mathrm{d}w\\
+  &amp;=\Phi(-x)+\exp(-\lambda+\lambda^2/2)\int_{-x}^\infty\frac{1}{\sqrt{2\pi}}\exp(-(w+\lambda)^2/2)\mathrm{d}w
+\end{align*}\]</span>
+となる．ただし，<span class="math inline">\(\Phi(x)=1-\Phi(-x)\)</span>は標準正規分布の累積分布関数である．よって
+<span class="math inline">\(u=w+\lambda\)</span>と変数変換すれば
+<span class="math display">\[\begin{align*}
+\mathbb{E}[\exp(-\lambda X_{m+1})|X_m=x]
+  &amp;=\Phi(-x)+\exp(-\lambda+\lambda^2/2)\int_{-x+\lambda}^\infty\frac{1}{\sqrt{2\pi}}\exp(-w^2/2)\mathrm{d}w\\
+  &amp;=\Phi(-x)+\exp(-\lambda+\lambda^2/2)(1-\Phi(-x+\lambda))
+\end{align*}\]</span>
+を得る．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-67" class="exercise"><strong>Exercise 4.8  </strong></span>例4.6のマルコフ連鎖にたいし，<span class="math inline">\(\gamma&lt;1\)</span>のとき
+<span class="math display">\[
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m|X_0=x]
+\]</span>
+および
+<span class="math display">\[
+\lim_{m\rightarrow\infty}\operatorname{Var}[X_m|X_0=x]
+\]</span>
+を求めよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> <span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>より，とくに<span class="math inline">\(|\alpha|&lt;1\)</span>である．
+マルコフカーネルの定義から
+<span class="math display">\[
+  \mathbb{E}[X_m]=\alpha\mathbb{E}[X_{m-1}]=\cdots=\alpha^m\mathbb{E}[X_0]
+\]</span>
+より，<span class="math inline">\(m\rightarrow\infty\)</span>とすると
+<span class="math display">\[\begin{align*}
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m]=0
+\end{align*}\]</span>
+を得る．一方，例4.6の途中の式から，
+<span class="math display">\[\begin{align*}
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m^2]&amp;=
+  \lim_{m\rightarrow\infty}\left\{\sum_{i=0}^{m-1}\gamma^i\sigma^2+\gamma^m\mathbb{E}[X_0^2|X_0=x]\right\}\\
+&amp;=
+  \sum_{i=0}^\infty\gamma^i\sigma^2=\frac{\sigma^2}{1-\gamma}
+\end{align*}\]</span>
+をえる．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-69" class="exercise"><strong>Exercise 4.9  </strong></span>例4.7の自己回帰過程において，<span class="math inline">\(\alpha=-1\)</span>のとき不変確率分布が存在しないことを示せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 例4.7の式(4.10)より，もし不変確率分布<span class="math inline">\(\Pi\)</span>が存在するなら，その特性関数を<span class="math inline">\(\psi(u)\)</span>と書くと
+<span class="math display">\[
+\psi(u)=\psi(-u)\exp(-u^2\sigma^2/2)=\psi(u)\exp(-u^2\sigma^2)
+\]</span>
+を得る．したがって<span class="math inline">\(u\)</span>が<span class="math inline">\(0\)</span>でないなら，
+<span class="math inline">\(\exp(-u^2\sigma^2)&lt;1\)</span>より，必然的に<span class="math inline">\(\psi(u)=0\)</span>でなければならない．すると特性関数の連続性から
+<span class="math inline">\(\psi(0)=0\)</span>の必要がある．いっぽう，これは特性関数のもう一つの性質である<span class="math inline">\(\psi(0)=1\)</span>に矛盾している．したがって不変分布は存在しない．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-71" class="exercise"><strong>Exercise 4.10  </strong></span>実数<span class="math inline">\(\mu\)</span>に対し，
+<span class="math display">\[\begin{align*}
+\|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}
+\end{align*}\]</span>
+を求めよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 定義から
+<span class="math display">\[\begin{align*}
+\|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}=\frac{1}{2}\int_{-\infty}^\infty|\phi(x)-\phi(x-\mu)|\mathrm{d}x
+\end{align*}\]</span>
+である．ここで，
+<span class="math display">\[\begin{align*}
+ \begin{cases}
+  \phi(x)\ge \phi(x-\mu)&amp;\mathrm{if}\ \|x\|\le \|x-\mu\|\\
+  \phi(x) &lt;\phi(x-\mu)&amp;\mathrm{if}\ \|x\|&gt; \|x-\mu\|
+  \end{cases}
+\end{align*}\]</span>
+だから，
+<span class="math display">\[\begin{align*}
+\|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}=\frac{1}{2}\int_{\|x\|\le \|x-\mu\|}(\phi(x)-\phi(x-\mu))\mathrm{d}x
++
+  \frac{1}{2}\int_{\|x\|&gt; \|x-\mu\|}(\phi(x-\mu)-\phi(x))\mathrm{d}x
+\end{align*}\]</span>
+となる．この２つの積分を計算して足し合わせればよいが，じつはこの２つの積分は同じ値になる．なぜなら，これらが図4.7の青い領域，緑の領域それぞれを表すからだ．だから，２つの積分のうち，片方を求めて二倍すればよい．したがって求める値は
+<span class="math display">\[\begin{align*}
+\int_{\|x\|\le \|x-\mu\|}(\phi(x)-\phi(x-\mu))\mathrm{d}x&amp;=
+  \int_{-\infty}^{\mu/2}(\phi(x)-\phi(x-\mu))\mathrm{d}x\\
+&amp;=\Phi(\mu/2)-\Phi(-\mu/2)). 
+\end{align*}\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 4.11  </strong></span>実数<span class="math inline">\(\sigma^2&gt;1\)</span>に対し，
+<span class="math display">\[\begin{align*}
+\|\mathcal{N}(0,1)-\mathcal{N}(0,\sigma^2)\|_{\mathrm{TV}}
+\end{align*}\]</span>
+を求めよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 前の問題と同じように，定義から
+<span class="math display">\[\begin{align*}
+\|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}=\frac{1}{2}\int_{-\infty}^\infty|\phi(x)-\sigma^{-1}\phi(x/\sigma)|\mathrm{d}x
+\end{align*}\]</span>
+である．ここで
+<span class="math display">\[\begin{align*}
+\phi(x)\ge \sigma^{-1}\phi(x/\sigma)\Longleftrightarrow
+2\left(1-\sigma^{-2}\right)^{-1}\log \sigma\ge x^2
+\end{align*}\]</span>
+となる．実数<span class="math inline">\(\eta=\left(2\left(1-\sigma^{-2}\right)^{-1}\right)^{1/2}\)</span>とすると，前の問題と同じ議論により，
+<span class="math display">\[\begin{align*}
+\|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}&amp;=\frac{1}{2}\int_{\|x\|\le \eta}\left(\phi(x)-\sigma^{-1}\phi(x/\sigma)\right)\mathrm{d}x
++
+  \frac{1}{2}\int_{\|x\|&gt; \eta}\left(\sigma^{-1}\phi(x/\sigma)-\phi(x)\right)\mathrm{d}x\\
+&amp;=
+  \int_{\|x\|\le \eta}\left(\phi(x)-\sigma^{-1}\phi(x/\sigma)\right)\mathrm{d}x\\
+&amp;=
+  \Phi(\eta)-\Phi(-\eta)-\Phi(\eta/\sigma)+\Phi(\eta/\sigma). 
+\end{align*}\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-75" class="exercise"><strong>Exercise 4.12  </strong></span><span class="math inline">\(P, Q\)</span>が確率関数<span class="math inline">\(p(x), q(x)\)</span>を持つとき，
+<span class="math display">\[
+\sum_{x\in E}\min\{p(x), q(x)\}&gt;0
+\]</span>
+なら，<span class="math inline">\(P, Q\)</span>は互いに特異ではない．とくに，<span class="math inline">\(p(x)&gt;0, q(x)&gt;0\)</span>なる<span class="math inline">\(x\)</span>があれば<span class="math inline">\(P, Q\)</span>は互いに特異ではないことを示せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 仮定は，ある<span class="math inline">\(x^*\)</span>があって，<span class="math inline">\(\min\{p(x^*),q(x^*)\}&gt;0\)</span>となるということである．いっぽう，もし<span class="math inline">\(P, Q\)</span>が特異なら，ある集合<span class="math inline">\(A\)</span>があって，
+<span class="math inline">\(P(A)=Q(A^c)=0\)</span>となる．もし<span class="math inline">\(x^*\)</span>が<span class="math inline">\(A\)</span>に含まれるなら，
+<span class="math display">\[
+ P(A)\ge p(x^*)&gt;0 
+\]</span>
+となり矛盾するし，もし<span class="math inline">\(A^c\)</span>に含まれるなら
+<span class="math display">\[
+ Q(A)\ge q(x^*)&gt;0 
+\]</span>
+となりやはり矛盾する．だから，<span class="math inline">\(P, Q\)</span>は互いに特異ではない．
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tab-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tab-5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bayes-computation.pdf", "bayes-computation.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

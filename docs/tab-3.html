@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 積分法 | 練習問題 : モンテカルロ統計計算</title>
+  <meta name="description" content="Chapter 3 積分法 | 練習問題 : モンテカルロ統計計算" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 積分法 | 練習問題 : モンテカルロ統計計算" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 積分法 | 練習問題 : モンテカルロ統計計算" />
+  
+  
+  
+
+<meta name="author" content="鎌谷 研吾 (Kengo Kamatani, ISM and JST CREST)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tab-2.html"/>
+<link rel="next" href="tab-4.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">モンテカルロ統計計算</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Readme</a></li>
+<li class="chapter" data-level="1" data-path="tab-1.html"><a href="tab-1.html"><i class="fa fa-check"></i><b>1</b> 序論</a></li>
+<li class="chapter" data-level="2" data-path="tab-2.html"><a href="tab-2.html"><i class="fa fa-check"></i><b>2</b> 乱数</a></li>
+<li class="chapter" data-level="3" data-path="tab-3.html"><a href="tab-3.html"><i class="fa fa-check"></i><b>3</b> 積分法</a></li>
+<li class="chapter" data-level="4" data-path="tab-4.html"><a href="tab-4.html"><i class="fa fa-check"></i><b>4</b> マルコフ連鎖</a></li>
+<li class="chapter" data-level="5" data-path="tab-5.html"><a href="tab-5.html"><i class="fa fa-check"></i><b>5</b> ギブスサンプリング</a></li>
+<li class="chapter" data-level="6" data-path="tab-6.html"><a href="tab-6.html"><i class="fa fa-check"></i><b>6</b> メトロポリス・ヘイスティングス法</a></li>
+<li class="chapter" data-level="7" data-path="tab-error.html"><a href="tab-error.html"><i class="fa fa-check"></i><b>7</b> エラータム</a><ul>
+<li class="chapter" data-level="7.1" data-path="tab-error.html"><a href="tab-error.html#例2.3について-20200511"><i class="fa fa-check"></i><b>7.1</b> 例2.3について　(20200511)</a></li>
+<li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#定義6.1-p169-について-20200511"><i class="fa fa-check"></i><b>7.2</b> 定義6.1 p169 について (20200511)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://sites.google.com/view/kengokamatani/home">鎌谷研吾</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">練習問題 : モンテカルロ統計計算</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tab-3" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> 積分法</h1>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-37" class="exercise"><strong>Exercise 3.1  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\([0,1]\)</span>上で定義された関数<span class="math inline">\(f(x)\)</span>の補間多項式としてバーンスタイン多項式 (Bernstein polynomial)
+<span class="math display">\[
+g(x)=\mathbb{E}\left[f\left(\frac{X}{N}\right)\right]=\sum_{n=0}^Nf\left(\frac{n}{N}\right)x^n(1-x)^{N-n}
+\]</span>
+を考える．ただし<span class="math inline">\(X\sim \mathcal{B}(N,x)\)</span>. このとき，
+<span class="math display">\[
+J=\int_0^1 g(x)\mathrm{d}x
+\]</span>
+を求めよ．
+なお，大数の法則から，<span class="math inline">\(f(x)\)</span>が連続なら，<span class="math inline">\(g(x)\)</span>は<span class="math inline">\(f(x)\)</span>に一様収束することが知られている．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> ベータ関数の定義より
+<span class="math display">\[
+ \int_0^1 x^n(1-x)^{N-n}\mathrm{d}x=B(n+1, N-n+1) 
+\]</span>
+となる．また，
+<span class="math display">\[\begin{align*}
+B(n+1, N-n+1)&amp;=\frac{\Gamma(n+1)\Gamma(N-n+1)}{\Gamma(N+2)}\\
+&amp;=\frac{n!(N-n)!}{(N+1)!}
+\end{align*}\]</span>
+であるから，
+<span class="math display">\[\begin{align*}
+\binom{N}{n}B(n+1, N-n+1)=\frac{1}{N+1}. 
+\end{align*}\]</span>
+よって
+<span class="math display">\[
+ \int_0^1g(x)\mathrm{d}x=\frac{1}{N+1}\sum_{n=1}^Ng\left(\frac{n}{N}\right). 
+\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-39" class="exercise"><strong>Exercise 3.2  </strong></span><span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合のルジャンドル多項式<span class="math inline">\(l_1, l_2, l_3\)</span>にたいし
+<span class="math display">\[
+w_i=\int_a^b l_i(x)\mathrm{d}x\ (i=1,2,3)
+\]</span>
+を求めよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 定義から，
+<span class="math display">\[\begin{align*}
+l_1(x)&amp;=\frac{\left(x-\frac{a+b}{2}\right)(x-b)}{\left(a-\frac{a+b}{2}\right)(a-b)}
+=2\frac{\left(x-\frac{a+b}{2}\right)(x-b)}{(a-b)^2}, \\
+l_2(x)&amp;=\frac{(x-a)(x-b)}{\left(\frac{a+b}{2}-a\right)\left(\frac{a+b}{2}-b\right)}
+=-4\frac{(x-a)(x-b)}{(a-b)^2}, \\
+l_3(x)
+&amp;=2\frac{\left(x-\frac{a+b}{2}\right)(x-a)}{(a-b)^2}
+\end{align*}\]</span>
+となる．したがって
+<span class="math display">\[\begin{align*}
+w_1=\int_a^bl_1(x)\mathrm{d}x&amp;=\int_a^b\frac{\left\{(x-a)+(x-b)\right\}(x-b)}{(a-b)^2}\\
+&amp;=\left(-\frac{1}{6}+\frac{1}{2}\right)(b-a)\\
+&amp;=\frac{1}{3}(b-a)
+\end{align*}\]</span>
+となり，同様の計算で<span class="math inline">\(w_3=w_1=(b-a)/3\)</span>となる．また，
+<span class="math display">\[\begin{align*}
+w_2=\int_a^bl_2(x)\mathrm{d}x&amp;=\frac{2}{3}(b-a). 
+\end{align*}\]</span>
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-41" class="exercise"><strong>Exercise 3.3  </strong></span>ニュートン・コーツの公式において，<span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合をという．区間<span class="math inline">\([a,b]\)</span>上の関数<span class="math inline">\(f(x)\)</span>に対するシンプソン公式が
+<span class="math display">\[
+J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
+\]</span>
+で与えられることを示せ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 前問の結果と定義からただちにに従う．
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 3.4  </strong></span>複合台形公式を用いて(3.7)を計算せよ．　
+</div>
+
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tab-3.html#cb20-1"></a>N &lt;-<span class="st"> </span><span class="dv">100</span> <span class="co"># No. of points -1 for trapezoidal rule</span></span>
+<span id="cb20-2"><a href="tab-3.html#cb20-2"></a></span>
+<span id="cb20-3"><a href="tab-3.html#cb20-3"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x) (<span class="kw">cos</span>(<span class="dv">50</span><span class="op">*</span>x) <span class="op">+</span><span class="st"> </span><span class="kw">sin</span>(<span class="dv">20</span><span class="op">*</span>x))<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb20-4"><a href="tab-3.html#cb20-4"></a>seq &lt;-<span class="st"> </span>(<span class="dv">0</span><span class="op">:</span>N) <span class="op">/</span><span class="st"> </span>N</span>
+<span id="cb20-5"><a href="tab-3.html#cb20-5"></a>(<span class="kw">sum</span>(<span class="kw">f</span>(seq[<span class="op">-</span><span class="dv">1</span>]))<span class="op">+</span><span class="kw">sum</span>(<span class="kw">f</span>(seq[<span class="op">-</span>(N<span class="op">+</span><span class="dv">1</span>)]))) <span class="op">/</span><span class="st"> </span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>(N<span class="dv">-1</span>))</span></code></pre></div>
+<pre><code>## [1] 0.975289</code></pre>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 3.5  </strong></span>例3.6の<span class="math inline">\(I\)</span>の値を，R言語の組み込み関数<code>rcauchy</code>を用いて，基本的モンテカルロ積分法で小数点以下第二位まで正確に求めよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_1,\ldots, X_M\)</span>をコーシー乱数としたとき，
+<span class="math display">\[
+  I_M=\frac{1}{M}\sum_{m=1}^M1_{\{2\le X_m\}}
+\]</span>
+により近似できる．また，その推定量の分散は
+<span class="math display">\[
+  \frac{1}{M-1}\sum_{m=1}^M(f(x_m)-I_M)^2
+\]</span>
+で近似できる．実際に計算すると
+</div>
+
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tab-3.html#cb22-1"></a><span class="co"># 95% Confidence interval </span></span>
+<span id="cb22-2"><a href="tab-3.html#cb22-2"></a>CI &lt;-<span class="st"> </span><span class="cf">function</span>(m){</span>
+<span id="cb22-3"><a href="tab-3.html#cb22-3"></a>  x &lt;-<span class="st"> </span>(<span class="kw">rcauchy</span>(m)<span class="op">&gt;</span><span class="dv">2</span>)</span>
+<span id="cb22-4"><a href="tab-3.html#cb22-4"></a>  <span class="kw">paste</span>(<span class="st">&quot;estimate&quot;</span>, <span class="kw">mean</span>(x), <span class="st">&quot;lower_bound&quot;</span>, <span class="kw">mean</span>(x)<span class="op">-</span><span class="fl">1.96</span><span class="op">*</span><span class="kw">sd</span>(x)<span class="op">/</span><span class="kw">sqrt</span>(m), <span class="st">&quot;upper_bound&quot;</span>, <span class="kw">mean</span>(x)<span class="op">+</span><span class="fl">1.96</span><span class="op">*</span><span class="kw">sd</span>(x)<span class="op">/</span><span class="kw">sqrt</span>(m))</span>
+<span id="cb22-5"><a href="tab-3.html#cb22-5"></a>}</span>
+<span id="cb22-6"><a href="tab-3.html#cb22-6"></a><span class="kw">CI</span>(<span class="fl">1e6</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;estimate 0.147259 lower_bound 0.146564446371953 upper_bound 0.147953553628047&quot;</code></pre>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercise 3.6  </strong></span>任意の実数<span class="math inline">\(x\)</span>にたいし，正接関数の逆関数<span class="math inline">\(\arctan x\)</span>を，R言語の組み込み関数<code>rcauchy</code>を用いた基本的モンテカルロ積分法で近似する方法を構成せよ．また，その値をR言語の組み込み関数<code>atan</code>と比較せよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 例3.6の計算から，
+<span class="math display">\[\begin{align*}
+  \int_x^\infty\frac{1}{\pi(1+y^2)}\mathrm{d}y
+&amp;=
+  \int_{\arctan x}^{\pi/2}\frac{1}{\pi}\mathrm{d}\theta=\frac{1}{2}-\frac{\arctan x}{\pi}
+\end{align*}\]</span>
+である．よって
+<span class="math display">\[
+ \arctan x= \pi\left\{\frac{1}{2}-\int_x^\infty\frac{1}{\pi(1+y^2)}\mathrm{d}y\right\}. 
+\]</span>
+上の式に含まれる積分計算をモンテカルロ法で近似して図示しよう．
+</div>
+
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tab-3.html#cb24-1"></a>N &lt;-<span class="st"> </span><span class="fl">1e2</span> <span class="co"># No. of samples</span></span>
+<span id="cb24-2"><a href="tab-3.html#cb24-2"></a>k &lt;-<span class="st"> </span><span class="fl">1e2</span> <span class="co"># Points for plot</span></span>
+<span id="cb24-3"><a href="tab-3.html#cb24-3"></a>x &lt;-<span class="st"> </span><span class="kw">rcauchy</span>(N) <span class="co"># Random number</span></span>
+<span id="cb24-4"><a href="tab-3.html#cb24-4"></a>f &lt;-<span class="st"> </span><span class="kw">ecdf</span>(x)</span>
+<span id="cb24-5"><a href="tab-3.html#cb24-5"></a></span>
+<span id="cb24-6"><a href="tab-3.html#cb24-6"></a>points &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dt">length =</span> k)</span>
+<span id="cb24-7"><a href="tab-3.html#cb24-7"></a></span>
+<span id="cb24-8"><a href="tab-3.html#cb24-8"></a>data.fr &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span>points, <span class="dt">y=</span>pi<span class="op">*</span>(<span class="kw">f</span>(points)<span class="op">-</span><span class="fl">0.5</span>))</span>
+<span id="cb24-9"><a href="tab-3.html#cb24-9"></a></span>
+<span id="cb24-10"><a href="tab-3.html#cb24-10"></a><span class="kw">ggplot</span>(data.fr, <span class="kw">aes</span>(<span class="dt">x=</span>x,<span class="dt">y=</span>y,<span class="dt">color=</span><span class="st">&quot;MC&quot;</span>))<span class="op">+</span><span class="kw">geom_step</span>(<span class="kw">aes</span>(<span class="dt">color=</span><span class="st">&quot;direct&quot;</span>))<span class="op">+</span><span class="kw">stat_function</span>(<span class="dt">fun=</span>atan)<span class="op">+</span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
+<p><img src="bayes-computation_files/figure-html/exercise_3.6-1.png" width="672" /></p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercise 3.7  </strong></span>例3.6の計算でわかるように，<span class="math inline">\(I\)</span>は
+<span class="math display">\[
+f(x)=\left\{\begin{array}{ll}
+    1&amp; \mathrm{if}\ x\ge \arctan 2\\
+    0&amp; \mathrm{if}\ x&lt;\arctan 2
+\end{array}\right.
+\]</span>
+および<span class="math inline">\(p(x)\)</span>を区間<span class="math inline">\([-\pi/2, \pi/2]\)</span>の一様分布<span class="math inline">\(\mathcal{U}[-\pi/2,\pi/2]\)</span>の確率密度関数として
+<span class="math display">\[
+I=\int_{-\pi/2}^{\pi/2} f(x)p(x)\mathrm{d}x
+\]</span>
+とも表現できる．この表現を利用してR言語の組み込み関数<code>runif</code>を用いた基本的モンテカルロ積分法を構成せよ．また，その誤差を<code>rcauchy</code>を用いた方法と理論的におよび数値的に比較せよ．正接関数の逆関数<span class="math inline">\(\arctan x\)</span>の導出はR言語の組み込み関数<code>atan</code>を用いよ．
+</div>
+
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> 誤差評価のため，分散を比較しよう．例3.6のように<span class="math inline">\(f(x)\)</span>をとる．期待値の真の値は<span class="math inline">\(I=0.5-(\arctan 2)/\pi\)</span>である．このとき，例3.6の<code>rcauchy</code>を用いた基本的モンテカルロ積分法での分散をまず計算する．確率変数<span class="math inline">\(X\)</span>が<span class="math inline">\(\mathcal{C}(0,1)\)</span>に従うとして，定理3.4における<span class="math inline">\(\sigma^2\)</span>は
+<span class="math display">\[\sigma^2=\operatorname{Var}[f(X)]=\mathbb{E}[f(X)^2]-\mathbb{E}[f(X)]^2=I-I^2\]</span>
+となる．一方，<code>runif</code>を用いた方法では，練習問題3.7のように<span class="math inline">\(f(x)\)</span>を取ると，確率変数<span class="math inline">\(X\)</span>が<span class="math inline">\(\mathcal{U}[-\pi/2,\pi/2]\)</span>に従うとして
+やはりおなじように
+<span class="math display">\[\sigma^2=\operatorname{Var}[f(X)]=\mathbb{E}[f(X)^2]-\mathbb{E}[f(X)]^2=I-I^2\]</span>
+となる．じつは２つの方法はまったくおなじ手法である．例2.2より<span class="math inline">\(U\sim\mathcal{U}[-\pi/2,\pi/2]\)</span>に従うなら
+<span class="math inline">\(\tan U\)</span>はコーシー分布に従うからだ．
+</div>
+
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tab-3.html#cb25-1"></a>M &lt;-<span class="st"> </span><span class="fl">1e2</span></span>
+<span id="cb25-2"><a href="tab-3.html#cb25-2"></a>N &lt;-<span class="st"> </span><span class="fl">1e2</span></span>
+<span id="cb25-3"><a href="tab-3.html#cb25-3"></a>true &lt;-<span class="st"> </span><span class="fl">0.5</span> <span class="op">-</span><span class="st"> </span><span class="kw">atan</span>( <span class="dv">2</span> )<span class="op">/</span>pi</span>
+<span id="cb25-4"><a href="tab-3.html#cb25-4"></a></span>
+<span id="cb25-5"><a href="tab-3.html#cb25-5"></a><span class="co">## runif method</span></span>
+<span id="cb25-6"><a href="tab-3.html#cb25-6"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb25-7"><a href="tab-3.html#cb25-7"></a>v &lt;-<span class="st"> </span><span class="kw">numeric</span>(N)</span>
+<span id="cb25-8"><a href="tab-3.html#cb25-8"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
+<span id="cb25-9"><a href="tab-3.html#cb25-9"></a>  u &lt;-<span class="st"> </span><span class="kw">runif</span>(M, <span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>, pi<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb25-10"><a href="tab-3.html#cb25-10"></a>  v[i] &lt;-<span class="st"> </span><span class="kw">mean</span>((u <span class="op">&gt;</span><span class="st"> </span><span class="kw">atan</span>(<span class="dv">2</span>)))</span>
+<span id="cb25-11"><a href="tab-3.html#cb25-11"></a>}</span>
+<span id="cb25-12"><a href="tab-3.html#cb25-12"></a><span class="kw">mean</span>((v<span class="op">-</span>true)<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0009072253</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tab-3.html#cb27-1"></a><span class="co">## rcauchy method</span></span>
+<span id="cb27-2"><a href="tab-3.html#cb27-2"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb27-3"><a href="tab-3.html#cb27-3"></a>v &lt;-<span class="st"> </span><span class="kw">numeric</span>(N)</span>
+<span id="cb27-4"><a href="tab-3.html#cb27-4"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){</span>
+<span id="cb27-5"><a href="tab-3.html#cb27-5"></a>  u &lt;-<span class="st"> </span><span class="kw">runif</span>(M, <span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>, pi<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb27-6"><a href="tab-3.html#cb27-6"></a>  x &lt;-<span class="st"> </span><span class="kw">tan</span>(u)</span>
+<span id="cb27-7"><a href="tab-3.html#cb27-7"></a>  v[i] &lt;-<span class="st"> </span><span class="kw">mean</span>((x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span>))</span>
+<span id="cb27-8"><a href="tab-3.html#cb27-8"></a>}</span>
+<span id="cb27-9"><a href="tab-3.html#cb27-9"></a><span class="kw">mean</span>((v<span class="op">-</span>true)<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0009072253</code></pre>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 3.8  </strong></span>長さ<span class="math inline">\(N\)</span>の観測<span class="math inline">\(x_1,\ldots, x_N|\theta\)</span>は独立でコーシー分布<span class="math inline">\(\mathcal{C}(\theta,1)\)</span>に従い，<span class="math inline">\(\theta\)</span>には<span class="math inline">\(\mathcal{C}(0,1)\)</span>が事前分布として仮定されているとする．このとき事後平均を，R言語の組み込み関数<code>rcauchy</code>による自己正規化モンテカルロ法で計算せよ．
+</div>
+
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tab-3.html#cb29-1"></a>M &lt;-<span class="st"> </span><span class="fl">1e4</span></span>
+<span id="cb29-2"><a href="tab-3.html#cb29-2"></a>N &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb29-3"><a href="tab-3.html#cb29-3"></a>theta &lt;-<span class="st"> </span><span class="fl">2.0</span></span>
+<span id="cb29-4"><a href="tab-3.html#cb29-4"></a>x &lt;-<span class="st"> </span>theta <span class="op">+</span><span class="st"> </span><span class="kw">rcauchy</span>(N)</span>
+<span id="cb29-5"><a href="tab-3.html#cb29-5"></a></span>
+<span id="cb29-6"><a href="tab-3.html#cb29-6"></a>p1 &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(<span class="cf">function</span>(theta) <span class="kw">prod</span>(<span class="kw">dcauchy</span>(x<span class="op">-</span>theta))<span class="op">*</span>theta)</span>
+<span id="cb29-7"><a href="tab-3.html#cb29-7"></a></span>
+<span id="cb29-8"><a href="tab-3.html#cb29-8"></a>p2 &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(<span class="cf">function</span>(theta) <span class="kw">prod</span>(<span class="kw">dcauchy</span>(x<span class="op">-</span>theta)))</span>
+<span id="cb29-9"><a href="tab-3.html#cb29-9"></a></span>
+<span id="cb29-10"><a href="tab-3.html#cb29-10"></a></span>
+<span id="cb29-11"><a href="tab-3.html#cb29-11"></a>theta &lt;-<span class="st"> </span><span class="kw">rcauchy</span>(M)</span>
+<span id="cb29-12"><a href="tab-3.html#cb29-12"></a>vec &lt;-<span class="st">  </span><span class="kw">p1</span>(theta)<span class="op">/</span><span class="kw">p2</span>(theta)</span>
+<span id="cb29-13"><a href="tab-3.html#cb29-13"></a></span>
+<span id="cb29-14"><a href="tab-3.html#cb29-14"></a>data.fr &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">1</span><span class="op">:</span>M, <span class="dt">y =</span> (<span class="kw">cumsum</span>(vec)<span class="op">/</span><span class="dv">1</span><span class="op">:</span>M))</span>
+<span id="cb29-15"><a href="tab-3.html#cb29-15"></a><span class="kw">ggplot</span>(data.fr, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y))<span class="op">+</span><span class="kw">geom_line</span>()<span class="op">+</span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="bayes-computation_files/figure-html/exercise_3.8-1.png" width="672" /></p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 3.9  </strong></span>積分
+<span class="math display">\[
+I=\int_{-\infty}^\infty \exp\left(-\sqrt{|x|}\right)(\sin x)^2\mathrm{d}x
+\]</span>
+を重点サンプリング法で計算する．コーシー分布<span class="math inline">\(\mathcal{C}(0,1)\)</span>を提案分布とする方法と，標準正規分布<span class="math inline">\(\mathcal{N}(0,1)\)</span>を提案分布とする方法を数値的に比較し，結果を考察せよ．
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> 以下で数値実験を見れば，正規分布の方法が不安定なのがわかるだろう．なぜだろか．じつは，例3.10と同じように，正規分布を使った方法では分散が発散してしまう．計算はやや煩雑であるが，<span class="math inline">\(M=1\)</span>としたときの推定量の分散は, <span class="math inline">\(f(x)=\exp\left(-\sqrt{|x|}\right)(\sin x)^2\)</span>, <span class="math inline">\(q(x)=\exp(-x^2/2)/\sqrt{2\pi}\)</span>として，
+<span class="math display">\[\int_{-\infty}^\infty\left(\frac{f(x)}{q(x)}\right)^2q(x)\mathrm{d}x-I^2=\sqrt{2\pi}\int_{-\infty}^\infty\exp(x^2/2-x)\sin(x)^4\mathrm{d}x-I^2\]</span>
+となる．正弦関数は<span class="math inline">\(0\)</span>になることもあるのでわかりにくいが，右辺の積分は<span class="math inline">\(+\infty\)</span>となる．積分の不等式評価は本書の範囲を超えるから，数値的に大きさを確認できれば良い．</p>
+しっかりとしめすには，まず
+<span class="math display">\[
+  J_k:=\int_{k\pi}^{(k+1)\pi}\sin(x)^4\mathrm{d}x
+\]</span>
+が正であり，<span class="math inline">\(k\)</span>に依存しないことに注意する．そして，
+<span class="math inline">\(x\ge 2\)</span>のとき<span class="math inline">\(x^2/2-x\ge 0\)</span>だから，
+<span class="math display">\[\begin{align*}
+\int_{-\infty}^\infty\exp(x^2/2-x)\sin(x)^4\mathrm{d}x&amp;=
+2\int_0^\infty\exp(x^2/2-x)\sin(x)^4\mathrm{d}x\\
+&amp;\ge 
+2\int_\pi^\infty\sin(x)^4\mathrm{d}x
+\end{align*}\]</span>
+を示す．すると最後の式が<span class="math inline">\(2(J_1+J_2+\cdots)\)</span>と表されることと先程の注意から，この積分が<span class="math inline">\(+\infty\)</span>であることがわかる．
+</div>
+
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tab-3.html#cb30-1"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb30-2"><a href="tab-3.html#cb30-2"></a>M &lt;-<span class="st"> </span><span class="fl">1e5</span></span>
+<span id="cb30-3"><a href="tab-3.html#cb30-3"></a></span>
+<span id="cb30-4"><a href="tab-3.html#cb30-4"></a>f &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(<span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span><span class="kw">sqrt</span>(<span class="kw">abs</span>(x))) <span class="op">*</span><span class="st"> </span><span class="kw">sin</span>(x)<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb30-5"><a href="tab-3.html#cb30-5"></a></span>
+<span id="cb30-6"><a href="tab-3.html#cb30-6"></a></span>
+<span id="cb30-7"><a href="tab-3.html#cb30-7"></a>x &lt;-<span class="st"> </span><span class="kw">rcauchy</span>(M)</span>
+<span id="cb30-8"><a href="tab-3.html#cb30-8"></a>y1 &lt;-<span class="st"> </span><span class="kw">f</span>(x)<span class="op">/</span><span class="kw">dcauchy</span>(x) <span class="co"># Cauchy distribution</span></span>
+<span id="cb30-9"><a href="tab-3.html#cb30-9"></a></span>
+<span id="cb30-10"><a href="tab-3.html#cb30-10"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(M)</span>
+<span id="cb30-11"><a href="tab-3.html#cb30-11"></a>y2 &lt;-<span class="st"> </span><span class="kw">f</span>(x)<span class="op">/</span><span class="kw">dnorm</span>(x) <span class="co"># Normal distribution</span></span>
+<span id="cb30-12"><a href="tab-3.html#cb30-12"></a>  </span>
+<span id="cb30-13"><a href="tab-3.html#cb30-13"></a>data.fr &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span>M,<span class="dv">2</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="kw">cumsum</span>(y1)<span class="op">/</span><span class="dv">1</span><span class="op">:</span>M,<span class="kw">cumsum</span>(y2)<span class="op">/</span><span class="dv">1</span><span class="op">:</span>M ), <span class="dt">method =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;Cauchy&quot;</span>, <span class="st">&quot;Normal&quot;</span>), <span class="dt">each=</span>M))</span>
+<span id="cb30-14"><a href="tab-3.html#cb30-14"></a><span class="kw">ggplot</span>(data.fr, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">color=</span>method))<span class="op">+</span><span class="kw">geom_line</span>()<span class="op">+</span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
+<p><img src="bayes-computation_files/figure-html/exercise_3.9-1.png" width="672" /></p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tab-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tab-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bayes-computation.pdf", "bayes-computation.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
