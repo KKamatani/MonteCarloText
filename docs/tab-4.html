@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算</title>
   <meta name="description" content="Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,8 @@
   
 <link rel="prev" href="tab-3.html"/>
 <link rel="next" href="tab-5.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,29 +50,27 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -91,7 +90,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -147,9 +146,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="tab-4.html"><a href="tab-4.html"><i class="fa fa-check"></i><b>4</b> マルコフ連鎖</a></li>
 <li class="chapter" data-level="5" data-path="tab-5.html"><a href="tab-5.html"><i class="fa fa-check"></i><b>5</b> ギブスサンプリング</a></li>
 <li class="chapter" data-level="6" data-path="tab-6.html"><a href="tab-6.html"><i class="fa fa-check"></i><b>6</b> メトロポリス・ヘイスティングス法</a></li>
-<li class="chapter" data-level="7" data-path="tab-error.html"><a href="tab-error.html"><i class="fa fa-check"></i><b>7</b> エラータム</a><ul>
-<li class="chapter" data-level="7.1" data-path="tab-error.html"><a href="tab-error.html#例2.3について-20200511"><i class="fa fa-check"></i><b>7.1</b> 例2.3について　(20200511)</a></li>
-<li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#定義6.1-p169-について-20200511"><i class="fa fa-check"></i><b>7.2</b> 定義6.1 p169 について (20200511)</a></li>
+<li class="chapter" data-level="7" data-path="tab-error.html"><a href="tab-error.html"><i class="fa fa-check"></i><b>7</b> エラータム</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tab-error.html"><a href="tab-error.html#p21-例1.8の後の文章-20200511-第二刷修正漏れ"><i class="fa fa-check"></i><b>7.1</b> p21　例1.8の後の文章 (20200511) 第二刷修正漏れ！</a></li>
+<li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#p44-例2.1について-20210308"><i class="fa fa-check"></i><b>7.2</b> p44 例2.1について　(20210308)</a></li>
+<li class="chapter" data-level="7.3" data-path="tab-error.html"><a href="tab-error.html#p48-例2.3について-20200511"><i class="fa fa-check"></i><b>7.3</b> p48 例2.3について　(20200511)</a></li>
+<li class="chapter" data-level="7.4" data-path="tab-error.html"><a href="tab-error.html#p70-定理3.2について-20210308"><i class="fa fa-check"></i><b>7.4</b> p70 定理3.2について　(20210308)</a></li>
+<li class="chapter" data-level="7.5" data-path="tab-error.html"><a href="tab-error.html#p93-練習問題3.2について-20210308"><i class="fa fa-check"></i><b>7.5</b> p93 練習問題3.2について　(20210308)</a></li>
+<li class="chapter" data-level="7.6" data-path="tab-error.html"><a href="tab-error.html#p95-章のアブストラクト-20210308"><i class="fa fa-check"></i><b>7.6</b> p95 章のアブストラクト　(20210308)</a></li>
+<li class="chapter" data-level="7.7" data-path="tab-error.html"><a href="tab-error.html#p109-例4.6について-20210308"><i class="fa fa-check"></i><b>7.7</b> p109 例4.6について　(20210308)</a></li>
+<li class="chapter" data-level="7.8" data-path="tab-error.html"><a href="tab-error.html#p139-定理5.7について-20210308"><i class="fa fa-check"></i><b>7.8</b> p139 定理5.7について (20210308)</a></li>
+<li class="chapter" data-level="7.9" data-path="tab-error.html"><a href="tab-error.html#p140-5.3.3について-20210308"><i class="fa fa-check"></i><b>7.9</b> p140 5.3.3について (20210308)</a></li>
+<li class="chapter" data-level="7.10" data-path="tab-error.html"><a href="tab-error.html#p144-例5.7-について-20210308"><i class="fa fa-check"></i><b>7.10</b> p144 例5.7 について (20210308)</a></li>
+<li class="chapter" data-level="7.11" data-path="tab-error.html"><a href="tab-error.html#p146-練習問題-5.10について-20210308"><i class="fa fa-check"></i><b>7.11</b> p146 練習問題 5.10について (20210308)</a></li>
+<li class="chapter" data-level="7.12" data-path="tab-error.html"><a href="tab-error.html#p155-下から8行目-20210308"><i class="fa fa-check"></i><b>7.12</b> p155 下から8行目 (20210308)</a></li>
+<li class="chapter" data-level="7.13" data-path="tab-error.html"><a href="tab-error.html#p156-6.3.1について-20210308"><i class="fa fa-check"></i><b>7.13</b> p156 6.3.1について (20210308)</a></li>
+<li class="chapter" data-level="7.14" data-path="tab-error.html"><a href="tab-error.html#p159-6.3.2について-20210308"><i class="fa fa-check"></i><b>7.14</b> p159 6.3.2について (20210308)</a></li>
+<li class="chapter" data-level="7.15" data-path="tab-error.html"><a href="tab-error.html#p160-引き続き6.3.2について-20210308"><i class="fa fa-check"></i><b>7.15</b> p160 引き続き6.3.2について (20210308)</a></li>
+<li class="chapter" data-level="7.16" data-path="tab-error.html"><a href="tab-error.html#p161-引き続き6.3.2について-20210308"><i class="fa fa-check"></i><b>7.16</b> p161 引き続き6.3.2について (20210308)</a></li>
+<li class="chapter" data-level="7.17" data-path="tab-error.html"><a href="tab-error.html#p164-リスト6.3について-20210308"><i class="fa fa-check"></i><b>7.17</b> p164 リスト6.3について (20210308)</a></li>
+<li class="chapter" data-level="7.18" data-path="tab-error.html"><a href="tab-error.html#定義6.1-p169-について-20200511"><i class="fa fa-check"></i><b>7.18</b> 定義6.1 p169 について (20200511)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://sites.google.com/view/kengokamatani/home">鎌谷研吾</a></li>
@@ -170,13 +186,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tab-4" class="section level1">
+<div id="tab-4" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> マルコフ連鎖</h1>
 
 <div class="exercise">
 <span id="exr:unnamed-chunk-53" class="exercise"><strong>Exercise 4.1  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(N\)</span>は正の整数とする．また<span class="math inline">\(x\)</span>は<span class="math inline">\(0\le x\le N\)</span>なる整数とする．ライト・フィッシャーモデルに対し<span class="math inline">\(\mathbb{E}[X_{m+1}|X_m=x]\)</span>および<span class="math inline">\(\operatorname{Var}(X_{m+1}|X_m=x)\)</span>を求めよ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_{m+1}\)</span>は<span class="math inline">\(X_m=x\)</span>で条件つけたもと<span class="math inline">\(\mathcal{B}(N, x/N)\)</span>に従う．よって二項分布の性質より
@@ -186,7 +201,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercise 4.2  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\(x\)</span>は<span class="math inline">\(0\le x\le N\)</span>なる整数とする．ライト・フィッシャーモデルにたいし，
 <span class="math display">\[
@@ -194,7 +208,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \]</span>
 を示せ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> 条件つき期待値，分散の計算から
@@ -206,11 +219,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 を得る．
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-57" class="exercise"><strong>Exercise 4.3  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(N\)</span>は正の整数とする．ライト・フィッシャーモデルに対し<span class="math inline">\(\operatorname{Cov}(X_{m+1}, X_m)=\operatorname{Var}(X_m)\)</span>を示せ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
@@ -232,7 +243,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-59" class="exercise"><strong>Exercise 4.4  </strong></span>ライト・フィッシャーモデルに対し
 <span class="math display">\[
@@ -240,7 +250,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \]</span>
 であることを示せ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> 定理4.1の証明の中で
@@ -263,13 +272,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-61" class="exercise"><strong>Exercise 4.5  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(x\)</span>は実数とする．
 自己回帰過程に対し，
 <span class="math inline">\(\mathbb{E}[X_{m+1}|X_m=x]\)</span>および<span class="math inline">\(\operatorname{Var}(X_{m+1}|X_m=x)\)</span>を求めよ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> 式(4.1)より
@@ -284,7 +291,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 4.6  </strong></span>各<span class="math inline">\(m=1,2,\ldots\)</span>について<span class="math inline">\(\mu_m,\mu\)</span>は実数，<span class="math inline">\(\sigma^2_m, \sigma^2\)</span>は正の実数とする．また，<span class="math inline">\(\mu_m\rightarrow\mu, \sigma^2_m\rightarrow\sigma^2\)</span>とする．このとき，
 <span class="math display">\[\begin{align*}
@@ -292,7 +298,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 となることを示せ（特性関数が収束することを見ればいい）．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> 確率分布の収束は，その特性関数の収束と同値である．正規分布<span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>の特性関数は
@@ -308,7 +313,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 より結論を得る．
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 4.7  </strong></span><span class="math inline">\(x, \lambda\)</span>は正の実数，<span class="math inline">\(m\)</span>は正の整数とする．確率分布<span class="math inline">\(G=\mathcal{N}(0,1)\)</span>としたときの<span class="math inline">\(\mathbb{R}_+\)</span>上のランダムウォークにたいし，
 <span class="math display">\[
@@ -316,7 +320,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \]</span>
 を求めよ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_m=x\)</span>のもと，<span class="math inline">\(X_{m+1}=\max\{0, x+W_{m+1}\}\)</span>で<span class="math inline">\(W_{m+1}\)</span>は標準正規分布に従う．
@@ -343,7 +346,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 を得る．
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-67" class="exercise"><strong>Exercise 4.8  </strong></span>例4.6のマルコフ連鎖にたいし，<span class="math inline">\(\gamma&lt;1\)</span>のとき
 <span class="math display">\[
@@ -355,7 +357,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \]</span>
 を求めよ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> <span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>より，とくに<span class="math inline">\(|\alpha|&lt;1\)</span>である．
@@ -377,11 +378,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 をえる．
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-69" class="exercise"><strong>Exercise 4.9  </strong></span>例4.7の自己回帰過程において，<span class="math inline">\(\alpha=-1\)</span>のとき不変確率分布が存在しないことを示せ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> 例4.7の式(4.10)より，もし不変確率分布<span class="math inline">\(\Pi\)</span>が存在するなら，その特性関数を<span class="math inline">\(\psi(u)\)</span>と書くと
@@ -393,7 +392,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math inline">\(\psi(0)=0\)</span>の必要がある．いっぽう，これは特性関数のもう一つの性質である<span class="math inline">\(\psi(0)=1\)</span>に矛盾している．したがって不変分布は存在しない．
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-71" class="exercise"><strong>Exercise 4.10  </strong></span>実数<span class="math inline">\(\mu\)</span>に対し，
 <span class="math display">\[\begin{align*}
@@ -401,7 +399,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 を求めよ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> 定義から
@@ -429,7 +426,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 4.11  </strong></span>実数<span class="math inline">\(\sigma^2&gt;1\)</span>に対し，
 <span class="math display">\[\begin{align*}
@@ -437,7 +433,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 を求めよ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> 前の問題と同じように，定義から
@@ -461,7 +456,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 </div>
 
-
 <div class="exercise">
 <span id="exr:unnamed-chunk-75" class="exercise"><strong>Exercise 4.12  </strong></span><span class="math inline">\(P, Q\)</span>が確率関数<span class="math inline">\(p(x), q(x)\)</span>を持つとき，
 <span class="math display">\[
@@ -469,7 +463,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \]</span>
 なら，<span class="math inline">\(P, Q\)</span>は互いに特異ではない．とくに，<span class="math inline">\(p(x)&gt;0, q(x)&gt;0\)</span>なる<span class="math inline">\(x\)</span>があれば<span class="math inline">\(P, Q\)</span>は互いに特異ではないことを示せ．
 </div>
-
 
 <div class="solution">
  <span class="solution"><em>Solution. </em></span> 仮定は，ある<span class="math inline">\(x^*\)</span>があって，<span class="math inline">\(\min\{p(x^*),q(x^*)\}&gt;0\)</span>となるということである．いっぽう，もし<span class="math inline">\(P, Q\)</span>が特異なら，ある集合<span class="math inline">\(A\)</span>があって，
@@ -483,7 +476,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \]</span>
 となりやはり矛盾する．だから，<span class="math inline">\(P, Q\)</span>は互いに特異ではない．
 </div>
-
 </div>
             </section>
 
