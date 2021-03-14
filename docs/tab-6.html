@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 6</span> メトロポリス・ヘイスティングス法</h1>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-102" class="exercise"><strong>Exercise 6.1  </strong></span>メトロポリス・ヘイスティングス法の採択関数<span class="math inline">\(\alpha(x,y)\)</span>の代わりに
+<span id="exr:unnamed-chunk-104" class="exercise"><strong>Exercise 6.1  </strong></span>メトロポリス・ヘイスティングス法の採択関数<span class="math inline">\(\alpha(x,y)\)</span>の代わりに
 <span class="math display">\[
 \beta(x,y)=\frac{\pi(y)q(y,x)}{\pi(x)q(x,y)+\pi(y)q(y,x)}
 \]</span>
@@ -224,7 +224,7 @@ P(x, A)\ge \int_Aq(x,y)\beta(x,y)\mathrm{d}y=:k(x,y)&gt;0
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-105" class="exercise"><strong>Exercise 6.2  </strong></span>例6.1で紹介された二つの独立型メトロポリス・ヘイスティングス法のそれぞれに対し，式(6.1)で定義される<span class="math inline">\(M\)</span>を計算せよ．
+<span id="exr:unnamed-chunk-107" class="exercise"><strong>Exercise 6.2  </strong></span>例6.1で紹介された二つの独立型メトロポリス・ヘイスティングス法のそれぞれに対し，式(6.1)で定義される<span class="math inline">\(M\)</span>を計算せよ．
 </div>
 
 <div class="solution">
@@ -235,7 +235,7 @@ M=C\sqrt{2\pi}\sup_{x\in\mathbb{R}^d}\frac{1}{1+\theta^2}=C\sqrt{2\pi}.
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-107" class="exercise"><strong>Exercise 6.3  </strong></span>独立型メトロポリス・ヘイスティングス法を
+<span id="exr:unnamed-chunk-109" class="exercise"><strong>Exercise 6.3  </strong></span>独立型メトロポリス・ヘイスティングス法を
 <span class="math inline">\(\Pi=\mathcal{N}(0,1)\)</span>, <span class="math inline">\(Q=\mathcal{C}(0,1)\)</span>としたものと，
 <span class="math inline">\(\Pi=\mathcal{C}(0,1)\)</span>, <span class="math inline">\(Q=\mathcal{N}(0,1)\)</span>としたものを実装し，結果を比較せよ．
 </div>
@@ -298,7 +298,7 @@ M=C\sqrt{2\pi}\sup_{x\in\mathbb{R}^d}\frac{1}{1+\theta^2}=C\sqrt{2\pi}.
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-110" class="exercise"><strong>Exercise 6.4  </strong></span><span class="math inline">\(\mathbb{R}^d\)</span>上の確率測度<span class="math inline">\(\Pi\)</span>に対し，確率密度関数<span class="math inline">\(\pi(x)\)</span>があるとする．メトロポリス・ヘイスティングス法で
+<span id="exr:unnamed-chunk-112" class="exercise"><strong>Exercise 6.4  </strong></span><span class="math inline">\(\mathbb{R}^d\)</span>上の確率測度<span class="math inline">\(\Pi\)</span>に対し，確率密度関数<span class="math inline">\(\pi(x)\)</span>があるとする．メトロポリス・ヘイスティングス法で
 正の実数<span class="math inline">\(\rho,\sigma\)</span>で<span class="math inline">\(0&lt;\rho&lt;1\)</span>なるものに対し，
 <span class="math inline">\(Q(x,\cdot)=\mathcal{N}(\rho^{1/2}x, (1-\rho)\sigma^2I_d)\)</span>とする．
 このとき採択関数が
@@ -333,7 +333,7 @@ q(x,y)=\frac{1}{\sqrt{2\pi\sigma^2(1-\rho)}}\exp\left(-\frac{(y-\rho^{1/2}x)^2}{
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-113" class="exercise"><strong>Exercise 6.5  </strong></span>定理6.4を証明せよ．
+<span id="exr:unnamed-chunk-115" class="exercise"><strong>Exercise 6.5  </strong></span>定理6.4を証明せよ．
 </div>
 
 <div class="solution">
@@ -341,7 +341,7 @@ q(x,y)=\frac{1}{\sqrt{2\pi\sigma^2(1-\rho)}}\exp\left(-\frac{(y-\rho^{1/2}x)^2}{
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-115" class="exercise"><strong>Exercise 6.6  </strong></span>定理6.6を示せ．
+<span id="exr:unnamed-chunk-117" class="exercise"><strong>Exercise 6.6  </strong></span>定理6.6を示せ．
 </div>
 
 <div class="solution">
@@ -349,7 +349,7 @@ q(x,y)=\frac{1}{\sqrt{2\pi\sigma^2(1-\rho)}}\exp\left(-\frac{(y-\rho^{1/2}x)^2}{
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-117" class="exercise"><strong>Exercise 6.7  </strong></span>ハミルトン方程式の離散近似は様々な方法がある．
+<span id="exr:unnamed-chunk-119" class="exercise"><strong>Exercise 6.7  </strong></span>ハミルトン方程式の離散近似は様々な方法がある．
 オイラー法は
 <span class="math display">\[\begin{align*}
 x_h&amp;=x_0+h\left(\frac{\partial H}{\partial w}\right)(x_0, w_0), \\
@@ -381,7 +381,7 @@ H(x_{kh},w_{kh})=(1+h^2)^kH(x_0, w_0)
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-120" class="exercise"><strong>Exercise 6.8  </strong></span>同様に修正されたオイラー法では，
+<span id="exr:unnamed-chunk-122" class="exercise"><strong>Exercise 6.8  </strong></span>同様に修正されたオイラー法では，
 ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
 <span class="math display">\[
 H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)

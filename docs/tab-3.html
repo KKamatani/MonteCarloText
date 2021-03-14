@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> 積分法</h1>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-41" class="exercise"><strong>Exercise 3.1  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\([0,1]\)</span>上で定義された関数<span class="math inline">\(f(x)\)</span>の補間多項式としてバーンスタイン多項式 (Bernstein polynomial)
+<span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 3.1  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\([0,1]\)</span>上で定義された関数<span class="math inline">\(f(x)\)</span>の補間多項式としてバーンスタイン多項式 (Bernstein polynomial)
 <span class="math display">\[
 g(x)=\mathbb{E}\left[f\left(\frac{X}{N}\right)\right]=\sum_{n=0}^Nf\left(\frac{n}{N}\right)x^n(1-x)^{N-n}
 \]</span>
@@ -224,7 +224,7 @@ B(n+1, N-n+1)&amp;=\frac{\Gamma(n+1)\Gamma(N-n+1)}{\Gamma(N+2)}\\
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 3.2  </strong></span><span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合のルジャンドル多項式<span class="math inline">\(l_1, l_2, l_3\)</span>にたいし
+<span id="exr:unnamed-chunk-45" class="exercise"><strong>Exercise 3.2  </strong></span><span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合のルジャンドル多項式<span class="math inline">\(l_1, l_2, l_3\)</span>にたいし
 <span class="math display">\[
 w_i=\int_a^b l_i(x)\mathrm{d}x\ (i=1,2,3)
 \]</span>
@@ -254,7 +254,7 @@ w_2=\int_a^bl_2(x)\mathrm{d}x&amp;=\frac{2}{3}(b-a).
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-45" class="exercise"><strong>Exercise 3.3  </strong></span>ニュートン・コーツの公式において，<span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合をという．区間<span class="math inline">\([a,b]\)</span>上の関数<span class="math inline">\(f(x)\)</span>に対するシンプソン公式が
+<span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 3.3  </strong></span>ニュートン・コーツの公式において，<span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合をという．区間<span class="math inline">\([a,b]\)</span>上の関数<span class="math inline">\(f(x)\)</span>に対するシンプソン公式が
 <span class="math display">\[
 J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 \]</span>
@@ -266,7 +266,7 @@ J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 3.4  </strong></span>複合台形公式を用いて(3.7)を計算せよ．　
+<span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 3.4  </strong></span>複合台形公式を用いて(3.7)を計算せよ．　
 </div>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tab-3.html#cb28-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># No. of points -1 for trapezoidal rule</span></span>
 <span id="cb28-2"><a href="tab-3.html#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -276,7 +276,7 @@ J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 <pre><code>## [1] 0.975289</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercise 3.5  </strong></span>例3.6の<span class="math inline">\(I\)</span>の値を，R言語の組み込み関数<code>rcauchy</code>を用いて，基本的モンテカルロ積分法で小数点以下第二位まで正確に求めよ．
+<span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 3.5  </strong></span>例3.6の<span class="math inline">\(I\)</span>の値を，R言語の組み込み関数<code>rcauchy</code>を用いて，基本的モンテカルロ積分法で小数点以下第二位まで正確に求めよ．
 </div>
 
 <div class="solution">
@@ -296,10 +296,10 @@ J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 <span id="cb30-4"><a href="tab-3.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">&quot;estimate&quot;</span>, <span class="fu">mean</span>(x), <span class="st">&quot;lower_bound&quot;</span>, <span class="fu">mean</span>(x)<span class="sc">-</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(m), <span class="st">&quot;upper_bound&quot;</span>, <span class="fu">mean</span>(x)<span class="sc">+</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(m))</span>
 <span id="cb30-5"><a href="tab-3.html#cb30-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb30-6"><a href="tab-3.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">CI</span>(<span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;estimate 0.147259 lower_bound 0.146564446371953 upper_bound 0.147953553628047&quot;</code></pre>
+<pre><code>## [1] &quot;estimate 0.147258 lower_bound 0.146563448322983 upper_bound 0.147952551677017&quot;</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 3.6  </strong></span>任意の実数<span class="math inline">\(x\)</span>にたいし，正接関数の逆関数<span class="math inline">\(\arctan x\)</span>を，R言語の組み込み関数<code>rcauchy</code>を用いた基本的モンテカルロ積分法で近似する方法を構成せよ．また，その値をR言語の組み込み関数<code>atan</code>と比較せよ．
+<span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercise 3.6  </strong></span>任意の実数<span class="math inline">\(x\)</span>にたいし，正接関数の逆関数<span class="math inline">\(\arctan x\)</span>を，R言語の組み込み関数<code>rcauchy</code>を用いた基本的モンテカルロ積分法で近似する方法を構成せよ．また，その値をR言語の組み込み関数<code>atan</code>と比較せよ．
 </div>
 
 <div class="solution">
@@ -328,7 +328,7 @@ J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 <p><img src="bayes-computation_files/figure-html/exercise_3.6-1.png" width="672" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercise 3.7  </strong></span>例3.6の計算でわかるように，<span class="math inline">\(I\)</span>は
+<span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 3.7  </strong></span>例3.6の計算でわかるように，<span class="math inline">\(I\)</span>は
 <span class="math display">\[
 f(x)=\left\{\begin{array}{ll}
     1&amp; \mathrm{if}\ x\ge \arctan 2\\
@@ -376,7 +376,7 @@ I=\int_{-\pi/2}^{\pi/2} f(x)p(x)\mathrm{d}x
 <pre><code>## [1] 0.0009072253</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 3.8  </strong></span>長さ<span class="math inline">\(N\)</span>の観測<span class="math inline">\(x_1,\ldots, x_N|\theta\)</span>は独立でコーシー分布<span class="math inline">\(\mathcal{C}(\theta,1)\)</span>に従い，<span class="math inline">\(\theta\)</span>には<span class="math inline">\(\mathcal{C}(0,1)\)</span>が事前分布として仮定されているとする．このとき事後平均を，R言語の組み込み関数<code>rcauchy</code>による自己正規化モンテカルロ法で計算せよ．
+<span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 3.8  </strong></span>長さ<span class="math inline">\(N\)</span>の観測<span class="math inline">\(x_1,\ldots, x_N|\theta\)</span>は独立でコーシー分布<span class="math inline">\(\mathcal{C}(\theta,1)\)</span>に従い，<span class="math inline">\(\theta\)</span>には<span class="math inline">\(\mathcal{C}(0,1)\)</span>が事前分布として仮定されているとする．このとき事後平均を，R言語の組み込み関数<code>rcauchy</code>による自己正規化モンテカルロ法で計算せよ．
 </div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tab-3.html#cb37-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fl">1e4</span></span>
 <span id="cb37-2"><a href="tab-3.html#cb37-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
@@ -396,7 +396,7 @@ I=\int_{-\pi/2}^{\pi/2} f(x)p(x)\mathrm{d}x
 <p><img src="bayes-computation_files/figure-html/exercise_3.8-1.png" width="672" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercise 3.9  </strong></span>積分
+<span id="exr:unnamed-chunk-57" class="exercise"><strong>Exercise 3.9  </strong></span>積分
 <span class="math display">\[
 I=\int_{-\infty}^\infty \exp\left(-\sqrt{|x|}\right)(\sin x)^2\mathrm{d}x
 \]</span>
