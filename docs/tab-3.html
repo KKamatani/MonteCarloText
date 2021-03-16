@@ -197,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> 積分法</h1>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 3.1  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\([0,1]\)</span>上で定義された関数<span class="math inline">\(f(x)\)</span>の補間多項式としてバーンスタイン多項式 (Bernstein polynomial)
+<span id="exr:unnamed-chunk-45" class="exercise"><strong>Exercise 3.1  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\([0,1]\)</span>上で定義された関数<span class="math inline">\(f(x)\)</span>の補間多項式としてバーンスタイン多項式 (Bernstein polynomial)
 <span class="math display">\[
 g(x)=\mathbb{E}\left[f\left(\frac{X}{N}\right)\right]=\sum_{n=0}^Nf\left(\frac{n}{N}\right)x^n(1-x)^{N-n}
 \]</span>
@@ -230,7 +230,7 @@ B(n+1, N-n+1)&amp;=\frac{\Gamma(n+1)\Gamma(N-n+1)}{\Gamma(N+2)}\\
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-45" class="exercise"><strong>Exercise 3.2  </strong></span><span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合のルジャンドル多項式<span class="math inline">\(l_1, l_2, l_3\)</span>にたいし
+<span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 3.2  </strong></span><span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合のルジャンドル多項式<span class="math inline">\(l_1, l_2, l_3\)</span>にたいし
 <span class="math display">\[
 w_i=\int_a^b l_i(x)\mathrm{d}x\ (i=1,2,3)
 \]</span>
@@ -260,7 +260,7 @@ w_2=\int_a^bl_2(x)\mathrm{d}x&amp;=\frac{2}{3}(b-a).
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-47" class="exercise"><strong>Exercise 3.3  </strong></span>ニュートン・コーツの公式において，<span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合をという．区間<span class="math inline">\([a,b]\)</span>上の関数<span class="math inline">\(f(x)\)</span>に対するシンプソン公式が
+<span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 3.3  </strong></span>ニュートン・コーツの公式において，<span class="math inline">\(N=3\)</span>とし，<span class="math inline">\(a=x_0&lt;x_1&lt;x_2=b\)</span>を等間隔，すなわち<span class="math inline">\(x_1=(a+b)/2\)</span>とした場合をという．区間<span class="math inline">\([a,b]\)</span>上の関数<span class="math inline">\(f(x)\)</span>に対するシンプソン公式が
 <span class="math display">\[
 J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 \]</span>
@@ -272,17 +272,17 @@ J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 </div>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 3.4  </strong></span>複合台形公式を用いて(3.7)を計算せよ．　
+<span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 3.4  </strong></span>複合台形公式を用いて(3.7)を計算せよ．　
 </div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tab-3.html#cb28-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># No. of points -1 for trapezoidal rule</span></span>
-<span id="cb28-2"><a href="tab-3.html#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="tab-3.html#cb28-3" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) (<span class="fu">cos</span>(<span class="dv">50</span><span class="sc">*</span>x) <span class="sc">+</span> <span class="fu">sin</span>(<span class="dv">20</span><span class="sc">*</span>x))<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb28-4"><a href="tab-3.html#cb28-4" aria-hidden="true" tabindex="-1"></a>seq <span class="ot">&lt;-</span> (<span class="dv">0</span><span class="sc">:</span>N) <span class="sc">/</span> N</span>
-<span id="cb28-5"><a href="tab-3.html#cb28-5" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sum</span>(<span class="fu">f</span>(seq[<span class="sc">-</span><span class="dv">1</span>]))<span class="sc">+</span><span class="fu">sum</span>(<span class="fu">f</span>(seq[<span class="sc">-</span>(N<span class="sc">+</span><span class="dv">1</span>)]))) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> (N<span class="dv">-1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tab-3.html#cb29-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># No. of points -1 for trapezoidal rule</span></span>
+<span id="cb29-2"><a href="tab-3.html#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="tab-3.html#cb29-3" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) (<span class="fu">cos</span>(<span class="dv">50</span><span class="sc">*</span>x) <span class="sc">+</span> <span class="fu">sin</span>(<span class="dv">20</span><span class="sc">*</span>x))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb29-4"><a href="tab-3.html#cb29-4" aria-hidden="true" tabindex="-1"></a>seq <span class="ot">&lt;-</span> (<span class="dv">0</span><span class="sc">:</span>N) <span class="sc">/</span> N</span>
+<span id="cb29-5"><a href="tab-3.html#cb29-5" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sum</span>(<span class="fu">f</span>(seq[<span class="sc">-</span><span class="dv">1</span>]))<span class="sc">+</span><span class="fu">sum</span>(<span class="fu">f</span>(seq[<span class="sc">-</span>(N<span class="sc">+</span><span class="dv">1</span>)]))) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> (N<span class="dv">-1</span>))</span></code></pre></div>
 <pre><code>## [1] 0.975289</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 3.5  </strong></span>例3.6の<span class="math inline">\(I\)</span>の値を，R言語の組み込み関数<code>rcauchy</code>を用いて，基本的モンテカルロ積分法で小数点以下第二位まで正確に求めよ．
+<span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercise 3.5  </strong></span>例3.6の<span class="math inline">\(I\)</span>の値を，R言語の組み込み関数<code>rcauchy</code>を用いて，基本的モンテカルロ積分法で小数点以下第二位まで正確に求めよ．
 </div>
 
 <div class="solution">
@@ -296,16 +296,16 @@ J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 \]</span>
 で近似できる．実際に計算すると
 </div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tab-3.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 95% Confidence interval </span></span>
-<span id="cb30-2"><a href="tab-3.html#cb30-2" aria-hidden="true" tabindex="-1"></a>CI <span class="ot">&lt;-</span> <span class="cf">function</span>(m){</span>
-<span id="cb30-3"><a href="tab-3.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> (<span class="fu">rcauchy</span>(m)<span class="sc">&gt;</span><span class="dv">2</span>)</span>
-<span id="cb30-4"><a href="tab-3.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">&quot;estimate&quot;</span>, <span class="fu">mean</span>(x), <span class="st">&quot;lower_bound&quot;</span>, <span class="fu">mean</span>(x)<span class="sc">-</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(m), <span class="st">&quot;upper_bound&quot;</span>, <span class="fu">mean</span>(x)<span class="sc">+</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(m))</span>
-<span id="cb30-5"><a href="tab-3.html#cb30-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb30-6"><a href="tab-3.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">CI</span>(<span class="fl">1e6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tab-3.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 95% Confidence interval </span></span>
+<span id="cb31-2"><a href="tab-3.html#cb31-2" aria-hidden="true" tabindex="-1"></a>CI <span class="ot">&lt;-</span> <span class="cf">function</span>(m){</span>
+<span id="cb31-3"><a href="tab-3.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> (<span class="fu">rcauchy</span>(m)<span class="sc">&gt;</span><span class="dv">2</span>)</span>
+<span id="cb31-4"><a href="tab-3.html#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">&quot;estimate&quot;</span>, <span class="fu">mean</span>(x), <span class="st">&quot;lower_bound&quot;</span>, <span class="fu">mean</span>(x)<span class="sc">-</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(m), <span class="st">&quot;upper_bound&quot;</span>, <span class="fu">mean</span>(x)<span class="sc">+</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(m))</span>
+<span id="cb31-5"><a href="tab-3.html#cb31-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-6"><a href="tab-3.html#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">CI</span>(<span class="fl">1e6</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;estimate 0.147258 lower_bound 0.146563448322983 upper_bound 0.147952551677017&quot;</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercise 3.6  </strong></span>任意の実数<span class="math inline">\(x\)</span>にたいし，正接関数の逆関数<span class="math inline">\(\arctan x\)</span>を，R言語の組み込み関数<code>rcauchy</code>を用いた基本的モンテカルロ積分法で近似する方法を構成せよ．また，その値をR言語の組み込み関数<code>atan</code>と比較せよ．
+<span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 3.6  </strong></span>任意の実数<span class="math inline">\(x\)</span>にたいし，正接関数の逆関数<span class="math inline">\(\arctan x\)</span>を，R言語の組み込み関数<code>rcauchy</code>を用いた基本的モンテカルロ積分法で近似する方法を構成せよ．また，その値をR言語の組み込み関数<code>atan</code>と比較せよ．
 </div>
 
 <div class="solution">
@@ -321,20 +321,20 @@ J=\frac{b-a}{6}\left(f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right)
 \]</span>
 上の式に含まれる積分計算をモンテカルロ法で近似して図示しよう．
 </div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tab-3.html#cb32-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e2</span> <span class="co"># No. of samples</span></span>
-<span id="cb32-2"><a href="tab-3.html#cb32-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fl">1e2</span> <span class="co"># Points for plot</span></span>
-<span id="cb32-3"><a href="tab-3.html#cb32-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(N) <span class="co"># Random number</span></span>
-<span id="cb32-4"><a href="tab-3.html#cb32-4" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">ecdf</span>(x)</span>
-<span id="cb32-5"><a href="tab-3.html#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-6"><a href="tab-3.html#cb32-6" aria-hidden="true" tabindex="-1"></a>points <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="at">length =</span> k)</span>
-<span id="cb32-7"><a href="tab-3.html#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="tab-3.html#cb32-8" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>points, <span class="at">y=</span>pi<span class="sc">*</span>(<span class="fu">f</span>(points)<span class="sc">-</span><span class="fl">0.5</span>))</span>
-<span id="cb32-9"><a href="tab-3.html#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="tab-3.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y,<span class="at">color=</span><span class="st">&quot;MC&quot;</span>))<span class="sc">+</span><span class="fu">geom_step</span>(<span class="fu">aes</span>(<span class="at">color=</span><span class="st">&quot;direct&quot;</span>))<span class="sc">+</span><span class="fu">stat_function</span>(<span class="at">fun=</span>atan)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tab-3.html#cb33-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e2</span> <span class="co"># No. of samples</span></span>
+<span id="cb33-2"><a href="tab-3.html#cb33-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fl">1e2</span> <span class="co"># Points for plot</span></span>
+<span id="cb33-3"><a href="tab-3.html#cb33-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(N) <span class="co"># Random number</span></span>
+<span id="cb33-4"><a href="tab-3.html#cb33-4" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">ecdf</span>(x)</span>
+<span id="cb33-5"><a href="tab-3.html#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="tab-3.html#cb33-6" aria-hidden="true" tabindex="-1"></a>points <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="at">length =</span> k)</span>
+<span id="cb33-7"><a href="tab-3.html#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="tab-3.html#cb33-8" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>points, <span class="at">y=</span>pi<span class="sc">*</span>(<span class="fu">f</span>(points)<span class="sc">-</span><span class="fl">0.5</span>))</span>
+<span id="cb33-9"><a href="tab-3.html#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="tab-3.html#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y,<span class="at">color=</span><span class="st">&quot;MC&quot;</span>))<span class="sc">+</span><span class="fu">geom_step</span>(<span class="fu">aes</span>(<span class="at">color=</span><span class="st">&quot;direct&quot;</span>))<span class="sc">+</span><span class="fu">stat_function</span>(<span class="at">fun=</span>atan)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/exercise_3.6-1.png" width="672" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 3.7  </strong></span>例3.6の計算でわかるように，<span class="math inline">\(I\)</span>は
+<span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 3.7  </strong></span>例3.6の計算でわかるように，<span class="math inline">\(I\)</span>は
 <span class="math display">\[
 f(x)=\left\{\begin{array}{ll}
     1&amp; \mathrm{if}\ x\ge \arctan 2\\
@@ -357,52 +357,52 @@ I=\int_{-\pi/2}^{\pi/2} f(x)p(x)\mathrm{d}x
 となる．じつは２つの方法はまったくおなじ手法である．例2.2より<span class="math inline">\(U\sim\mathcal{U}[-\pi/2,\pi/2]\)</span>に従うなら
 <span class="math inline">\(\tan U\)</span>はコーシー分布に従うからだ．
 </div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tab-3.html#cb33-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fl">1e2</span></span>
-<span id="cb33-2"><a href="tab-3.html#cb33-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e2</span></span>
-<span id="cb33-3"><a href="tab-3.html#cb33-3" aria-hidden="true" tabindex="-1"></a>true <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">-</span> <span class="fu">atan</span>( <span class="dv">2</span> )<span class="sc">/</span>pi</span>
-<span id="cb33-4"><a href="tab-3.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="tab-3.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="do">## runif method</span></span>
-<span id="cb33-6"><a href="tab-3.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb33-7"><a href="tab-3.html#cb33-7" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N)</span>
-<span id="cb33-8"><a href="tab-3.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
-<span id="cb33-9"><a href="tab-3.html#cb33-9" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">runif</span>(M, <span class="sc">-</span>pi<span class="sc">/</span><span class="dv">2</span>, pi<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb33-10"><a href="tab-3.html#cb33-10" aria-hidden="true" tabindex="-1"></a>  v[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>((u <span class="sc">&gt;</span> <span class="fu">atan</span>(<span class="dv">2</span>)))</span>
-<span id="cb33-11"><a href="tab-3.html#cb33-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb33-12"><a href="tab-3.html#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>((v<span class="sc">-</span>true)<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tab-3.html#cb34-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fl">1e2</span></span>
+<span id="cb34-2"><a href="tab-3.html#cb34-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e2</span></span>
+<span id="cb34-3"><a href="tab-3.html#cb34-3" aria-hidden="true" tabindex="-1"></a>true <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">-</span> <span class="fu">atan</span>( <span class="dv">2</span> )<span class="sc">/</span>pi</span>
+<span id="cb34-4"><a href="tab-3.html#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="tab-3.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="do">## runif method</span></span>
+<span id="cb34-6"><a href="tab-3.html#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb34-7"><a href="tab-3.html#cb34-7" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N)</span>
+<span id="cb34-8"><a href="tab-3.html#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb34-9"><a href="tab-3.html#cb34-9" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">runif</span>(M, <span class="sc">-</span>pi<span class="sc">/</span><span class="dv">2</span>, pi<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb34-10"><a href="tab-3.html#cb34-10" aria-hidden="true" tabindex="-1"></a>  v[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>((u <span class="sc">&gt;</span> <span class="fu">atan</span>(<span class="dv">2</span>)))</span>
+<span id="cb34-11"><a href="tab-3.html#cb34-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-12"><a href="tab-3.html#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>((v<span class="sc">-</span>true)<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0009072253</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="tab-3.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rcauchy method</span></span>
-<span id="cb35-2"><a href="tab-3.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb35-3"><a href="tab-3.html#cb35-3" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N)</span>
-<span id="cb35-4"><a href="tab-3.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
-<span id="cb35-5"><a href="tab-3.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">runif</span>(M, <span class="sc">-</span>pi<span class="sc">/</span><span class="dv">2</span>, pi<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb35-6"><a href="tab-3.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">tan</span>(u)</span>
-<span id="cb35-7"><a href="tab-3.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  v[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>((x <span class="sc">&gt;</span> <span class="dv">2</span>))</span>
-<span id="cb35-8"><a href="tab-3.html#cb35-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb35-9"><a href="tab-3.html#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>((v<span class="sc">-</span>true)<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="tab-3.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rcauchy method</span></span>
+<span id="cb36-2"><a href="tab-3.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb36-3"><a href="tab-3.html#cb36-3" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N)</span>
+<span id="cb36-4"><a href="tab-3.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb36-5"><a href="tab-3.html#cb36-5" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">runif</span>(M, <span class="sc">-</span>pi<span class="sc">/</span><span class="dv">2</span>, pi<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb36-6"><a href="tab-3.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">tan</span>(u)</span>
+<span id="cb36-7"><a href="tab-3.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  v[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>((x <span class="sc">&gt;</span> <span class="dv">2</span>))</span>
+<span id="cb36-8"><a href="tab-3.html#cb36-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-9"><a href="tab-3.html#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>((v<span class="sc">-</span>true)<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0009072253</code></pre>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercise 3.8  </strong></span>長さ<span class="math inline">\(N\)</span>の観測<span class="math inline">\(x_1,\ldots, x_N|\theta\)</span>は独立でコーシー分布<span class="math inline">\(\mathcal{C}(\theta,1)\)</span>に従い，<span class="math inline">\(\theta\)</span>には<span class="math inline">\(\mathcal{C}(0,1)\)</span>が事前分布として仮定されているとする．このとき事後平均を，R言語の組み込み関数<code>rcauchy</code>による自己正規化モンテカルロ法で計算せよ．
+<span id="exr:unnamed-chunk-58" class="exercise"><strong>Exercise 3.8  </strong></span>長さ<span class="math inline">\(N\)</span>の観測<span class="math inline">\(x_1,\ldots, x_N|\theta\)</span>は独立でコーシー分布<span class="math inline">\(\mathcal{C}(\theta,1)\)</span>に従い，<span class="math inline">\(\theta\)</span>には<span class="math inline">\(\mathcal{C}(0,1)\)</span>が事前分布として仮定されているとする．このとき事後平均を，R言語の組み込み関数<code>rcauchy</code>による自己正規化モンテカルロ法で計算せよ．
 </div>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tab-3.html#cb37-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fl">1e4</span></span>
-<span id="cb37-2"><a href="tab-3.html#cb37-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb37-3"><a href="tab-3.html#cb37-3" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fl">2.0</span></span>
-<span id="cb37-4"><a href="tab-3.html#cb37-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> theta <span class="sc">+</span> <span class="fu">rcauchy</span>(N)</span>
-<span id="cb37-5"><a href="tab-3.html#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-6"><a href="tab-3.html#cb37-6" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(<span class="cf">function</span>(theta) <span class="fu">prod</span>(<span class="fu">dcauchy</span>(x<span class="sc">-</span>theta))<span class="sc">*</span>theta)</span>
-<span id="cb37-7"><a href="tab-3.html#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-8"><a href="tab-3.html#cb37-8" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(<span class="cf">function</span>(theta) <span class="fu">prod</span>(<span class="fu">dcauchy</span>(x<span class="sc">-</span>theta)))</span>
-<span id="cb37-9"><a href="tab-3.html#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-10"><a href="tab-3.html#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="tab-3.html#cb37-11" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(M)</span>
-<span id="cb37-12"><a href="tab-3.html#cb37-12" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span>  <span class="fu">p1</span>(theta)<span class="sc">/</span><span class="fu">p2</span>(theta)</span>
-<span id="cb37-13"><a href="tab-3.html#cb37-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-14"><a href="tab-3.html#cb37-14" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span>M, <span class="at">y =</span> (<span class="fu">cumsum</span>(vec)<span class="sc">/</span><span class="dv">1</span><span class="sc">:</span>M))</span>
-<span id="cb37-15"><a href="tab-3.html#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span><span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="tab-3.html#cb38-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fl">1e4</span></span>
+<span id="cb38-2"><a href="tab-3.html#cb38-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb38-3"><a href="tab-3.html#cb38-3" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fl">2.0</span></span>
+<span id="cb38-4"><a href="tab-3.html#cb38-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> theta <span class="sc">+</span> <span class="fu">rcauchy</span>(N)</span>
+<span id="cb38-5"><a href="tab-3.html#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="tab-3.html#cb38-6" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(<span class="cf">function</span>(theta) <span class="fu">prod</span>(<span class="fu">dcauchy</span>(x<span class="sc">-</span>theta))<span class="sc">*</span>theta)</span>
+<span id="cb38-7"><a href="tab-3.html#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="tab-3.html#cb38-8" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(<span class="cf">function</span>(theta) <span class="fu">prod</span>(<span class="fu">dcauchy</span>(x<span class="sc">-</span>theta)))</span>
+<span id="cb38-9"><a href="tab-3.html#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="tab-3.html#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="tab-3.html#cb38-11" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(M)</span>
+<span id="cb38-12"><a href="tab-3.html#cb38-12" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span>  <span class="fu">p1</span>(theta)<span class="sc">/</span><span class="fu">p2</span>(theta)</span>
+<span id="cb38-13"><a href="tab-3.html#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-14"><a href="tab-3.html#cb38-14" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span>M, <span class="at">y =</span> (<span class="fu">cumsum</span>(vec)<span class="sc">/</span><span class="dv">1</span><span class="sc">:</span>M))</span>
+<span id="cb38-15"><a href="tab-3.html#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span><span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/exercise_3.8-1.png" width="672" /></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-57" class="exercise"><strong>Exercise 3.9  </strong></span>積分
+<span id="exr:unnamed-chunk-59" class="exercise"><strong>Exercise 3.9  </strong></span>積分
 <span class="math display">\[
 I=\int_{-\infty}^\infty \exp\left(-\sqrt{|x|}\right)(\sin x)^2\mathrm{d}x
 \]</span>
@@ -427,20 +427,20 @@ I=\int_{-\infty}^\infty \exp\left(-\sqrt{|x|}\right)(\sin x)^2\mathrm{d}x
 \end{align*}\]</span>
 を示す．すると最後の式が<span class="math inline">\(2(J_1+J_2+\cdots)\)</span>と表されることと先程の注意から，この積分が<span class="math inline">\(+\infty\)</span>であることがわかる．
 </div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="tab-3.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb38-2"><a href="tab-3.html#cb38-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fl">1e5</span></span>
-<span id="cb38-3"><a href="tab-3.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="tab-3.html#cb38-4" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(<span class="cf">function</span>(x) <span class="fu">exp</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="fu">abs</span>(x))) <span class="sc">*</span> <span class="fu">sin</span>(x)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb38-5"><a href="tab-3.html#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-6"><a href="tab-3.html#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="tab-3.html#cb38-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(M)</span>
-<span id="cb38-8"><a href="tab-3.html#cb38-8" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">f</span>(x)<span class="sc">/</span><span class="fu">dcauchy</span>(x) <span class="co"># Cauchy distribution</span></span>
-<span id="cb38-9"><a href="tab-3.html#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-10"><a href="tab-3.html#cb38-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(M)</span>
-<span id="cb38-11"><a href="tab-3.html#cb38-11" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">f</span>(x)<span class="sc">/</span><span class="fu">dnorm</span>(x) <span class="co"># Normal distribution</span></span>
-<span id="cb38-12"><a href="tab-3.html#cb38-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-13"><a href="tab-3.html#cb38-13" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>M,<span class="dv">2</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">cumsum</span>(y1)<span class="sc">/</span><span class="dv">1</span><span class="sc">:</span>M,<span class="fu">cumsum</span>(y2)<span class="sc">/</span><span class="dv">1</span><span class="sc">:</span>M ), <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Cauchy&quot;</span>, <span class="st">&quot;Normal&quot;</span>), <span class="at">each=</span>M))</span>
-<span id="cb38-14"><a href="tab-3.html#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>method))<span class="sc">+</span><span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">theme_bw</span>() <span class="sc">+</span><span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tab-3.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb39-2"><a href="tab-3.html#cb39-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fl">1e5</span></span>
+<span id="cb39-3"><a href="tab-3.html#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="tab-3.html#cb39-4" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(<span class="cf">function</span>(x) <span class="fu">exp</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="fu">abs</span>(x))) <span class="sc">*</span> <span class="fu">sin</span>(x)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb39-5"><a href="tab-3.html#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="tab-3.html#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="tab-3.html#cb39-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(M)</span>
+<span id="cb39-8"><a href="tab-3.html#cb39-8" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">f</span>(x)<span class="sc">/</span><span class="fu">dcauchy</span>(x) <span class="co"># Cauchy distribution</span></span>
+<span id="cb39-9"><a href="tab-3.html#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="tab-3.html#cb39-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(M)</span>
+<span id="cb39-11"><a href="tab-3.html#cb39-11" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">f</span>(x)<span class="sc">/</span><span class="fu">dnorm</span>(x) <span class="co"># Normal distribution</span></span>
+<span id="cb39-12"><a href="tab-3.html#cb39-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-13"><a href="tab-3.html#cb39-13" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>M,<span class="dv">2</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">cumsum</span>(y1)<span class="sc">/</span><span class="dv">1</span><span class="sc">:</span>M,<span class="fu">cumsum</span>(y2)<span class="sc">/</span><span class="dv">1</span><span class="sc">:</span>M ), <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Cauchy&quot;</span>, <span class="st">&quot;Normal&quot;</span>), <span class="at">each=</span>M))</span>
+<span id="cb39-14"><a href="tab-3.html#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>method))<span class="sc">+</span><span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">theme_bw</span>() <span class="sc">+</span><span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/exercise_3.9-1.png" width="672" /></p>
 </div>
             </section>

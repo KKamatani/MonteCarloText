@@ -383,6 +383,67 @@ p(n;r,\theta)=\binom{n+r-1}{n}(1-\theta)^r\theta^n\ (n=0,1,2,\ldots)
 となる．ただし，教科書の式(1.7)を使った．
 あとは<span class="math inline">\(\Gamma(r)=(r-1)!, \Gamma(x+r)=(x+r-1)!\)</span>であることから，式を見比べて結論が得られる．
 </div>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 2.9  </strong></span><span class="math inline">\(\alpha\)</span>は正の実数とする．歪正規分布 (Skew normal distribution) は確率密度関数
+<span class="math display">\[
+p(x)=2\phi(x)\Phi(\alpha x)\ (-\infty&lt;x&lt;\infty)
+\]</span>
+を持つ．ただし<span class="math inline">\(\phi(x)，\Phi(x)\)</span>は標準正規分布の確率密度関数および累積分布関数である．次の手続きで歪正規乱数が生成できることを示せ．
+</div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tab-2.html#cb28-1" aria-hidden="true" tabindex="-1"></a>rho <span class="ot">&lt;-</span> alpha <span class="sc">^</span> <span class="dv">2</span> <span class="sc">/</span> ( <span class="dv">1</span> <span class="sc">+</span> alpha <span class="sc">^</span><span class="dv">2</span> )</span>
+<span id="cb28-2"><a href="tab-2.html#cb28-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">2</span>)</span>
+<span id="cb28-3"><a href="tab-2.html#cb28-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sqrt</span>( rho ) <span class="sc">*</span> w[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> rho) <span class="sc">*</span> w[<span class="dv">2</span>]</span>
+<span id="cb28-4"><a href="tab-2.html#cb28-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (y <span class="sc">&gt;=</span> <span class="dv">0</span>) <span class="sc">*</span> w[<span class="dv">1</span>] <span class="sc">-</span> (y <span class="sc">&lt;</span> <span class="dv">0</span>) <span class="sc">*</span> w[<span class="dv">1</span>] </span></code></pre></div>
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> まず上の手続きを確率変数で書き直そう．
+<span class="math inline">\(W_1, W_2\)</span>が独立で標準正規分布に従うとき，
+<span class="math display">\[\begin{align*}
+Y&amp;=\sqrt{\rho}~W_1+\sqrt{1-\rho}~W_2\\
+X&amp;=
+  \left\{
+\begin{split}
+W_1&amp;\quad Y\ge 0\\
+-W_1&amp;\quad Y&lt;0
+\end{split}
+\right.
+\end{align*}\]</span>
+定める．ただし<span class="math inline">\(\rho=\alpha^2/(1+\alpha^2)\)</span>である．
+上の問題と同じように<span class="math inline">\(X\)</span>の従う確率分布の周辺密度関数<span class="math inline">\(p(x)\)</span>を計算したいが，
+<span class="math inline">\(Y, W_1\)</span>を与えたもとでの<span class="math inline">\(X\)</span>の分布が確定的なので同じようにはいかない．だから<span class="math inline">\(X\)</span>の周辺分布の累積分布関数<span class="math inline">\(F(x)\)</span>を求めて，それを微分することで周辺密度関数を導出しよう．</p>
+定義から
+<span class="math display">\[
+F(x)=\mathbb{P}(X\le x)=\mathbb{P}(W_1\le x, Y\ge 0)+
+\mathbb{P}(-W_1\le x, Y&lt; 0)
+\]</span>
+である．じつは，右辺の２つの確率は同じだ．なぜなら<span class="math inline">\(W_1\)</span>と<span class="math inline">\(W_2\)</span>の符号を取り替えれば，ひとつめの事象とふたつめの事象が同じになるからだ．ここでは等号が入っているかどうかは小さいことなので気にしなくていい．だから．
+<span class="math display">\[
+  F(x)=2\mathbb{P}(W_1\le x, Y\ge 0)
+\]</span>
+となる．
+いっぽう，<span class="math inline">\(W_1=z\)</span>をあたえたもとで，
+<span class="math display">\[\begin{align*}
+\mathbb{P}(Y\ge 0|W_1=z)&amp;=\mathbb{P}(\sqrt{\rho}~z+\sqrt{1-\rho}W_2\ge 0)\\
+&amp;=\mathbb{P}\left(W_2\ge -\sqrt{\frac{\rho}{1-\rho}}z\right)\\
+&amp;=\mathbb{P}\left(W_2\ge -\alpha~z\right)\\
+&amp;=1-\Phi(-\alpha z)=\Phi(\alpha z)
+\end{align*}\]</span>
+となる．ここで，<span class="math inline">\(\Phi(x)\)</span>は標準正規分布の累積分布関数で，
+<span class="math inline">\(1-\Phi(-x)=\Phi(x)\)</span>を満たす．あとは<span class="math inline">\(W_1=z\)</span>を<span class="math inline">\(z\le x\)</span>の範囲で積分すれば
+<span class="math display">\[
+  F(x)=2\int_{-\infty}^x\Phi(\alpha z)\phi(z)\mathrm{d}x
+\]</span>
+となる．両辺を<span class="math inline">\(x\)</span>で微分すれば，
+<span class="math display">\[
+  p(x)=2\Phi(\alpha x)\phi(x). 
+\]</span><br />
+ただしここで
+<span class="math display">\[
+  \left(\int_{-\infty}^xf(z)\mathrm{d}z\right)&#39;=f(x)
+\]</span>
+という事実を使った．
+</div>
 </div>
             </section>
 
