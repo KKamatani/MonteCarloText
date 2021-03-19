@@ -140,7 +140,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">モンテカルロ統計計算</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Readme</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Readme</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#rstanについて"><i class="fa fa-check"></i><b>0.1</b> RStanについて</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="tab-1.html"><a href="tab-1.html"><i class="fa fa-check"></i><b>1</b> 序論</a></li>
 <li class="chapter" data-level="2" data-path="tab-2.html"><a href="tab-2.html"><i class="fa fa-check"></i><b>2</b> 乱数</a></li>
 <li class="chapter" data-level="3" data-path="tab-3.html"><a href="tab-3.html"><i class="fa fa-check"></i><b>3</b> 積分法</a></li>
@@ -211,6 +214,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstan)</span>
 <span id="cb1-8"><a href="index.html#cb1-8" aria-hidden="true" tabindex="-1"></a>blue <span class="ot">&lt;-</span> <span class="st">&quot;#4271AE&quot;</span></span>
 <span id="cb1-9"><a href="index.html#cb1-9" aria-hidden="true" tabindex="-1"></a>black <span class="ot">&lt;-</span> <span class="st">&quot;#1F3552&quot;</span></span></code></pre></div>
+<div id="rstanについて" class="section level2" number="0.1">
+<h2><span class="header-section-number">0.1</span> RStanについて</h2>
+<p>本ウェブサイトでは，教科書で扱っていない
+<a href="https://mc-stan.org/users/interfaces/rstan"><code>rstan</code>パッケージ</a>を少し使う．事前に設定が必要なので注意してほしい．インストールに際しては<a href="https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started">rstanのウェブサイト</a>を確認してほしい．手順としては，</p>
+<ul>
+<li><p>まず最新版のRをインストール - <a href="https://www.r-project.org">R Projectのウェブサイト</a></p></li>
+<li><p>C++を使うため，<code>C++ Toolchain</code>をインストール</p></li>
+</ul>
+<p>それぞれのプラットフォームごとに以下のリンクをたどること．</p>
+<p><a href="https://github.com/stan-dev/rstan/wiki/Configuring-C---Toolchain-for-Windows">Windows - Configuring C++ Toolchain</a></p>
+<p><a href="https://github.com/stan-dev/rstan/wiki/Configuring-C---Toolchain-for-Mac">Mac - Configuring C++ Toolchain</a></p>
+<p><a href="https://github.com/stan-dev/rstan/wiki/Configuring-C-Toolchain-for-Linux">Linux - Configuring C++ Toolchain</a></p>
+<p>なお，Macについて補足すると，ARM Processor（Apple M1）では，いまのところ <a href="https://thecoatlessprofessor.com/programming/cpp/r-compiler-tools-for-rcpp-on-macos/">The Coatless professorのブログ</a> の通りに <a href="https://github.com/fxcoudert/gfortran-for-macOS">gfortran</a>をインストールすればよいが gfortran 10.2 for Big Sur (macOS 11), for Intel processors をインストールすること．Intel Processor用だが，Rosetta 2で，ARM Processorでも動く．<code>RcppArmadillo</code>のバージョンを<a href="https://github.com/immunogenomics/harmony/issues/113">古いものにする必要があるかもしれない</a>．</p>
+<ul>
+<li>念の為すでに<code>rstan</code>があればそれと<code>.RData</code>を削除し，</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>(<span class="st">&quot;rstan&quot;</span>)</span>
+<span id="cb2-2"><a href="index.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">file.exists</span>(<span class="st">&quot;.RData&quot;</span>)) <span class="fu">file.remove</span>(<span class="st">&quot;.RData&quot;</span>)</span></code></pre></div>
+<ul>
+<li>また，念の為，リポジトリを指定してインストール</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">DOWNLOAD_STATIC_LIBV8 =</span> <span class="dv">1</span>) <span class="co"># only necessary for Linux without the nodejs library / headers</span></span>
+<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rstan&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cloud.r-project.org/&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>インストールが無事にできているか確認のため，</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(stan_model, <span class="at">package =</span> <span class="st">&quot;rstan&quot;</span>, <span class="at">run.dontrun =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>を実行すると良い．<code>Warning</code>が出ても気にしなくてよいが，<code>Error</code>が出たらうまく行っていないということだ．</p>
+</div>
 </div>
             </section>
 
