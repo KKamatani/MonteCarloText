@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 ギブスサンプリング | 練習問題 : モンテカルロ統計計算</title>
   <meta name="description" content="Chapter 5 ギブスサンプリング | 練習問題 : モンテカルロ統計計算" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 ギブスサンプリング | 練習問題 : モンテカルロ統計計算" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="tab-4.html"/>
 <link rel="next" href="tab-6.html"/>
-<script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
-<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,14 +50,15 @@
 
 
 
-
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -124,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -174,7 +177,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#tab-error-2"><i class="fa fa-check"></i><b>7.2</b> エラータム 第二刷</a>
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="tab-error.html"><a href="tab-error.html#p21-例1.8の後の文章-20200511"><i class="fa fa-check"></i><b>7.2.1</b> p21　例1.8の後の文章 (20200511)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="tab-error.html"><a href="tab-error.html#p66-練習問題2.8"><i class="fa fa-check"></i><b>7.2.2</b> p66 練習問題2.8</a></li>
+<li class="chapter" data-level="7.2.2" data-path="tab-error.html"><a href="tab-error.html#p49-例2.4の後の文章-20211125"><i class="fa fa-check"></i><b>7.2.2</b> p49　例2.4の後の文章 (20211125)</a></li>
+<li class="chapter" data-level="7.2.3" data-path="tab-error.html"><a href="tab-error.html#p57-定理2.7の後の証明の途中式-20211125"><i class="fa fa-check"></i><b>7.2.3</b> p57　定理2.7の後の証明の途中式 (20211125)</a></li>
+<li class="chapter" data-level="7.2.4" data-path="tab-error.html"><a href="tab-error.html#p66-練習問題2.8"><i class="fa fa-check"></i><b>7.2.4</b> p66 練習問題2.8</a></li>
+<li class="chapter" data-level="7.2.5" data-path="tab-error.html"><a href="tab-error.html#p77-図3.7のキャプション-20211125"><i class="fa fa-check"></i><b>7.2.5</b> p77　図3.7のキャプション (20211125)</a></li>
+<li class="chapter" data-level="7.2.6" data-path="tab-error.html"><a href="tab-error.html#p100-定理4.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.6</b> p100　定理4.2のあとの解説 (20211125)</a></li>
+<li class="chapter" data-level="7.2.7" data-path="tab-error.html"><a href="tab-error.html#p-125-126-定理5.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.7</b> p 125, 126 定理5.2のあとの解説 (20211125)</a></li>
+<li class="chapter" data-level="7.2.8" data-path="tab-error.html"><a href="tab-error.html#p-159-6.3.2-について-20211125"><i class="fa fa-check"></i><b>7.2.8</b> p 159 6.3.2 について (20211125)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -205,11 +214,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(P_\theta=\mathcal{B}(1,(1-\theta) q_0+\theta q_1)\)</span>.
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(P_\theta=\mathcal{B}(1,(1-\theta) q_0+\theta q_1)\)</span>.
 </div>
 
 <div class="remark">
- <span class="remark"><em>Remark. </em></span> すなわち，ベルヌーイの定理分布の混合も再びベルヌーイ分布になる．混合分布を考えても分布の世界が広がらないのである．
+\iffalse{} <span class="remark"><em>Remark. </em></span> すなわち，ベルヌーイの定理分布の混合も再びベルヌーイ分布になる．混合分布を考えても分布の世界が広がらないのである．
 </div>
 
 <div class="exercise">
@@ -217,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(\varphi_0, \varphi_1\)</span>をそれぞれ<span class="math inline">\(P_0, P_1\)</span>の特性関数とする．このとき，<span class="math inline">\(P_\theta\)</span>の特性関数は
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(\varphi_0, \varphi_1\)</span>をそれぞれ<span class="math inline">\(P_0, P_1\)</span>の特性関数とする．このとき，<span class="math inline">\(P_\theta\)</span>の特性関数は
 <span class="math display">\[
 \varphi_\theta=(1-\theta)\varphi_0+\theta\varphi_1
 \]</span>
@@ -246,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> <span class="math inline">\(x_n, I_n\)</span>の<span class="math inline">\(\theta\)</span>のもとでの結合分布の密度関数は
+<p>\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(x_n, I_n\)</span>の<span class="math inline">\(\theta\)</span>のもとでの結合分布の密度関数は
 <span class="math display">\[
 p(x_n, I_n=i|\theta)=
   \begin{cases}
@@ -285,7 +294,7 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> ベータ分布の性質から
+\iffalse{} <span class="solution"><em>Solution. </em></span> ベータ分布の性質から
 <span class="math display">\[
 \mathbb{E}[~\theta~|x^N, I^N]=\frac{m_1+1}{(m_0+1)+(m_1+1)}=\frac{m_1+1}{N+2}. 
 \]</span>
@@ -300,7 +309,7 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 略．
+\iffalse{} <span class="solution"><em>Solution. </em></span> 略．
 </div>
 
 <div class="exercise">
@@ -308,7 +317,7 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 仮定から
+\iffalse{} <span class="solution"><em>Solution. </em></span> 仮定から
 <span class="math display">\[\begin{align*}
 \mathbb{E}[X]&amp;=\frac{\int_0^\infty x\phi(x-\mu)\mathrm{d}x}{\Phi(\mu)}\\
 &amp;=\mu+\frac{\int_0^\infty (x-\mu)\phi(x-\mu)\mathrm{d}x}{\Phi(\mu)}\\
@@ -323,7 +332,7 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X\sim \mathcal{N}(0,1)\)</span>かつ<span class="math inline">\(Y\sim \mathcal{N}(\rho^2X,1-\rho^4)\)</span>としたとき，
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X\sim \mathcal{N}(0,1)\)</span>かつ<span class="math inline">\(Y\sim \mathcal{N}(\rho^2X,1-\rho^4)\)</span>としたとき，
 <span class="math inline">\(Y\sim \mathcal{N}(0,1)\)</span>であることを示せば良い．正規分布の再生性を使って示そう．
 <span class="math inline">\(\epsilon_1, \epsilon_2\)</span>は独立な標準正規乱数とする．すると上で定義される<span class="math inline">\(X,Y\)</span>の同時分布と
 <span class="math display">\[
@@ -337,7 +346,7 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X, Y\)</span>の同時密度関数が
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X, Y\)</span>の同時密度関数が
 <span class="math display">\[
  p(x, y)=p(x|y)p(y)=\left\{\frac{y^x}{x!}\exp(-y)\right\}\exp(-y)
 \]</span>
@@ -347,27 +356,27 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 \]</span>
 となる．これはガンマ分布<span class="math inline">\(\mathcal{G}(x+1,2)\)</span>の確率密度関数だから，条件付き分布は<span class="math inline">\(\mathcal{G}(x+1,-2)\)</span>である．実際にプログラムしてみよう．
 </div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="tab-5.html#cb44-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e3</span> <span class="co"># No. of iteration</span></span>
-<span id="cb44-2"><a href="tab-5.html#cb44-2" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="fl">1e3</span> <span class="co"># No. of iteration for trajectory plot</span></span>
-<span id="cb44-3"><a href="tab-5.html#cb44-3" aria-hidden="true" tabindex="-1"></a>lag <span class="ot">&lt;-</span> <span class="dv">25</span> <span class="co"># Lag of MCMCs</span></span>
-<span id="cb44-4"><a href="tab-5.html#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-5"><a href="tab-5.html#cb44-5" aria-hidden="true" tabindex="-1"></a>vecx <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N) <span class="co"># Output #1</span></span>
-<span id="cb44-6"><a href="tab-5.html#cb44-6" aria-hidden="true" tabindex="-1"></a>vecy <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N) <span class="co"># Output #2</span></span>
-<span id="cb44-7"><a href="tab-5.html#cb44-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-8"><a href="tab-5.html#cb44-8" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>,<span class="dv">1</span>) <span class="co"># Initial value</span></span>
-<span id="cb44-9"><a href="tab-5.html#cb44-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-10"><a href="tab-5.html#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Gibbs Sampler</span></span>
-<span id="cb44-11"><a href="tab-5.html#cb44-11" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x0</span>
-<span id="cb44-12"><a href="tab-5.html#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
-<span id="cb44-13"><a href="tab-5.html#cb44-13" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>,<span class="at">shape =</span> x<span class="sc">+</span><span class="dv">1</span>, <span class="at">rate =</span> <span class="dv">2</span>)</span>
-<span id="cb44-14"><a href="tab-5.html#cb44-14" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>,y)</span>
-<span id="cb44-15"><a href="tab-5.html#cb44-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-16"><a href="tab-5.html#cb44-16" aria-hidden="true" tabindex="-1"></a>  vecx[i] <span class="ot">&lt;-</span> x</span>
-<span id="cb44-17"><a href="tab-5.html#cb44-17" aria-hidden="true" tabindex="-1"></a>  vecy[i] <span class="ot">&lt;-</span> y</span>
-<span id="cb44-18"><a href="tab-5.html#cb44-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb44-19"><a href="tab-5.html#cb44-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-20"><a href="tab-5.html#cb44-20" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(vecx, vecy), <span class="at">m =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>N,<span class="dv">2</span>), <span class="at">xy =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>),<span class="at">each=</span>N))), <span class="at">id =</span><span class="fu">c</span>(<span class="st">&quot;m&quot;</span>,<span class="st">&quot;xy&quot;</span>))</span>
-<span id="cb44-21"><a href="tab-5.html#cb44-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> value, <span class="at">color =</span> xy)) <span class="sc">+</span> <span class="fu">geom_path</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>( . <span class="sc">~</span> xy)<span class="sc">+</span> <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Trajectory plot&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="tab-5.html#cb46-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e3</span> <span class="co"># No. of iteration</span></span>
+<span id="cb46-2"><a href="tab-5.html#cb46-2" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="fl">1e3</span> <span class="co"># No. of iteration for trajectory plot</span></span>
+<span id="cb46-3"><a href="tab-5.html#cb46-3" aria-hidden="true" tabindex="-1"></a>lag <span class="ot">&lt;-</span> <span class="dv">25</span> <span class="co"># Lag of MCMCs</span></span>
+<span id="cb46-4"><a href="tab-5.html#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="tab-5.html#cb46-5" aria-hidden="true" tabindex="-1"></a>vecx <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N) <span class="co"># Output #1</span></span>
+<span id="cb46-6"><a href="tab-5.html#cb46-6" aria-hidden="true" tabindex="-1"></a>vecy <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N) <span class="co"># Output #2</span></span>
+<span id="cb46-7"><a href="tab-5.html#cb46-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-8"><a href="tab-5.html#cb46-8" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>,<span class="dv">1</span>) <span class="co"># Initial value</span></span>
+<span id="cb46-9"><a href="tab-5.html#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-10"><a href="tab-5.html#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Gibbs Sampler</span></span>
+<span id="cb46-11"><a href="tab-5.html#cb46-11" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x0</span>
+<span id="cb46-12"><a href="tab-5.html#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb46-13"><a href="tab-5.html#cb46-13" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>,<span class="at">shape =</span> x<span class="sc">+</span><span class="dv">1</span>, <span class="at">rate =</span> <span class="dv">2</span>)</span>
+<span id="cb46-14"><a href="tab-5.html#cb46-14" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>,y)</span>
+<span id="cb46-15"><a href="tab-5.html#cb46-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-16"><a href="tab-5.html#cb46-16" aria-hidden="true" tabindex="-1"></a>  vecx[i] <span class="ot">&lt;-</span> x</span>
+<span id="cb46-17"><a href="tab-5.html#cb46-17" aria-hidden="true" tabindex="-1"></a>  vecy[i] <span class="ot">&lt;-</span> y</span>
+<span id="cb46-18"><a href="tab-5.html#cb46-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-19"><a href="tab-5.html#cb46-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-20"><a href="tab-5.html#cb46-20" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(vecx, vecy), <span class="at">m =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>N,<span class="dv">2</span>), <span class="at">xy =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>),<span class="at">each=</span>N))), <span class="at">id =</span><span class="fu">c</span>(<span class="st">&quot;m&quot;</span>,<span class="st">&quot;xy&quot;</span>))</span>
+<span id="cb46-21"><a href="tab-5.html#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> value, <span class="at">color =</span> xy)) <span class="sc">+</span> <span class="fu">geom_path</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>( . <span class="sc">~</span> xy)<span class="sc">+</span> <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Trajectory plot&quot;</span>) </span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/exercise_5.8-1.png" width="672" /></p>
 
 <div class="exercise">
@@ -377,7 +386,7 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(P(x,\cdot)\)</span>の確率関数を<span class="math inline">\(p(x,y)\)</span>と書くと
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(P(x,\cdot)\)</span>の確率関数を<span class="math inline">\(p(x,y)\)</span>と書くと
 <span class="math display">\[\begin{align*}
 p(x,y)&amp;=\int_0^1\binom{N}{y}z^y(1-z)^{N-y}\frac{z^{x+\alpha-1}(1-z)^{N-x+\beta-1}}{B(x+\alpha, N-x+\beta)}\mathrm{d}z
 \end{align*}\]</span>
@@ -410,7 +419,7 @@ p_\theta(x)=\theta_1 p_1(x)+\cdots+\theta_Kp_K(x)
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(K=2\)</span>の場合と同様に，<span class="math inline">\(I_n=k, n=1,\ldots\)</span>が，のとき，分布<span class="math inline">\(P_k\)</span>からの乱数であることを明示する確率変数としよう．すると，
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(K=2\)</span>の場合と同様に，<span class="math inline">\(I_n=k, n=1,\ldots\)</span>が，のとき，分布<span class="math inline">\(P_k\)</span>からの乱数であることを明示する確率変数としよう．すると，
 <span class="math inline">\(I^N=\{I_1,\ldots, I_N\}\)</span>のもと，尤度は
 <span class="math display">\[
 p(x^N, I^N|\theta)\propto \prod_{k=1}^K \theta_k^{m_k}
@@ -440,7 +449,6 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto \prod_{k=1}^K \thet
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -459,6 +467,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -479,6 +488,10 @@ gitbook.start({
 "text": null
 },
 "download": ["bayes-computation.pdf", "bayes-computation.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

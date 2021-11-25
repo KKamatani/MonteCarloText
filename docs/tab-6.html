@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 メトロポリス・ヘイスティングス法 | 練習問題 : モンテカルロ統計計算</title>
   <meta name="description" content="Chapter 6 メトロポリス・ヘイスティングス法 | 練習問題 : モンテカルロ統計計算" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 メトロポリス・ヘイスティングス法 | 練習問題 : モンテカルロ統計計算" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="tab-5.html"/>
 <link rel="next" href="tab-error.html"/>
-<script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
-<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,14 +50,15 @@
 
 
 
-
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -124,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -174,7 +177,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#tab-error-2"><i class="fa fa-check"></i><b>7.2</b> エラータム 第二刷</a>
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="tab-error.html"><a href="tab-error.html#p21-例1.8の後の文章-20200511"><i class="fa fa-check"></i><b>7.2.1</b> p21　例1.8の後の文章 (20200511)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="tab-error.html"><a href="tab-error.html#p66-練習問題2.8"><i class="fa fa-check"></i><b>7.2.2</b> p66 練習問題2.8</a></li>
+<li class="chapter" data-level="7.2.2" data-path="tab-error.html"><a href="tab-error.html#p49-例2.4の後の文章-20211125"><i class="fa fa-check"></i><b>7.2.2</b> p49　例2.4の後の文章 (20211125)</a></li>
+<li class="chapter" data-level="7.2.3" data-path="tab-error.html"><a href="tab-error.html#p57-定理2.7の後の証明の途中式-20211125"><i class="fa fa-check"></i><b>7.2.3</b> p57　定理2.7の後の証明の途中式 (20211125)</a></li>
+<li class="chapter" data-level="7.2.4" data-path="tab-error.html"><a href="tab-error.html#p66-練習問題2.8"><i class="fa fa-check"></i><b>7.2.4</b> p66 練習問題2.8</a></li>
+<li class="chapter" data-level="7.2.5" data-path="tab-error.html"><a href="tab-error.html#p77-図3.7のキャプション-20211125"><i class="fa fa-check"></i><b>7.2.5</b> p77　図3.7のキャプション (20211125)</a></li>
+<li class="chapter" data-level="7.2.6" data-path="tab-error.html"><a href="tab-error.html#p100-定理4.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.6</b> p100　定理4.2のあとの解説 (20211125)</a></li>
+<li class="chapter" data-level="7.2.7" data-path="tab-error.html"><a href="tab-error.html#p-125-126-定理5.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.7</b> p 125, 126 定理5.2のあとの解説 (20211125)</a></li>
+<li class="chapter" data-level="7.2.8" data-path="tab-error.html"><a href="tab-error.html#p-159-6.3.2-について-20211125"><i class="fa fa-check"></i><b>7.2.8</b> p 159 6.3.2 について (20211125)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -208,7 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> メトロポリス・ヘイスティングスカーネルの<span class="math inline">\(\alpha(x,y)\)</span>を<span class="math inline">\(\beta(x,y)\)</span>でおきかえたマルコフカーネルを<span class="math inline">\(P\)</span>と書く．
+<p>\iffalse{} <span class="solution"><em>Solution. </em></span> メトロポリス・ヘイスティングスカーネルの<span class="math inline">\(\alpha(x,y)\)</span>を<span class="math inline">\(\beta(x,y)\)</span>でおきかえたマルコフカーネルを<span class="math inline">\(P\)</span>と書く．
 まず定理6.1と同じ結論が従うことをみよう．
 定理6.1の証明と同じように，
 <span class="math display">\[
@@ -229,7 +238,7 @@ P(x, A)\ge \int_Aq(x,y)\beta(x,y)\mathrm{d}y=:k(x,y)&gt;0
 </div>
 
 <div class="remark">
- <span class="remark"><em>Remark. </em></span> 本問のように作られたマルコフカーネルを，しばしばバーカーカーネル(See <a href="https://www.publish.csiro.au/ph/PH650119">Barker 1965</a>)という．中心極限定理の漸近分散の観点から，バーカーカーネルは必ずメトロポリス・ヘイスティングスカーネルより良くない(See <a href="https://projecteuclid.org/euclid.aoap/1027961031">Tierney 1998</a>)．しかし<span class="math inline">\(\beta(x,y)\)</span>は微分可能性など，関数としてよりなめらかなため，理論的に解析しやすい．
+\iffalse{} <span class="remark"><em>Remark. </em></span> 本問のように作られたマルコフカーネルを，しばしばバーカーカーネル(See <a href="https://www.publish.csiro.au/ph/PH650119">Barker 1965</a>)という．中心極限定理の漸近分散の観点から，バーカーカーネルは必ずメトロポリス・ヘイスティングスカーネルより良くない(See <a href="https://projecteuclid.org/euclid.aoap/1027961031">Tierney 1998</a>)．しかし<span class="math inline">\(\beta(x,y)\)</span>は微分可能性など，関数としてよりなめらかなため，理論的に解析しやすい．
 </div>
 
 <div class="exercise">
@@ -237,7 +246,7 @@ P(x, A)\ge \int_Aq(x,y)\beta(x,y)\mathrm{d}y=:k(x,y)&gt;0
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 定義から
+\iffalse{} <span class="solution"><em>Solution. </em></span> 定義から
 <span class="math display">\[
 M=C\sqrt{2\pi}\sup_{x\in\mathbb{R}^d}\frac{1}{1+\theta^2}=C\sqrt{2\pi}. 
 \]</span>
@@ -250,60 +259,60 @@ M=C\sqrt{2\pi}\sup_{x\in\mathbb{R}^d}\frac{1}{1+\theta^2}=C\sqrt{2\pi}.
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 実際に，ふたつのメトロポリス・ヘイスティングス法から，長さ<code>N</code>のサンプルを生成し，経路図と採択率，事項相関図を生成してみよう．
+\iffalse{} <span class="solution"><em>Solution. </em></span> 実際に，ふたつのメトロポリス・ヘイスティングス法から，長さ<code>N</code>のサンプルを生成し，経路図と採択率，事項相関図を生成してみよう．
 </div>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="tab-6.html#cb45-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e5</span> <span class="co"># No. of iteration</span></span>
-<span id="cb45-2"><a href="tab-6.html#cb45-2" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="fl">1e3</span> <span class="co"># No. of iteration for trajectory plot</span></span>
-<span id="cb45-3"><a href="tab-6.html#cb45-3" aria-hidden="true" tabindex="-1"></a>lag <span class="ot">&lt;-</span> <span class="dv">25</span> <span class="co"># Lag of MCMCs</span></span>
-<span id="cb45-4"><a href="tab-6.html#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-5"><a href="tab-6.html#cb45-5" aria-hidden="true" tabindex="-1"></a>pi1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">dnorm</span>(x) <span class="co"># Target #1</span></span>
-<span id="cb45-6"><a href="tab-6.html#cb45-6" aria-hidden="true" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">dcauchy</span>(x) <span class="co"># Proposal #1</span></span>
-<span id="cb45-7"><a href="tab-6.html#cb45-7" aria-hidden="true" tabindex="-1"></a>w1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">pi1</span>(x)<span class="sc">/</span><span class="fu">q1</span>(x) <span class="co"># Ratio #1</span></span>
-<span id="cb45-8"><a href="tab-6.html#cb45-8" aria-hidden="true" tabindex="-1"></a>w2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="dv">1</span><span class="sc">/</span><span class="fu">w1</span>(x) <span class="co"># Ratio #2</span></span>
-<span id="cb45-9"><a href="tab-6.html#cb45-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-10"><a href="tab-6.html#cb45-10" aria-hidden="true" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N) <span class="co"># Output #1</span></span>
-<span id="cb45-11"><a href="tab-6.html#cb45-11" aria-hidden="true" tabindex="-1"></a>vec2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N) <span class="co"># Output #2</span></span>
-<span id="cb45-12"><a href="tab-6.html#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-13"><a href="tab-6.html#cb45-13" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">1</span>) <span class="co"># Initial value</span></span>
-<span id="cb45-14"><a href="tab-6.html#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-15"><a href="tab-6.html#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="co"># MCMC #1</span></span>
-<span id="cb45-16"><a href="tab-6.html#cb45-16" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x0</span>
-<span id="cb45-17"><a href="tab-6.html#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
-<span id="cb45-18"><a href="tab-6.html#cb45-18" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(<span class="dv">1</span>)</span>
-<span id="cb45-19"><a href="tab-6.html#cb45-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> <span class="fu">w1</span>(y)<span class="sc">/</span><span class="fu">w1</span>(x)){</span>
-<span id="cb45-20"><a href="tab-6.html#cb45-20" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> y</span>
-<span id="cb45-21"><a href="tab-6.html#cb45-21" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb45-22"><a href="tab-6.html#cb45-22" aria-hidden="true" tabindex="-1"></a>  vec1[i] <span class="ot">&lt;-</span> x</span>
-<span id="cb45-23"><a href="tab-6.html#cb45-23" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb45-24"><a href="tab-6.html#cb45-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-25"><a href="tab-6.html#cb45-25" aria-hidden="true" tabindex="-1"></a><span class="co"># MCMC #2</span></span>
-<span id="cb45-26"><a href="tab-6.html#cb45-26" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x0</span>
-<span id="cb45-27"><a href="tab-6.html#cb45-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
-<span id="cb45-28"><a href="tab-6.html#cb45-28" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb45-29"><a href="tab-6.html#cb45-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> <span class="fu">w2</span>(y)<span class="sc">/</span><span class="fu">w2</span>(x)){</span>
-<span id="cb45-30"><a href="tab-6.html#cb45-30" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> y</span>
-<span id="cb45-31"><a href="tab-6.html#cb45-31" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb45-32"><a href="tab-6.html#cb45-32" aria-hidden="true" tabindex="-1"></a>  vec2[i] <span class="ot">&lt;-</span> x</span>
-<span id="cb45-33"><a href="tab-6.html#cb45-33" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb45-34"><a href="tab-6.html#cb45-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-35"><a href="tab-6.html#cb45-35" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(vec1, vec2), <span class="at">m =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>N,<span class="dv">2</span>), <span class="at">method =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">each=</span>N))), <span class="at">id =</span><span class="fu">c</span>(<span class="st">&quot;m&quot;</span>,<span class="st">&quot;method&quot;</span>))</span>
-<span id="cb45-36"><a href="tab-6.html#cb45-36" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(data.fr, m <span class="sc">&lt;</span> N1), <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> value, <span class="at">color=</span>method)) <span class="sc">+</span> <span class="fu">geom_path</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Trajectory plot&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="tab-6.html#cb47-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e5</span> <span class="co"># No. of iteration</span></span>
+<span id="cb47-2"><a href="tab-6.html#cb47-2" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="fl">1e3</span> <span class="co"># No. of iteration for trajectory plot</span></span>
+<span id="cb47-3"><a href="tab-6.html#cb47-3" aria-hidden="true" tabindex="-1"></a>lag <span class="ot">&lt;-</span> <span class="dv">25</span> <span class="co"># Lag of MCMCs</span></span>
+<span id="cb47-4"><a href="tab-6.html#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="tab-6.html#cb47-5" aria-hidden="true" tabindex="-1"></a>pi1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">dnorm</span>(x) <span class="co"># Target #1</span></span>
+<span id="cb47-6"><a href="tab-6.html#cb47-6" aria-hidden="true" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">dcauchy</span>(x) <span class="co"># Proposal #1</span></span>
+<span id="cb47-7"><a href="tab-6.html#cb47-7" aria-hidden="true" tabindex="-1"></a>w1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">pi1</span>(x)<span class="sc">/</span><span class="fu">q1</span>(x) <span class="co"># Ratio #1</span></span>
+<span id="cb47-8"><a href="tab-6.html#cb47-8" aria-hidden="true" tabindex="-1"></a>w2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="dv">1</span><span class="sc">/</span><span class="fu">w1</span>(x) <span class="co"># Ratio #2</span></span>
+<span id="cb47-9"><a href="tab-6.html#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="tab-6.html#cb47-10" aria-hidden="true" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N) <span class="co"># Output #1</span></span>
+<span id="cb47-11"><a href="tab-6.html#cb47-11" aria-hidden="true" tabindex="-1"></a>vec2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(N) <span class="co"># Output #2</span></span>
+<span id="cb47-12"><a href="tab-6.html#cb47-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-13"><a href="tab-6.html#cb47-13" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">1</span>) <span class="co"># Initial value</span></span>
+<span id="cb47-14"><a href="tab-6.html#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-15"><a href="tab-6.html#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="co"># MCMC #1</span></span>
+<span id="cb47-16"><a href="tab-6.html#cb47-16" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x0</span>
+<span id="cb47-17"><a href="tab-6.html#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb47-18"><a href="tab-6.html#cb47-18" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rcauchy</span>(<span class="dv">1</span>)</span>
+<span id="cb47-19"><a href="tab-6.html#cb47-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> <span class="fu">w1</span>(y)<span class="sc">/</span><span class="fu">w1</span>(x)){</span>
+<span id="cb47-20"><a href="tab-6.html#cb47-20" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> y</span>
+<span id="cb47-21"><a href="tab-6.html#cb47-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-22"><a href="tab-6.html#cb47-22" aria-hidden="true" tabindex="-1"></a>  vec1[i] <span class="ot">&lt;-</span> x</span>
+<span id="cb47-23"><a href="tab-6.html#cb47-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-24"><a href="tab-6.html#cb47-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-25"><a href="tab-6.html#cb47-25" aria-hidden="true" tabindex="-1"></a><span class="co"># MCMC #2</span></span>
+<span id="cb47-26"><a href="tab-6.html#cb47-26" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x0</span>
+<span id="cb47-27"><a href="tab-6.html#cb47-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb47-28"><a href="tab-6.html#cb47-28" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
+<span id="cb47-29"><a href="tab-6.html#cb47-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> <span class="fu">w2</span>(y)<span class="sc">/</span><span class="fu">w2</span>(x)){</span>
+<span id="cb47-30"><a href="tab-6.html#cb47-30" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> y</span>
+<span id="cb47-31"><a href="tab-6.html#cb47-31" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-32"><a href="tab-6.html#cb47-32" aria-hidden="true" tabindex="-1"></a>  vec2[i] <span class="ot">&lt;-</span> x</span>
+<span id="cb47-33"><a href="tab-6.html#cb47-33" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-34"><a href="tab-6.html#cb47-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-35"><a href="tab-6.html#cb47-35" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(vec1, vec2), <span class="at">m =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>N,<span class="dv">2</span>), <span class="at">method =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">each=</span>N))), <span class="at">id =</span><span class="fu">c</span>(<span class="st">&quot;m&quot;</span>,<span class="st">&quot;method&quot;</span>))</span>
+<span id="cb47-36"><a href="tab-6.html#cb47-36" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(data.fr, m <span class="sc">&lt;</span> N1), <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> value, <span class="at">color=</span>method)) <span class="sc">+</span> <span class="fu">geom_path</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Trajectory plot&quot;</span>)</span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/exercise_6.3-1.png" width="672" /></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="tab-6.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;Acceptance probability #1&quot;</span>, <span class="fu">sum</span>(<span class="fu">diff</span>(<span class="fu">c</span>(x,vec1))<span class="sc">!=</span><span class="dv">0</span>)<span class="sc">/</span>N)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="tab-6.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;Acceptance probability #1&quot;</span>, <span class="fu">sum</span>(<span class="fu">diff</span>(<span class="fu">c</span>(x,vec1))<span class="sc">!=</span><span class="dv">0</span>)<span class="sc">/</span>N)</span></code></pre></div>
 <pre><code>## [1] &quot;Acceptance probability #1 0.70507&quot;</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="tab-6.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;Acceptance probability #2&quot;</span>, <span class="fu">sum</span>(<span class="fu">diff</span>(<span class="fu">c</span>(x,vec2))<span class="sc">!=</span><span class="dv">0</span>)<span class="sc">/</span>N)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="tab-6.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;Acceptance probability #2&quot;</span>, <span class="fu">sum</span>(<span class="fu">diff</span>(<span class="fu">c</span>(x,vec2))<span class="sc">!=</span><span class="dv">0</span>)<span class="sc">/</span>N)</span></code></pre></div>
 <pre><code>## [1] &quot;Acceptance probability #2 0.77516&quot;</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="tab-6.html#cb50-1" aria-hidden="true" tabindex="-1"></a>acf1 <span class="ot">&lt;-</span> <span class="fu">acf</span>(vec1, <span class="at">lag =</span> lag, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb50-2"><a href="tab-6.html#cb50-2" aria-hidden="true" tabindex="-1"></a>acf2 <span class="ot">&lt;-</span> <span class="fu">acf</span>(vec2, <span class="at">lag =</span> lag, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb50-3"><a href="tab-6.html#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="tab-6.html#cb50-4" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">length</span>(acf1<span class="sc">$</span>lag)</span>
-<span id="cb50-5"><a href="tab-6.html#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-6"><a href="tab-6.html#cb50-6" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">lag =</span> <span class="fu">rep</span>(<span class="fu">as.vector</span>(acf1<span class="sc">$</span>lag),<span class="dv">2</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">as.vector</span>(acf1<span class="sc">$</span>acf), <span class="fu">as.vector</span>(acf2<span class="sc">$</span>acf)), <span class="at">z =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">each=</span>M)))</span>
-<span id="cb50-7"><a href="tab-6.html#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr , <span class="fu">aes</span>(<span class="at">x =</span> lag, <span class="at">y =</span> y, <span class="at">fill=</span>z)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(), <span class="at">alpha=</span><span class="fl">1.0</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Acf plot&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="tab-6.html#cb52-1" aria-hidden="true" tabindex="-1"></a>acf1 <span class="ot">&lt;-</span> <span class="fu">acf</span>(vec1, <span class="at">lag =</span> lag, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb52-2"><a href="tab-6.html#cb52-2" aria-hidden="true" tabindex="-1"></a>acf2 <span class="ot">&lt;-</span> <span class="fu">acf</span>(vec2, <span class="at">lag =</span> lag, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb52-3"><a href="tab-6.html#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="tab-6.html#cb52-4" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">length</span>(acf1<span class="sc">$</span>lag)</span>
+<span id="cb52-5"><a href="tab-6.html#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="tab-6.html#cb52-6" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">lag =</span> <span class="fu">rep</span>(<span class="fu">as.vector</span>(acf1<span class="sc">$</span>lag),<span class="dv">2</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">as.vector</span>(acf1<span class="sc">$</span>acf), <span class="fu">as.vector</span>(acf2<span class="sc">$</span>acf)), <span class="at">z =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">each=</span>M)))</span>
+<span id="cb52-7"><a href="tab-6.html#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr , <span class="fu">aes</span>(<span class="at">x =</span> lag, <span class="at">y =</span> y, <span class="at">fill=</span>z)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(), <span class="at">alpha=</span><span class="fl">1.0</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Acf plot&quot;</span>)</span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/exercise_6.3-2.png" width="672" /></p>
 
 <div class="remark">
- <span class="remark"><em>Remark. </em></span> 前者は一様エルゴード的，後者はそうでないことが知られる．自己相関関数の推移をみるかぎり，理論的な結果と整合的である．
+\iffalse{} <span class="remark"><em>Remark. </em></span> 前者は一様エルゴード的，後者はそうでないことが知られる．自己相関関数の推移をみるかぎり，理論的な結果と整合的である．
 </div>
 
 <div class="exercise">
@@ -318,7 +327,7 @@ M=C\sqrt{2\pi}\sup_{x\in\mathbb{R}^d}\frac{1}{1+\theta^2}=C\sqrt{2\pi}.
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> メトロポリス・ヘイスティングス法の採択関数の定義とみくらべて
+\iffalse{} <span class="solution"><em>Solution. </em></span> メトロポリス・ヘイスティングス法の採択関数の定義とみくらべて
 <span class="math display">\[
   \frac{q(y,x)}{q(x,y)}=\frac{\phi_\sigma(x)}{\phi_\sigma(y)}
 \]</span>
@@ -338,7 +347,7 @@ q(x,y)=\frac{1}{\sqrt{2\pi\sigma^2(1-\rho)}}\exp\left(-\frac{(y-\rho^{1/2}x)^2}{
 </div>
 
 <div class="remark">
- <span class="remark"><em>Remark. </em></span> 上で紹介したマルコフカーネルは，しばしば<a href="https://en.wikipedia.org/wiki/Preconditioned_Crank–Nicolson_algorithm">preconditioned Crank-Nikolsonカーネル</a>とよばれ，高次元で，正規分布を事前分布として用いるときの解析に有効である(See <a href="https://www.cs.toronto.edu/~radford/ftp/val6gp.pdf">Neal 1998</a>, <a href="https://projecteuclid.org/euclid.ss/1377696944">Cotter et al 2013</a>)．関連するアルゴリズムとして，<a href="http://proceedings.mlr.press/v9/murray10a.html">Elliptical slice sampling</a>がある．
+\iffalse{} <span class="remark"><em>Remark. </em></span> 上で紹介したマルコフカーネルは，しばしば<a href="https://en.wikipedia.org/wiki/Preconditioned_Crank–Nicolson_algorithm">preconditioned Crank-Nikolsonカーネル</a>とよばれ，高次元で，正規分布を事前分布として用いるときの解析に有効である(See <a href="https://www.cs.toronto.edu/~radford/ftp/val6gp.pdf">Neal 1998</a>, <a href="https://projecteuclid.org/euclid.ss/1377696944">Cotter et al 2013</a>)．関連するアルゴリズムとして，<a href="http://proceedings.mlr.press/v9/murray10a.html">Elliptical slice sampling</a>がある．
 </div>
 
 <div class="exercise">
@@ -346,7 +355,7 @@ q(x,y)=\frac{1}{\sqrt{2\pi\sigma^2(1-\rho)}}\exp\left(-\frac{(y-\rho^{1/2}x)^2}{
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 定理6.2よりただちにしたがう．なぜなら<span class="math inline">\(q(x,y)=\gamma(y-x)&gt;0\)</span>となるからだ．
+\iffalse{} <span class="solution"><em>Solution. </em></span> 定理6.2よりただちにしたがう．なぜなら<span class="math inline">\(q(x,y)=\gamma(y-x)&gt;0\)</span>となるからだ．
 </div>
 
 <div class="exercise">
@@ -354,7 +363,7 @@ q(x,y)=\frac{1}{\sqrt{2\pi\sigma^2(1-\rho)}}\exp\left(-\frac{(y-\rho^{1/2}x)^2}{
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 略
+\iffalse{} <span class="solution"><em>Solution. </em></span> 略
 </div>
 
 <div class="exercise">
@@ -372,7 +381,7 @@ H(x_h,w_h)-H(x_0, w_0)
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
 H(x_h, w_h)-H(x_0,w_0)&amp;=
   (x_0+hW_0)^2+(w_0-hx_0)\\
 &amp;=(x_0^2+w_0^2)+h^2(x_0^2+w_0^2)\\
@@ -382,7 +391,7 @@ H(x_h, w_h)-H(x_0,w_0)&amp;=
 </div>
 
 <div class="remark">
- <span class="remark"><em>Remark. </em></span> 上の結果から，オイラー法を繰り返すと，<span class="math inline">\(k=1,2,\ldots\)</span>にたいし
+\iffalse{} <span class="remark"><em>Remark. </em></span> 上の結果から，オイラー法を繰り返すと，<span class="math inline">\(k=1,2,\ldots\)</span>にたいし
 <span class="math display">\[
 H(x_{kh},w_{kh})=(1+h^2)^kH(x_0, w_0)  
 \]</span>
@@ -399,11 +408,11 @@ H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 略
+\iffalse{} <span class="solution"><em>Solution. </em></span> 略
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 同様に馬跳び法の場合，ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
+\iffalse{} <span class="solution"><em>Solution. </em></span> 同様に馬跳び法の場合，ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
 <span class="math display">\[
 \begin{pmatrix}
     x_h\\
@@ -418,7 +427,7 @@ H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)
 </div>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> ３つのステップを行列で表すと，それぞれ
+<p>\iffalse{} <span class="solution"><em>Solution. </em></span> ３つのステップを行列で表すと，それぞれ
 <span class="math display">\[\begin{align*}
 \begin{pmatrix}
 1&amp;h/2
@@ -472,7 +481,6 @@ H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -491,6 +499,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -511,6 +520,10 @@ gitbook.start({
 "text": null
 },
 "download": ["bayes-computation.pdf", "bayes-computation.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

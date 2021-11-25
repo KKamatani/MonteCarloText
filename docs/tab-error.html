@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 エラータム | 練習問題 : モンテカルロ統計計算</title>
   <meta name="description" content="Chapter 7 エラータム | 練習問題 : モンテカルロ統計計算" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 エラータム | 練習問題 : モンテカルロ統計計算" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="tab-6.html"/>
 
-<script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
-<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,14 +50,15 @@
 
 
 
-
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -124,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -174,7 +177,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#tab-error-2"><i class="fa fa-check"></i><b>7.2</b> エラータム 第二刷</a>
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="tab-error.html"><a href="tab-error.html#p21-例1.8の後の文章-20200511"><i class="fa fa-check"></i><b>7.2.1</b> p21　例1.8の後の文章 (20200511)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="tab-error.html"><a href="tab-error.html#p66-練習問題2.8"><i class="fa fa-check"></i><b>7.2.2</b> p66 練習問題2.8</a></li>
+<li class="chapter" data-level="7.2.2" data-path="tab-error.html"><a href="tab-error.html#p49-例2.4の後の文章-20211125"><i class="fa fa-check"></i><b>7.2.2</b> p49　例2.4の後の文章 (20211125)</a></li>
+<li class="chapter" data-level="7.2.3" data-path="tab-error.html"><a href="tab-error.html#p57-定理2.7の後の証明の途中式-20211125"><i class="fa fa-check"></i><b>7.2.3</b> p57　定理2.7の後の証明の途中式 (20211125)</a></li>
+<li class="chapter" data-level="7.2.4" data-path="tab-error.html"><a href="tab-error.html#p66-練習問題2.8"><i class="fa fa-check"></i><b>7.2.4</b> p66 練習問題2.8</a></li>
+<li class="chapter" data-level="7.2.5" data-path="tab-error.html"><a href="tab-error.html#p77-図3.7のキャプション-20211125"><i class="fa fa-check"></i><b>7.2.5</b> p77　図3.7のキャプション (20211125)</a></li>
+<li class="chapter" data-level="7.2.6" data-path="tab-error.html"><a href="tab-error.html#p100-定理4.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.6</b> p100　定理4.2のあとの解説 (20211125)</a></li>
+<li class="chapter" data-level="7.2.7" data-path="tab-error.html"><a href="tab-error.html#p-125-126-定理5.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.7</b> p 125, 126 定理5.2のあとの解説 (20211125)</a></li>
+<li class="chapter" data-level="7.2.8" data-path="tab-error.html"><a href="tab-error.html#p-159-6.3.2-について-20211125"><i class="fa fa-check"></i><b>7.2.8</b> p 159 6.3.2 について (20211125)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -224,9 +233,9 @@ x=\left\lceil\frac{\log(1-U)}{\log(1-p)}-1\right\rceil
 \left\lceil\frac{\log U}{\log(1-p)}-1\right\rceil
 \]</span>
 で生成できる．R言語では</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="tab-error.html#cb51-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb51-2"><a href="tab-error.html#cb51-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb51-3"><a href="tab-error.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">log</span>(<span class="fu">runif</span>(n))<span class="sc">/</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tab-error.html#cb53-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb53-2"><a href="tab-error.html#cb53-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb53-3"><a href="tab-error.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">log</span>(<span class="fu">runif</span>(n))<span class="sc">/</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 1 0 1</code></pre>
 <p>とすべきだった．ただし，教科書にある
 <span class="math display">\[
@@ -348,56 +357,56 @@ P(x,A)=(1-M^{-1})Q(x,A)+M^{-1}\Pi(A)
 <div id="p164-リスト6.3について-20210308" class="section level3" number="7.1.16">
 <h3><span class="header-section-number">7.1.16</span> p164 リスト6.3について (20210308)</h3>
 <p>恥ずかしながら，プログラムにバグが有り，ニュートン・ラフソン法がよく見えているが，実際はもっと悪い．コードを直し，以下のように初期値を十分真値に近く取り直す．</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tab-error.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb53-2"><a href="tab-error.html#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-3"><a href="tab-error.html#cb53-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb53-4"><a href="tab-error.html#cb53-4" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.4</span>)</span>
-<span id="cb53-5"><a href="tab-error.html#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-6"><a href="tab-error.html#cb53-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,N),<span class="fu">rnorm</span>(N)), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb53-7"><a href="tab-error.html#cb53-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x)))</span>
-<span id="cb53-8"><a href="tab-error.html#cb53-8" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">runif</span>(N)</span>
-<span id="cb53-9"><a href="tab-error.html#cb53-9" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(u <span class="sc">&lt;=</span> p)</span>
-<span id="cb53-10"><a href="tab-error.html#cb53-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-11"><a href="tab-error.html#cb53-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-12"><a href="tab-error.html#cb53-12" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
-<span id="cb53-13"><a href="tab-error.html#cb53-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x) <span class="sc">*</span> y)<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">log</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x))))</span>
-<span id="cb53-14"><a href="tab-error.html#cb53-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb53-15"><a href="tab-error.html#cb53-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-16"><a href="tab-error.html#cb53-16" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
-<span id="cb53-17"><a href="tab-error.html#cb53-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowSums</span>(<span class="fu">t</span>(<span class="fu">t</span>(x)<span class="sc">*</span>y)) <span class="sc">-</span> <span class="fu">rowSums</span>(<span class="fu">t</span>(<span class="fu">t</span>(x) <span class="sc">*</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x)))))</span>
-<span id="cb53-18"><a href="tab-error.html#cb53-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb53-19"><a href="tab-error.html#cb53-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-20"><a href="tab-error.html#cb53-20" aria-hidden="true" tabindex="-1"></a>ddf <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
-<span id="cb53-21"><a href="tab-error.html#cb53-21" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x)))</span>
-<span id="cb53-22"><a href="tab-error.html#cb53-22" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>x <span class="sc">%*%</span> <span class="fu">diag</span>(prob<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>prob))<span class="sc">%*%</span> <span class="fu">t</span>(x)</span>
-<span id="cb53-23"><a href="tab-error.html#cb53-23" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb53-24"><a href="tab-error.html#cb53-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-25"><a href="tab-error.html#cb53-25" aria-hidden="true" tabindex="-1"></a>data.grid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">s.1 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>, <span class="at">length.out=</span><span class="dv">200</span>), <span class="at">s.2 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">11</span>, <span class="at">length.out=</span><span class="dv">200</span>))</span>
-<span id="cb53-26"><a href="tab-error.html#cb53-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-27"><a href="tab-error.html#cb53-27" aria-hidden="true" tabindex="-1"></a>pv <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">0</span>)</span>
-<span id="cb53-28"><a href="tab-error.html#cb53-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">dim</span>(data.grid)[<span class="dv">1</span>])){</span>
-<span id="cb53-29"><a href="tab-error.html#cb53-29" aria-hidden="true" tabindex="-1"></a>  pv <span class="ot">&lt;-</span> <span class="fu">append</span>(pv,<span class="fu">f</span>(<span class="fu">as.numeric</span>(data.grid[i,])))</span>
-<span id="cb53-30"><a href="tab-error.html#cb53-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb53-31"><a href="tab-error.html#cb53-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-32"><a href="tab-error.html#cb53-32" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb53-33"><a href="tab-error.html#cb53-33" aria-hidden="true" tabindex="-1"></a>theta0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="dv">1</span>)</span>
-<span id="cb53-34"><a href="tab-error.html#cb53-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-35"><a href="tab-error.html#cb53-35" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> theta0</span>
-<span id="cb53-36"><a href="tab-error.html#cb53-36" aria-hidden="true" tabindex="-1"></a>theta_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow=</span>M, <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb53-37"><a href="tab-error.html#cb53-37" aria-hidden="true" tabindex="-1"></a>theta_mat[<span class="dv">1</span>,] <span class="ot">&lt;-</span> theta0</span>
-<span id="cb53-38"><a href="tab-error.html#cb53-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(m <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>M){</span>
-<span id="cb53-39"><a href="tab-error.html#cb53-39" aria-hidden="true" tabindex="-1"></a> theta <span class="ot">&lt;-</span> theta <span class="sc">-</span> <span class="fu">as.vector</span>(<span class="fu">solve</span>(<span class="fu">ddf</span>(<span class="fu">as.vector</span>(theta))) <span class="sc">%*%</span> <span class="fu">df</span>(theta))</span>
-<span id="cb53-40"><a href="tab-error.html#cb53-40" aria-hidden="true" tabindex="-1"></a> theta_mat[m,] <span class="ot">&lt;-</span> theta</span>
-<span id="cb53-41"><a href="tab-error.html#cb53-41" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb53-42"><a href="tab-error.html#cb53-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-43"><a href="tab-error.html#cb53-43" aria-hidden="true" tabindex="-1"></a>htheta <span class="ot">&lt;-</span>theta</span>
-<span id="cb53-44"><a href="tab-error.html#cb53-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-45"><a href="tab-error.html#cb53-45" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>theta_mat[,<span class="dv">1</span>],<span class="at">y=</span>theta_mat[,<span class="dv">2</span>], <span class="at">z=</span><span class="dv">1</span><span class="sc">:</span>M)</span>
-<span id="cb53-46"><a href="tab-error.html#cb53-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-47"><a href="tab-error.html#cb53-47" aria-hidden="true" tabindex="-1"></a>q.samp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(data.grid, <span class="at">z =</span> pv))</span>
-<span id="cb53-48"><a href="tab-error.html#cb53-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-49"><a href="tab-error.html#cb53-49" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(q.samp, <span class="fu">aes</span>(<span class="at">x=</span>s<span class="fl">.1</span>, <span class="at">y=</span>s<span class="fl">.2</span>, <span class="at">z=</span>z)) <span class="sc">+</span> <span class="fu">geom_contour</span>(<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> </span>
-<span id="cb53-50"><a href="tab-error.html#cb53-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">data=</span>data.fr,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y),<span class="at">lty=</span><span class="dv">2</span>,<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data=</span>data.fr,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y),<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">size=</span><span class="fu">I</span>(<span class="fl">2.0</span>))<span class="sc">+</span><span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">11</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">theta_1$&quot;</span>)) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">theta_2$&quot;</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="tab-error.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb55-2"><a href="tab-error.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="tab-error.html#cb55-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb55-4"><a href="tab-error.html#cb55-4" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.4</span>)</span>
+<span id="cb55-5"><a href="tab-error.html#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="tab-error.html#cb55-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,N),<span class="fu">rnorm</span>(N)), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb55-7"><a href="tab-error.html#cb55-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x)))</span>
+<span id="cb55-8"><a href="tab-error.html#cb55-8" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">runif</span>(N)</span>
+<span id="cb55-9"><a href="tab-error.html#cb55-9" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(u <span class="sc">&lt;=</span> p)</span>
+<span id="cb55-10"><a href="tab-error.html#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="tab-error.html#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-12"><a href="tab-error.html#cb55-12" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
+<span id="cb55-13"><a href="tab-error.html#cb55-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x) <span class="sc">*</span> y)<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">log</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x))))</span>
+<span id="cb55-14"><a href="tab-error.html#cb55-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb55-15"><a href="tab-error.html#cb55-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-16"><a href="tab-error.html#cb55-16" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
+<span id="cb55-17"><a href="tab-error.html#cb55-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowSums</span>(<span class="fu">t</span>(<span class="fu">t</span>(x)<span class="sc">*</span>y)) <span class="sc">-</span> <span class="fu">rowSums</span>(<span class="fu">t</span>(<span class="fu">t</span>(x) <span class="sc">*</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x)))))</span>
+<span id="cb55-18"><a href="tab-error.html#cb55-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb55-19"><a href="tab-error.html#cb55-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-20"><a href="tab-error.html#cb55-20" aria-hidden="true" tabindex="-1"></a>ddf <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
+<span id="cb55-21"><a href="tab-error.html#cb55-21" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x)))</span>
+<span id="cb55-22"><a href="tab-error.html#cb55-22" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>x <span class="sc">%*%</span> <span class="fu">diag</span>(prob<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>prob))<span class="sc">%*%</span> <span class="fu">t</span>(x)</span>
+<span id="cb55-23"><a href="tab-error.html#cb55-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb55-24"><a href="tab-error.html#cb55-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-25"><a href="tab-error.html#cb55-25" aria-hidden="true" tabindex="-1"></a>data.grid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">s.1 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>, <span class="at">length.out=</span><span class="dv">200</span>), <span class="at">s.2 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">11</span>, <span class="at">length.out=</span><span class="dv">200</span>))</span>
+<span id="cb55-26"><a href="tab-error.html#cb55-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-27"><a href="tab-error.html#cb55-27" aria-hidden="true" tabindex="-1"></a>pv <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">0</span>)</span>
+<span id="cb55-28"><a href="tab-error.html#cb55-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">dim</span>(data.grid)[<span class="dv">1</span>])){</span>
+<span id="cb55-29"><a href="tab-error.html#cb55-29" aria-hidden="true" tabindex="-1"></a>  pv <span class="ot">&lt;-</span> <span class="fu">append</span>(pv,<span class="fu">f</span>(<span class="fu">as.numeric</span>(data.grid[i,])))</span>
+<span id="cb55-30"><a href="tab-error.html#cb55-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb55-31"><a href="tab-error.html#cb55-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-32"><a href="tab-error.html#cb55-32" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb55-33"><a href="tab-error.html#cb55-33" aria-hidden="true" tabindex="-1"></a>theta0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="dv">1</span>)</span>
+<span id="cb55-34"><a href="tab-error.html#cb55-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-35"><a href="tab-error.html#cb55-35" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> theta0</span>
+<span id="cb55-36"><a href="tab-error.html#cb55-36" aria-hidden="true" tabindex="-1"></a>theta_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow=</span>M, <span class="at">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb55-37"><a href="tab-error.html#cb55-37" aria-hidden="true" tabindex="-1"></a>theta_mat[<span class="dv">1</span>,] <span class="ot">&lt;-</span> theta0</span>
+<span id="cb55-38"><a href="tab-error.html#cb55-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(m <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>M){</span>
+<span id="cb55-39"><a href="tab-error.html#cb55-39" aria-hidden="true" tabindex="-1"></a> theta <span class="ot">&lt;-</span> theta <span class="sc">-</span> <span class="fu">as.vector</span>(<span class="fu">solve</span>(<span class="fu">ddf</span>(<span class="fu">as.vector</span>(theta))) <span class="sc">%*%</span> <span class="fu">df</span>(theta))</span>
+<span id="cb55-40"><a href="tab-error.html#cb55-40" aria-hidden="true" tabindex="-1"></a> theta_mat[m,] <span class="ot">&lt;-</span> theta</span>
+<span id="cb55-41"><a href="tab-error.html#cb55-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb55-42"><a href="tab-error.html#cb55-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-43"><a href="tab-error.html#cb55-43" aria-hidden="true" tabindex="-1"></a>htheta <span class="ot">&lt;-</span>theta</span>
+<span id="cb55-44"><a href="tab-error.html#cb55-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-45"><a href="tab-error.html#cb55-45" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>theta_mat[,<span class="dv">1</span>],<span class="at">y=</span>theta_mat[,<span class="dv">2</span>], <span class="at">z=</span><span class="dv">1</span><span class="sc">:</span>M)</span>
+<span id="cb55-46"><a href="tab-error.html#cb55-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-47"><a href="tab-error.html#cb55-47" aria-hidden="true" tabindex="-1"></a>q.samp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(data.grid, <span class="at">z =</span> pv))</span>
+<span id="cb55-48"><a href="tab-error.html#cb55-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-49"><a href="tab-error.html#cb55-49" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(q.samp, <span class="fu">aes</span>(<span class="at">x=</span>s<span class="fl">.1</span>, <span class="at">y=</span>s<span class="fl">.2</span>, <span class="at">z=</span>z)) <span class="sc">+</span> <span class="fu">geom_contour</span>(<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb55-50"><a href="tab-error.html#cb55-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">data=</span>data.fr,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y),<span class="at">lty=</span><span class="dv">2</span>,<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data=</span>data.fr,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y),<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">size=</span><span class="fu">I</span>(<span class="fl">2.0</span>))<span class="sc">+</span><span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">11</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">theta_1$&quot;</span>)) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">theta_2$&quot;</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
 <div id="定義6.1-p169-について-20200511" class="section level4" number="7.1.16.1">
 <h4><span class="header-section-number">7.1.16.1</span> 定義6.1 p169 について (20200511)</h4>
@@ -414,12 +423,36 @@ H(x,w)=-\log\pi(x)-\log\phi_\sigma(w)=-\log\pi(x)+\|w\|^2/2\sigma^2+\log(2\pi\si
 <h3><span class="header-section-number">7.2.1</span> p21　例1.8の後の文章 (20200511)</h3>
 <p>事後確率の計算の直前「すなわち<span class="math inline">\(\theta&gt;0\)</span>」とあるのは「すなわち<span class="math inline">\(\theta&gt;0.5\)</span>」の誤り．</p>
 </div>
-<div id="p66-練習問題2.8" class="section level3" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> p66 練習問題2.8</h3>
+<div id="p49-例2.4の後の文章-20211125" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> p49　例2.4の後の文章 (20211125)</h3>
+<p><span class="math inline">\(F(n)\)</span>の式の分子の指数部は<span class="math inline">\(n\)</span>でなく，<span class="math inline">\(m\)</span>．</p>
+</div>
+<div id="p57-定理2.7の後の証明の途中式-20211125" class="section level3" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> p57　定理2.7の後の証明の途中式 (20211125)</h3>
+<p><span class="math inline">\(p(z)\)</span>の式の<span class="math inline">\(p(y)\)</span>（青色)の部分は<span class="math inline">\(2^{\nu/2}\)</span>ではなく<span class="math inline">\(2^{-\nu/2}\)</span>.</p>
+</div>
+<div id="p66-練習問題2.8" class="section level3" number="7.2.4">
+<h3><span class="header-section-number">7.2.4</span> p66 練習問題2.8</h3>
 <p>コードが一部違っている．</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="tab-error.html#cb54-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb54-2"><a href="tab-error.html#cb54-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> r, <span class="at">rate =</span> (<span class="dv">1</span><span class="sc">-</span>theta)<span class="sc">/</span>theta)</span>
-<span id="cb54-3"><a href="tab-error.html#cb54-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>, y)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="tab-error.html#cb56-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb56-2"><a href="tab-error.html#cb56-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> r, <span class="at">rate =</span> (<span class="dv">1</span><span class="sc">-</span>theta)<span class="sc">/</span>theta)</span>
+<span id="cb56-3"><a href="tab-error.html#cb56-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>, y)</span></code></pre></div>
+</div>
+<div id="p77-図3.7のキャプション-20211125" class="section level3" number="7.2.5">
+<h3><span class="header-section-number">7.2.5</span> p77　図3.7のキャプション (20211125)</h3>
+<p>青色の <span class="math inline">\(f(x)\)</span>は<span class="math inline">\(g(x)\)</span>の誤り．</p>
+</div>
+<div id="p100-定理4.2のあとの解説-20211125" class="section level3" number="7.2.6">
+<h3><span class="header-section-number">7.2.6</span> p100　定理4.2のあとの解説 (20211125)</h3>
+<p>「さらに<span class="math inline">\(|\alpha|&gt;1\)</span>となると，<span class="math inline">\(x\neq \mu\)</span>なら平均も発散する」とあるが，<span class="math inline">\(x\)</span>ではなく<span class="math inline">\(x_0\)</span>とすべき．</p>
+</div>
+<div id="p-125-126-定理5.2のあとの解説-20211125" class="section level3" number="7.2.7">
+<h3><span class="header-section-number">7.2.7</span> p 125, 126 定理5.2のあとの解説 (20211125)</h3>
+<p>p125の(5.1)式およびp126の最初の式，さらにp126のギブスサンプリングStep2において<span class="math inline">\(m_0\)</span>と<span class="math inline">\(m_1\)</span>が反対になっている．</p>
+</div>
+<div id="p-159-6.3.2-について-20211125" class="section level3" number="7.2.8">
+<h3><span class="header-section-number">7.2.8</span> p 159 6.3.2 について (20211125)</h3>
+<p>アルゴリズムStep 2において<span class="math inline">\(X_{n+1}=X_n\)</span>は<span class="math inline">\(X_n=X_{n-1}\)</span>の誤り．</p>
 
 </div>
 </div>
@@ -434,7 +467,6 @@ H(x,w)=-\log\pi(x)-\log\phi_\sigma(w)=-\log\pi(x)+\|w\|^2/2\sigma^2+\log(2\pi\si
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -453,6 +485,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -473,6 +506,10 @@ gitbook.start({
 "text": null
 },
 "download": ["bayes-computation.pdf", "bayes-computation.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算</title>
   <meta name="description" content="Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 マルコフ連鎖 | 練習問題 : モンテカルロ統計計算" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="tab-3.html"/>
 <link rel="next" href="tab-5.html"/>
-<script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
-<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,14 +50,15 @@
 
 
 
-
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -124,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -174,7 +177,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="tab-error.html"><a href="tab-error.html#tab-error-2"><i class="fa fa-check"></i><b>7.2</b> エラータム 第二刷</a>
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="tab-error.html"><a href="tab-error.html#p21-例1.8の後の文章-20200511"><i class="fa fa-check"></i><b>7.2.1</b> p21　例1.8の後の文章 (20200511)</a></li>
-<li class="chapter" data-level="7.2.2" data-path="tab-error.html"><a href="tab-error.html#p66-練習問題2.8"><i class="fa fa-check"></i><b>7.2.2</b> p66 練習問題2.8</a></li>
+<li class="chapter" data-level="7.2.2" data-path="tab-error.html"><a href="tab-error.html#p49-例2.4の後の文章-20211125"><i class="fa fa-check"></i><b>7.2.2</b> p49　例2.4の後の文章 (20211125)</a></li>
+<li class="chapter" data-level="7.2.3" data-path="tab-error.html"><a href="tab-error.html#p57-定理2.7の後の証明の途中式-20211125"><i class="fa fa-check"></i><b>7.2.3</b> p57　定理2.7の後の証明の途中式 (20211125)</a></li>
+<li class="chapter" data-level="7.2.4" data-path="tab-error.html"><a href="tab-error.html#p66-練習問題2.8"><i class="fa fa-check"></i><b>7.2.4</b> p66 練習問題2.8</a></li>
+<li class="chapter" data-level="7.2.5" data-path="tab-error.html"><a href="tab-error.html#p77-図3.7のキャプション-20211125"><i class="fa fa-check"></i><b>7.2.5</b> p77　図3.7のキャプション (20211125)</a></li>
+<li class="chapter" data-level="7.2.6" data-path="tab-error.html"><a href="tab-error.html#p100-定理4.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.6</b> p100　定理4.2のあとの解説 (20211125)</a></li>
+<li class="chapter" data-level="7.2.7" data-path="tab-error.html"><a href="tab-error.html#p-125-126-定理5.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.7</b> p 125, 126 定理5.2のあとの解説 (20211125)</a></li>
+<li class="chapter" data-level="7.2.8" data-path="tab-error.html"><a href="tab-error.html#p-159-6.3.2-について-20211125"><i class="fa fa-check"></i><b>7.2.8</b> p 159 6.3.2 について (20211125)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -204,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_{m+1}\)</span>は<span class="math inline">\(X_m=x\)</span>で条件つけたもと<span class="math inline">\(\mathcal{B}(N, x/N)\)</span>に従う．よって二項分布の性質より
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_{m+1}\)</span>は<span class="math inline">\(X_m=x\)</span>で条件つけたもと<span class="math inline">\(\mathcal{B}(N, x/N)\)</span>に従う．よって二項分布の性質より
 <span class="math display">\[\begin{align*}
 \mathbb{E}[X_{m+1}|X_m=x]&amp;=N\frac{x}{N}=x\\
 \operatorname{Var}[X_{m+1}|X_m=x]&amp;=N\frac{x}{N}\left(1-\frac{x}{N}\right)=N^{-1}x(N-x)
@@ -220,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 条件つき期待値，分散の計算から
+\iffalse{} <span class="solution"><em>Solution. </em></span> 条件つき期待値，分散の計算から
 <span class="math display">\[\begin{align*}
 \mathbb{E}[X_m(N-X_m)|X_m=x]&amp;=N\mathbb{E}[X_{m+1}|X_m=x]-\mathbb{E}[X_{m+1}^2|X_m=x]\\
 &amp;=N\mathbb{E}[X_{m+1}|X_m=x]-(\operatorname{V}[X_{m+1}|X_m=x]+\mathbb{E}[X_{m+1}|X_m=x]^2)\\
@@ -234,7 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
 \mathbb{E}[X_{m+1}|X_m=x]=x
 \end{align*}\]</span>
 だから，任意の<span class="math inline">\(m=0,1,\ldots\)</span>にたいし，<span class="math inline">\(\mathbb{E}[X_{m}]=\mathbb{E}[X_{0}]\)</span>かつ，
@@ -262,7 +271,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 定理4.1の証明の中で
+\iffalse{} <span class="solution"><em>Solution. </em></span> 定理4.1の証明の中で
 <span class="math display">\[
 \mathbb{E}[X_m(N-X_m)]=(1-N^{-1})^m\mathbb{E}[X_0(N-X_0)]
 \]</span>
@@ -289,7 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 式(4.1)より
+\iffalse{} <span class="solution"><em>Solution. </em></span> 式(4.1)より
 <span class="math display">\[\begin{align*}
 \mathbb{E}[X_{m+1}|X_m=x]&amp;=\mathbb{E}[\mu+\alpha(X_m-\mu)+W_m|X_m=x]\\
 &amp;=\mu+\alpha(x-\mu). 
@@ -310,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 確率分布の収束は，その特性関数の収束と同値である．正規分布<span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>の特性関数は
+\iffalse{} <span class="solution"><em>Solution. </em></span> 確率分布の収束は，その特性関数の収束と同値である．正規分布<span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>の特性関数は
 <span class="math display">\[
 \varphi(t)=\exp\left(\mu t\mathbf{i}-\frac{\sigma^2}{2}t^2\right)
 \]</span>
@@ -332,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_m=x\)</span>のもと，<span class="math inline">\(X_{m+1}=\max\{0, x+W_{m+1}\}\)</span>で<span class="math inline">\(W_{m+1}\)</span>は標準正規分布に従う．
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_m=x\)</span>のもと，<span class="math inline">\(X_{m+1}=\max\{0, x+W_{m+1}\}\)</span>で<span class="math inline">\(W_{m+1}\)</span>は標準正規分布に従う．
 <span class="math display">\[\begin{align*}
 \exp(-\lambda X_{m+1})=
 \begin{cases}
@@ -369,7 +378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>より，とくに<span class="math inline">\(|\alpha|&lt;1\)</span>である．
+\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>より，とくに<span class="math inline">\(|\alpha|&lt;1\)</span>である．
 マルコフカーネルの定義から
 <span class="math display">\[
   \mathbb{E}[X_m]=\alpha\mathbb{E}[X_{m-1}]=\cdots=\alpha^m\mathbb{E}[X_0]
@@ -393,7 +402,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 例4.7の式(4.10)より，もし不変確率分布<span class="math inline">\(\Pi\)</span>が存在するなら，その特性関数を<span class="math inline">\(\psi(u)\)</span>と書くと
+\iffalse{} <span class="solution"><em>Solution. </em></span> 例4.7の式(4.10)より，もし不変確率分布<span class="math inline">\(\Pi\)</span>が存在するなら，その特性関数を<span class="math inline">\(\psi(u)\)</span>と書くと
 <span class="math display">\[
 \psi(u)=\psi(-u)\exp(-u^2\sigma^2/2)=\psi(u)\exp(-u^2\sigma^2)
 \]</span>
@@ -411,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 定義から
+\iffalse{} <span class="solution"><em>Solution. </em></span> 定義から
 <span class="math display">\[\begin{align*}
 \|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}=\frac{1}{2}\int_{-\infty}^\infty|\phi(x)-\phi(x-\mu)|\mathrm{d}x
 \end{align*}\]</span>
@@ -445,7 +454,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 前の問題と同じように，定義から
+\iffalse{} <span class="solution"><em>Solution. </em></span> 前の問題と同じように，定義から
 <span class="math display">\[\begin{align*}
 \|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}=\frac{1}{2}\int_{-\infty}^\infty|\phi(x)-\sigma^{-1}\phi(x/\sigma)|\mathrm{d}x
 \end{align*}\]</span>
@@ -475,7 +484,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> 仮定は，ある<span class="math inline">\(x^*\)</span>があって，<span class="math inline">\(\min\{p(x^*),q(x^*)\}&gt;0\)</span>となるということである．いっぽう，もし<span class="math inline">\(P, Q\)</span>が特異なら，ある集合<span class="math inline">\(A\)</span>があって，
+\iffalse{} <span class="solution"><em>Solution. </em></span> 仮定は，ある<span class="math inline">\(x^*\)</span>があって，<span class="math inline">\(\min\{p(x^*),q(x^*)\}&gt;0\)</span>となるということである．いっぽう，もし<span class="math inline">\(P, Q\)</span>が特異なら，ある集合<span class="math inline">\(A\)</span>があって，
 <span class="math inline">\(P(A)=Q(A^c)=0\)</span>となる．もし<span class="math inline">\(x^*\)</span>が<span class="math inline">\(A\)</span>に含まれるなら，
 <span class="math display">\[
  P(A)\ge p(x^*)&gt;0 
@@ -497,7 +506,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -516,6 +524,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -536,6 +545,10 @@ gitbook.start({
 "text": null
 },
 "download": ["bayes-computation.pdf", "bayes-computation.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
