@@ -207,43 +207,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="tab-4" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> マルコフ連鎖</h1>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-67" class="exercise"><strong>Exercise 4.1  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(N\)</span>は正の整数とする．また<span class="math inline">\(x\)</span>は<span class="math inline">\(0\le x\le N\)</span>なる整数とする．ライト・フィッシャーモデルに対し<span class="math inline">\(\mathbb{E}[X_{m+1}|X_m=x]\)</span>および<span class="math inline">\(\operatorname{Var}(X_{m+1}|X_m=x)\)</span>を求めよ．
+<p><span id="exr:unlabeled-div-59" class="exercise"><strong>Exercise 4.1  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(N\)</span>は正の整数とする．また<span class="math inline">\(x\)</span>は<span class="math inline">\(0\le x\le N\)</span>なる整数とする．ライト・フィッシャーモデルに対し<span class="math inline">\(\mathbb{E}[X_{m+1}|X_m=x]\)</span>および<span class="math inline">\(\operatorname{Var}(X_{m+1}|X_m=x)\)</span>を求めよ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_{m+1}\)</span>は<span class="math inline">\(X_m=x\)</span>で条件つけたもと<span class="math inline">\(\mathcal{B}(N, x/N)\)</span>に従う．よって二項分布の性質より
+<p><span id="unlabeled-div-60" class="solution"><em>Solution</em>. </span><span class="math inline">\(X_{m+1}\)</span>は<span class="math inline">\(X_m=x\)</span>で条件つけたもと<span class="math inline">\(\mathcal{B}(N, x/N)\)</span>に従う．よって二項分布の性質より
 <span class="math display">\[\begin{align*}
 \mathbb{E}[X_{m+1}|X_m=x]&amp;=N\frac{x}{N}=x\\
 \operatorname{Var}[X_{m+1}|X_m=x]&amp;=N\frac{x}{N}\left(1-\frac{x}{N}\right)=N^{-1}x(N-x)
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-69" class="exercise"><strong>Exercise 4.2  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\(x\)</span>は<span class="math inline">\(0\le x\le N\)</span>なる整数とする．ライト・フィッシャーモデルにたいし，
+<p><span id="exr:unlabeled-div-61" class="exercise"><strong>Exercise 4.2  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\(x\)</span>は<span class="math inline">\(0\le x\le N\)</span>なる整数とする．ライト・フィッシャーモデルにたいし，
 <span class="math display">\[
  \mathbb{E}[X_m(N-X_m)|X_m=x]=(1-N^{-1})x(N-x) 
 \]</span>
-を示せ．
+を示せ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> 条件つき期待値，分散の計算から
+<p><span id="unlabeled-div-62" class="solution"><em>Solution</em>. </span>条件つき期待値，分散の計算から
 <span class="math display">\[\begin{align*}
 \mathbb{E}[X_m(N-X_m)|X_m=x]&amp;=N\mathbb{E}[X_{m+1}|X_m=x]-\mathbb{E}[X_{m+1}^2|X_m=x]\\
 &amp;=N\mathbb{E}[X_{m+1}|X_m=x]-(\operatorname{V}[X_{m+1}|X_m=x]+\mathbb{E}[X_{m+1}|X_m=x]^2)\\
 &amp;=Nx-(N^{-1}x(N-x)+x^2)=(1-N^{-1})x(N-x) 
 \end{align*}\]</span>
-を得る．
+を得る．</p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-71" class="exercise"><strong>Exercise 4.3  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(N\)</span>は正の整数とする．ライト・フィッシャーモデルに対し<span class="math inline">\(\operatorname{Cov}(X_{m+1}, X_m)=\operatorname{Var}(X_m)\)</span>を示せ．
+<p><span id="exr:unlabeled-div-63" class="exercise"><strong>Exercise 4.3  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(N\)</span>は正の整数とする．ライト・フィッシャーモデルに対し<span class="math inline">\(\operatorname{Cov}(X_{m+1}, X_m)=\operatorname{Var}(X_m)\)</span>を示せ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-64" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \mathbb{E}[X_{m+1}|X_m=x]=x
 \end{align*}\]</span>
 だから，任意の<span class="math inline">\(m=0,1,\ldots\)</span>にたいし，<span class="math inline">\(\mathbb{E}[X_{m}]=\mathbb{E}[X_{0}]\)</span>かつ，
@@ -259,19 +253,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 &amp;=\mathbb{E}[X_{m+1}X_m]-x^2\\
 &amp;=\mathbb{E}[X_m^2]-x^2\\
 &amp;=\operatorname{Var}[X_m]. 
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 4.4  </strong></span>ライト・フィッシャーモデルに対し
+<p><span id="exr:unlabeled-div-65" class="exercise"><strong>Exercise 4.4  </strong></span>ライト・フィッシャーモデルに対し
 <span class="math display">\[
 \lim_{m\rightarrow\infty}\operatorname{Var}(X_m)=N\mathbb{E}[X_0]-\mathbb{E}[X_0]^2
 \]</span>
-であることを示せ．
+であることを示せ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> 定理4.1の証明の中で
+<p><span id="unlabeled-div-66" class="solution"><em>Solution</em>. </span>定理4.1の証明の中で
 <span class="math display">\[
 \mathbb{E}[X_m(N-X_m)]=(1-N^{-1})^m\mathbb{E}[X_0(N-X_0)]
 \]</span>
@@ -288,17 +280,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \lim_{m\rightarrow\infty}\operatorname{Var}[X_m]&amp;=
    \lim_{m\rightarrow\infty}(\mathbb[X_m^2]-\mathbb{E}[X_m]^2)\\
 &amp;=N\mathbb{E}[X_0]-\mathbb{E}[X_0]^2. 
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-75" class="exercise"><strong>Exercise 4.5  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(x\)</span>は実数とする．
+<p><span id="exr:unlabeled-div-67" class="exercise"><strong>Exercise 4.5  </strong></span><span class="math inline">\(m\)</span>は非負の整数，<span class="math inline">\(x\)</span>は実数とする．
 自己回帰過程に対し，
-<span class="math inline">\(\mathbb{E}[X_{m+1}|X_m=x]\)</span>および<span class="math inline">\(\operatorname{Var}(X_{m+1}|X_m=x)\)</span>を求めよ．
+<span class="math inline">\(\mathbb{E}[X_{m+1}|X_m=x]\)</span>および<span class="math inline">\(\operatorname{Var}(X_{m+1}|X_m=x)\)</span>を求めよ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> 式(4.1)より
+<p><span id="unlabeled-div-68" class="solution"><em>Solution</em>. </span>式(4.1)より
 <span class="math display">\[\begin{align*}
 \mathbb{E}[X_{m+1}|X_m=x]&amp;=\mathbb{E}[\mu+\alpha(X_m-\mu)+W_m|X_m=x]\\
 &amp;=\mu+\alpha(x-\mu). 
@@ -307,19 +297,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[\begin{align*}
 \operatorname{Var}[X_{m+1}|X_m=x]&amp;=\operatorname{Var}[\mu+\alpha(X_m-\mu)+W_m|X_m=x]\\
 &amp;=\operatorname{Var}[W_m|X_m=x]=\sigma^2. 
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-77" class="exercise"><strong>Exercise 4.6  </strong></span>各<span class="math inline">\(m=1,2,\ldots\)</span>について<span class="math inline">\(\mu_m,\mu\)</span>は実数，<span class="math inline">\(\sigma^2_m, \sigma^2\)</span>は正の実数とする．また，<span class="math inline">\(\mu_m\rightarrow\mu, \sigma^2_m\rightarrow\sigma^2\)</span>とする．このとき，
+<p><span id="exr:unlabeled-div-69" class="exercise"><strong>Exercise 4.6  </strong></span>各<span class="math inline">\(m=1,2,\ldots\)</span>について<span class="math inline">\(\mu_m,\mu\)</span>は実数，<span class="math inline">\(\sigma^2_m, \sigma^2\)</span>は正の実数とする．また，<span class="math inline">\(\mu_m\rightarrow\mu, \sigma^2_m\rightarrow\sigma^2\)</span>とする．このとき，
 <span class="math display">\[\begin{align*}
 \mathcal{N}(\mu_m,\sigma^2_m)~\longrightarrow~\mathcal{N}(\mu,\sigma^2)
 \end{align*}\]</span>
-となることを示せ（特性関数が収束することを見ればいい）．
+となることを示せ（特性関数が収束することを見ればいい）．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> 確率分布の収束は，その特性関数の収束と同値である．正規分布<span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>の特性関数は
+<p><span id="unlabeled-div-70" class="solution"><em>Solution</em>. </span>確率分布の収束は，その特性関数の収束と同値である．正規分布<span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>の特性関数は
 <span class="math display">\[
 \varphi(t)=\exp\left(\mu t\mathbf{i}-\frac{\sigma^2}{2}t^2\right)
 \]</span>
@@ -329,19 +317,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  \longrightarrow
  \exp\left(\mu t\mathbf{i}-\frac{\sigma^2}{2}t^2\right)
 \]</span>
-より結論を得る．
+より結論を得る．</p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-79" class="exercise"><strong>Exercise 4.7  </strong></span><span class="math inline">\(x, \lambda\)</span>は正の実数，<span class="math inline">\(m\)</span>は正の整数とする．確率分布<span class="math inline">\(G=\mathcal{N}(0,1)\)</span>としたときの<span class="math inline">\(\mathbb{R}_+\)</span>上のランダムウォークにたいし，
+<p><span id="exr:unlabeled-div-71" class="exercise"><strong>Exercise 4.7  </strong></span><span class="math inline">\(x, \lambda\)</span>は正の実数，<span class="math inline">\(m\)</span>は正の整数とする．確率分布<span class="math inline">\(G=\mathcal{N}(0,1)\)</span>としたときの<span class="math inline">\(\mathbb{R}_+\)</span>上のランダムウォークにたいし，
 <span class="math display">\[
 \mathbb{E}[\exp(-\lambda X_{m+1})|X_m=x]
 \]</span>
-を求めよ．
+を求めよ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(X_m=x\)</span>のもと，<span class="math inline">\(X_{m+1}=\max\{0, x+W_{m+1}\}\)</span>で<span class="math inline">\(W_{m+1}\)</span>は標準正規分布に従う．
+<p><span id="unlabeled-div-72" class="solution"><em>Solution</em>. </span><span class="math inline">\(X_m=x\)</span>のもと，<span class="math inline">\(X_{m+1}=\max\{0, x+W_{m+1}\}\)</span>で<span class="math inline">\(W_{m+1}\)</span>は標準正規分布に従う．
 <span class="math display">\[\begin{align*}
 \exp(-\lambda X_{m+1})=
 \begin{cases}
@@ -362,11 +348,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   &amp;=\Phi(-x)+\exp(-\lambda+\lambda^2/2)\int_{-x+\lambda}^\infty\frac{1}{\sqrt{2\pi}}\exp(-w^2/2)\mathrm{d}w\\
   &amp;=\Phi(-x)+\exp(-\lambda+\lambda^2/2)(1-\Phi(-x+\lambda))
 \end{align*}\]</span>
-を得る．
+を得る．</p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-81" class="exercise"><strong>Exercise 4.8  </strong></span>例4.6のマルコフ連鎖にたいし，<span class="math inline">\(\gamma&lt;1\)</span>のとき
+<p><span id="exr:unlabeled-div-73" class="exercise"><strong>Exercise 4.8  </strong></span>例4.6のマルコフ連鎖にたいし，<span class="math inline">\(\gamma&lt;1\)</span>のとき
 <span class="math display">\[
 \lim_{m\rightarrow\infty}\mathbb{E}[X_m|X_0=x]
 \]</span>
@@ -374,11 +359,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[
 \lim_{m\rightarrow\infty}\operatorname{Var}[X_m|X_0=x]
 \]</span>
-を求めよ．
+を求めよ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> <span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>より，とくに<span class="math inline">\(|\alpha|&lt;1\)</span>である．
+<p><span id="unlabeled-div-74" class="solution"><em>Solution</em>. </span><span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>より，とくに<span class="math inline">\(|\alpha|&lt;1\)</span>である．
 マルコフカーネルの定義から
 <span class="math display">\[
   \mathbb{E}[X_m]=\alpha\mathbb{E}[X_{m-1}]=\cdots=\alpha^m\mathbb{E}[X_0]
@@ -394,33 +378,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 &amp;=
   \sum_{i=0}^\infty\gamma^i\sigma^2=\frac{\sigma^2}{1-\gamma}
 \end{align*}\]</span>
-をえる．
+をえる．</p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-83" class="exercise"><strong>Exercise 4.9  </strong></span>例4.7の自己回帰過程において，<span class="math inline">\(\alpha=-1\)</span>のとき不変確率分布が存在しないことを示せ．
+<p><span id="exr:unlabeled-div-75" class="exercise"><strong>Exercise 4.9  </strong></span>例4.7の自己回帰過程において，<span class="math inline">\(\alpha=-1\)</span>のとき不変確率分布が存在しないことを示せ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> 例4.7の式(4.10)より，もし不変確率分布<span class="math inline">\(\Pi\)</span>が存在するなら，その特性関数を<span class="math inline">\(\psi(u)\)</span>と書くと
+<p><span id="unlabeled-div-76" class="solution"><em>Solution</em>. </span>例4.7の式(4.10)より，もし不変確率分布<span class="math inline">\(\Pi\)</span>が存在するなら，その特性関数を<span class="math inline">\(\psi(u)\)</span>と書くと
 <span class="math display">\[
 \psi(u)=\psi(-u)\exp(-u^2\sigma^2/2)=\psi(u)\exp(-u^2\sigma^2)
 \]</span>
 を得る．したがって<span class="math inline">\(u\)</span>が<span class="math inline">\(0\)</span>でないなら，
 <span class="math inline">\(\exp(-u^2\sigma^2)&lt;1\)</span>より，必然的に<span class="math inline">\(\psi(u)=0\)</span>でなければならない．すると特性関数の連続性から
-<span class="math inline">\(\psi(0)=0\)</span>の必要がある．いっぽう，これは特性関数のもう一つの性質である<span class="math inline">\(\psi(0)=1\)</span>に矛盾している．したがって不変分布は存在しない．
+<span class="math inline">\(\psi(0)=0\)</span>の必要がある．いっぽう，これは特性関数のもう一つの性質である<span class="math inline">\(\psi(0)=1\)</span>に矛盾している．したがって不変分布は存在しない．</p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-85" class="exercise"><strong>Exercise 4.10  </strong></span>実数<span class="math inline">\(\mu\)</span>に対し，
+<p><span id="exr:unlabeled-div-77" class="exercise"><strong>Exercise 4.10  </strong></span>実数<span class="math inline">\(\mu\)</span>に対し，
 <span class="math display">\[\begin{align*}
 \|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}
 \end{align*}\]</span>
-を求めよ．
+を求めよ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> 定義から
+<p><span id="unlabeled-div-78" class="solution"><em>Solution</em>. </span>定義から
 <span class="math display">\[\begin{align*}
 \|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}=\frac{1}{2}\int_{-\infty}^\infty|\phi(x)-\phi(x-\mu)|\mathrm{d}x
 \end{align*}\]</span>
@@ -442,19 +422,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \int_{\|x\|\le \|x-\mu\|}(\phi(x)-\phi(x-\mu))\mathrm{d}x&amp;=
   \int_{-\infty}^{\mu/2}(\phi(x)-\phi(x-\mu))\mathrm{d}x\\
 &amp;=\Phi(\mu/2)-\Phi(-\mu/2)). 
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-87" class="exercise"><strong>Exercise 4.11  </strong></span>実数<span class="math inline">\(\sigma^2&gt;1\)</span>に対し，
+<p><span id="exr:unlabeled-div-79" class="exercise"><strong>Exercise 4.11  </strong></span>実数<span class="math inline">\(\sigma^2&gt;1\)</span>に対し，
 <span class="math display">\[\begin{align*}
 \|\mathcal{N}(0,1)-\mathcal{N}(0,\sigma^2)\|_{\mathrm{TV}}
 \end{align*}\]</span>
-を求めよ．
+を求めよ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> 前の問題と同じように，定義から
+<p><span id="unlabeled-div-80" class="solution"><em>Solution</em>. </span>前の問題と同じように，定義から
 <span class="math display">\[\begin{align*}
 \|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}=\frac{1}{2}\int_{-\infty}^\infty|\phi(x)-\sigma^{-1}\phi(x/\sigma)|\mathrm{d}x
 \end{align*}\]</span>
@@ -472,19 +450,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   \int_{\|x\|\le \eta}\left(\phi(x)-\sigma^{-1}\phi(x/\sigma)\right)\mathrm{d}x\\
 &amp;=
   \Phi(\eta)-\Phi(-\eta)-\Phi(\eta/\sigma)+\Phi(\eta/\sigma). 
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-89" class="exercise"><strong>Exercise 4.12  </strong></span><span class="math inline">\(P, Q\)</span>が確率関数<span class="math inline">\(p(x), q(x)\)</span>を持つとき，
+<p><span id="exr:unlabeled-div-81" class="exercise"><strong>Exercise 4.12  </strong></span><span class="math inline">\(P, Q\)</span>が確率関数<span class="math inline">\(p(x), q(x)\)</span>を持つとき，
 <span class="math display">\[
 \sum_{x\in E}\min\{p(x), q(x)\}&gt;0
 \]</span>
-なら，<span class="math inline">\(P, Q\)</span>は互いに特異ではない．とくに，<span class="math inline">\(p(x)&gt;0, q(x)&gt;0\)</span>なる<span class="math inline">\(x\)</span>があれば<span class="math inline">\(P, Q\)</span>は互いに特異ではないことを示せ．
+なら，<span class="math inline">\(P, Q\)</span>は互いに特異ではない．とくに，<span class="math inline">\(p(x)&gt;0, q(x)&gt;0\)</span>なる<span class="math inline">\(x\)</span>があれば<span class="math inline">\(P, Q\)</span>は互いに特異ではないことを示せ．</p>
 </div>
-
 <div class="solution">
-\iffalse{} <span class="solution"><em>Solution. </em></span> 仮定は，ある<span class="math inline">\(x^*\)</span>があって，<span class="math inline">\(\min\{p(x^*),q(x^*)\}&gt;0\)</span>となるということである．いっぽう，もし<span class="math inline">\(P, Q\)</span>が特異なら，ある集合<span class="math inline">\(A\)</span>があって，
+<p><span id="unlabeled-div-82" class="solution"><em>Solution</em>. </span>仮定は，ある<span class="math inline">\(x^*\)</span>があって，<span class="math inline">\(\min\{p(x^*),q(x^*)\}&gt;0\)</span>となるということである．いっぽう，もし<span class="math inline">\(P, Q\)</span>が特異なら，ある集合<span class="math inline">\(A\)</span>があって，
 <span class="math inline">\(P(A)=Q(A^c)=0\)</span>となる．もし<span class="math inline">\(x^*\)</span>が<span class="math inline">\(A\)</span>に含まれるなら，
 <span class="math display">\[
  P(A)\ge p(x^*)&gt;0 
@@ -493,7 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[
  Q(A)\ge q(x^*)&gt;0 
 \]</span>
-となりやはり矛盾する．だから，<span class="math inline">\(P, Q\)</span>は互いに特異ではない．
+となりやはり矛盾する．だから，<span class="math inline">\(P, Q\)</span>は互いに特異ではない．</p>
 </div>
 </div>
             </section>
