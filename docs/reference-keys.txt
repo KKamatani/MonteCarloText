@@ -59,6 +59,7 @@ exr:unlabeled-div-117
 exr:unlabeled-div-119
 exr:unlabeled-div-121
 exr:unlabeled-div-124
+exr:unlabeled-div-126
 rstanについて
 tab-1
 tab-2
@@ -94,3 +95,4 @@ p77-図3.7のキャプション-20211125
 p100-定理4.2のあとの解説-20211125
 p-125-126-定理5.2のあとの解説-20211125
 p-159-6.3.2-について-20211125
+p-176-練習問題6.9-について-20211127

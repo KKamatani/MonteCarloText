@@ -184,6 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.6" data-path="tab-error.html"><a href="tab-error.html#p100-定理4.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.6</b> p100　定理4.2のあとの解説 (20211125)</a></li>
 <li class="chapter" data-level="7.2.7" data-path="tab-error.html"><a href="tab-error.html#p-125-126-定理5.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.7</b> p 125, 126 定理5.2のあとの解説 (20211125)</a></li>
 <li class="chapter" data-level="7.2.8" data-path="tab-error.html"><a href="tab-error.html#p-159-6.3.2-について-20211125"><i class="fa fa-check"></i><b>7.2.8</b> p 159 6.3.2 について (20211125)</a></li>
+<li class="chapter" data-level="7.2.9" data-path="tab-error.html"><a href="tab-error.html#p-176-練習問題6.9-について-20211127"><i class="fa fa-check"></i><b>7.2.9</b> p 176 練習問題6.9 について (20211127)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -364,13 +365,17 @@ H(x_h,w_h)-H(x_0, w_0)
 を<span class="math inline">\(H(x_0,w_0)\)</span>を用いて表せ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-122" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
-H(x_h, w_h)-H(x_0,w_0)&amp;=
-  (x_0+hW_0)^2+(w_0-hx_0)\\
-&amp;=(x_0^2+w_0^2)+h^2(x_0^2+w_0^2)\\
+<p><span id="unlabeled-div-122" class="solution"><em>Solution</em>. </span>（20211127解答修正）
+<span class="math display">\[\begin{align*}
+H(x_h, w_h)-&amp;=
+  \frac{(x_0+hw_0)^2+(w_0-hx_0)^2}{2}\\
+&amp;=\frac{(x_0^2+w_0^2)+h^2(x_0^2+w_0^2)}{2}\\
 &amp;=(1+h^2)H(x_0, w_0)
 \end{align*}\]</span>
-とあらわせる．</p>
+とあらわせる．したがって，
+<span class="math display">\[
+H(x_h,w_h)-H(x_0, w_0)=h^2H(x_0,w_0). 
+\]</span></p>
 </div>
 <div class="remark">
 <p><span id="unlabeled-div-123" class="remark"><em>Remark</em>. </span>上の結果から，オイラー法を繰り返すと，<span class="math inline">\(k=1,2,\ldots\)</span>にたいし
@@ -383,15 +388,31 @@ H(x_{kh},w_{kh})=(1+h^2)^kH(x_0, w_0)
 <p><span id="exr:unlabeled-div-124" class="exercise"><strong>Exercise 6.8  </strong></span>同様に修正されたオイラー法では，
 ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
 <span class="math display">\[
-H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)
+H(x_h,w_h)-H(x_0, w_0)=\frac{h^2(-x_0^2+w_h^2)}{2}
 \]</span>
 を示せ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-125" class="solution"><em>Solution</em>. </span>略</p>
+<p><span id="unlabeled-div-125" class="solution"><em>Solution</em>. </span>（20211127解答追加）
+修正されたオイラー法では
+<span class="math display">\[\begin{align*}
+\begin{pmatrix}
+x_h\\w_h
+\end{pmatrix}
+=
+\begin{pmatrix}
+w_0-hx_0\\x_0+h(w_0-hx_0)
+\end{pmatrix}
+\end{align*}\]</span>
+なる遷移を行う．したがって
+<span class="math display">\[\begin{align*}
+H(x_h, w_h)-H(x_0, w_0)&amp;=\frac{(w_0-hx_0)^2+(x_0+hw_h)^2}{2}-\frac{x_0^2+w_0^2}{2}\\
+&amp;=\frac{h^2x_0^2-2hx_0(w_0-w_h)+h^2w_h^2}{2}\\
+&amp;=\frac{-h^2x_0^2+h^2w_0}{2}. 
+\end{align*}\]</span></p>
 </div>
-<div class="solution">
-<p><span id="unlabeled-div-126" class="solution"><em>Solution</em>. </span>同様に馬跳び法の場合，ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
+<div class="exercise">
+<p><span id="exr:unlabeled-div-126" class="exercise"><strong>Exercise 6.9  </strong></span>同様に馬跳び法の場合，ハミルトニアンが<span class="math inline">\(H(x,w)=(x^2+w^2)/2\)</span>であるとき，
 <span class="math display">\[
 \begin{pmatrix}
     x_h\\
@@ -405,7 +426,8 @@ H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)
 となる行列<span class="math inline">\(A_h\)</span>を求めよ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-127" class="solution"><em>Solution</em>. </span>３つのステップを行列で表すと，それぞれ
+<p><span id="unlabeled-div-127" class="solution"><em>Solution</em>. </span>（20211127解答修正）
+３つのステップを行列で表すと，それぞれ
 <span class="math display">\[\begin{align*}
 \begin{pmatrix}
 1&amp;h/2
@@ -413,7 +435,7 @@ H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)
 0&amp;1
 \end{pmatrix}, 
 \begin{pmatrix}
-0&amp;1
+1&amp;0
 \\
 -h&amp;1
 \end{pmatrix},
@@ -442,7 +464,7 @@ H(x_h,w_h)-H(x_0, w_0)=h^2(-x_0^2+w_h^2)
 \end{pmatrix}
 =
 \begin{pmatrix}
-1-h^2/2&amp;h+h^3/2
+1-h^2/2&amp;h-h^3/4
 \\
 -h&amp;1-h^2/2
 \end{pmatrix}. 

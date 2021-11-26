@@ -184,6 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.6" data-path="tab-error.html"><a href="tab-error.html#p100-定理4.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.6</b> p100　定理4.2のあとの解説 (20211125)</a></li>
 <li class="chapter" data-level="7.2.7" data-path="tab-error.html"><a href="tab-error.html#p-125-126-定理5.2のあとの解説-20211125"><i class="fa fa-check"></i><b>7.2.7</b> p 125, 126 定理5.2のあとの解説 (20211125)</a></li>
 <li class="chapter" data-level="7.2.8" data-path="tab-error.html"><a href="tab-error.html#p-159-6.3.2-について-20211125"><i class="fa fa-check"></i><b>7.2.8</b> p 159 6.3.2 について (20211125)</a></li>
+<li class="chapter" data-level="7.2.9" data-path="tab-error.html"><a href="tab-error.html#p-176-練習問題6.9-について-20211127"><i class="fa fa-check"></i><b>7.2.9</b> p 176 練習問題6.9 について (20211127)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -327,7 +328,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 を求めよ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-74" class="solution"><em>Solution</em>. </span><span class="math inline">\(X_m=x\)</span>のもと，<span class="math inline">\(X_{m+1}=\max\{0, x+W_{m+1}\}\)</span>で<span class="math inline">\(W_{m+1}\)</span>は標準正規分布に従う．
+<p><span id="unlabeled-div-74" class="solution"><em>Solution</em>. </span>（20211127解答修正）
+<span class="math inline">\(X_m=x\)</span>のもと，<span class="math inline">\(X_{m+1}=\max\{0, x+W_{m+1}\}\)</span>で<span class="math inline">\(W_{m+1}\)</span>は標準正規分布に従う．
 <span class="math display">\[\begin{align*}
 \exp(-\lambda X_{m+1})=
 \begin{cases}
@@ -339,14 +341,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[\begin{align*}
 \mathbb{E}[\exp(-\lambda X_{m+1})\mid X_m=x]&amp;=
   \mathbb{P}(W_{m+1}\le -x)+\int_{-x}^\infty\exp(-\lambda(x+w))\frac{1}{\sqrt{2\pi}}\exp(-w^2/2)\mathrm{d}w\\
-  &amp;=\Phi(-x)+\exp(-\lambda+\lambda^2/2)\int_{-x}^\infty\frac{1}{\sqrt{2\pi}}\exp(-(w+\lambda)^2/2)\mathrm{d}w
+  &amp;=\Phi(-x)+\exp(-\lambda~x+\lambda^2/2)\int_{-x}^\infty\frac{1}{\sqrt{2\pi}}\exp(-(w+\lambda)^2/2)\mathrm{d}w
 \end{align*}\]</span>
 となる．ただし，<span class="math inline">\(\Phi(x)=1-\Phi(-x)\)</span>は標準正規分布の累積分布関数である．よって
 <span class="math inline">\(u=w+\lambda\)</span>と変数変換すれば
 <span class="math display">\[\begin{align*}
 \mathbb{E}[\exp(-\lambda X_{m+1})\mid X_m=x]
-  &amp;=\Phi(-x)+\exp(-\lambda+\lambda^2/2)\int_{-x+\lambda}^\infty\frac{1}{\sqrt{2\pi}}\exp(-w^2/2)\mathrm{d}w\\
-  &amp;=\Phi(-x)+\exp(-\lambda+\lambda^2/2)(1-\Phi(-x+\lambda))
+  &amp;=\Phi(-x)+\exp(-\lambda~x+\lambda^2/2)\int_{-x+\lambda}^\infty\frac{1}{\sqrt{2\pi}}\exp(-w^2/2)\mathrm{d}w\\
+  &amp;=\Phi(-x)+\exp(-\lambda~x+\lambda^2/2)(1-\Phi(-x+\lambda))
 \end{align*}\]</span>
 を得る．</p>
 </div>
@@ -362,7 +364,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 を求めよ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-76" class="solution"><em>Solution</em>. </span><span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>より，とくに<span class="math inline">\(|\alpha|&lt;1\)</span>である．
+<p><span id="unlabeled-div-76" class="solution"><em>Solution</em>. </span>（20211127解答修正）
+<span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>より，とくに<span class="math inline">\(|\alpha|&lt;1\)</span>である．
 マルコフカーネルの定義から
 <span class="math display">\[
   \mathbb{E}[X_m]=\alpha\mathbb{E}[X_{m-1}]=\cdots=\alpha^m\mathbb{E}[X_0]
@@ -373,12 +376,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{align*}\]</span>
 を得る．一方，例4.6の途中の式から，
 <span class="math display">\[\begin{align*}
-\lim_{m\rightarrow\infty}\mathbb{E}[X_m^2]&amp;=
-  \lim_{m\rightarrow\infty}\left\{\sum_{i=0}^{m-1}\gamma^i\sigma^2+\gamma^m\mathbb{E}[X_0^2\mid X_0=x]\right\}\\
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m^2+\delta X_m\mid X_0=x]
 &amp;=
   \sum_{i=0}^\infty\gamma^i\sigma^2=\frac{\sigma^2}{1-\gamma}
 \end{align*}\]</span>
-をえる．</p>
+をえる．したがって，
+<span class="math display">\[\begin{align*}
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m^2\mid X_0=x]&amp;=
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m^2+\delta X_m\mid X_0=x]-\delta \lim_{m\rightarrow\infty}\mathbb{E}[ X_m\mid X_0=x]\\
+&amp;=\frac{\sigma^2}{1-\gamma}. 
+\end{align*}\]</span>
+よって，分散は
+<span class="math display">\[\begin{align*}
+\lim_{m\rightarrow\infty}\mathbb{V}[X_m\mid X_0=x]&amp;=
+\lim_{m\rightarrow\infty}\mathbb{E}[X_m^2\mid X_0=x]- \lim_{m\rightarrow\infty}\mathbb{E}[ X_m\mid X_0=x]^2\\
+&amp;=\frac{\sigma^2}{1-\gamma}. 
+\end{align*}\]</span></p>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-77" class="exercise"><strong>Exercise 4.9  </strong></span>例4.7の自己回帰過程において，<span class="math inline">\(\alpha=-1\)</span>のとき不変確率分布が存在しないことを示せ．</p>
@@ -400,7 +413,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 を求めよ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-80" class="solution"><em>Solution</em>. </span>定義から
+<p><span id="unlabeled-div-80" class="solution"><em>Solution</em>. </span>（20211127解答修正）
+定義から
 <span class="math display">\[\begin{align*}
 \|\mathcal{N}(0,1)-\mathcal{N}(\mu,1)\|_{\mathrm{TV}}=\frac{1}{2}\int_{-\infty}^\infty|\phi(x)-\phi(x-\mu)|\mathrm{d}x
 \end{align*}\]</span>
@@ -417,12 +431,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 +
   \frac{1}{2}\int_{\|x\|&gt; \|x-\mu\|}(\phi(x-\mu)-\phi(x))\mathrm{d}x
 \end{align*}\]</span>
-となる．この２つの積分を計算して足し合わせればよいが，じつはこの２つの積分は同じ値になる．なぜなら，これらが図4.7の青い領域，緑の領域それぞれを表すからだ．だから，２つの積分のうち，片方を求めて二倍すればよい．したがって求める値は
+となる．この２つの積分を計算して足し合わせればよいが，じつはこの２つの積分は同じ値になる．なぜなら，これらが図4.7の青い領域，緑の領域それぞれを表すからだ．だから，２つの積分のうち，片方を求めて二倍すればよい．したがって求める値は<span class="math inline">\(\mu\ge 0\)</span>のとき
 <span class="math display">\[\begin{align*}
 \int_{\|x\|\le \|x-\mu\|}(\phi(x)-\phi(x-\mu))\mathrm{d}x&amp;=
   \int_{-\infty}^{\mu/2}(\phi(x)-\phi(x-\mu))\mathrm{d}x\\
-&amp;=\Phi(\mu/2)-\Phi(-\mu/2)). 
-\end{align*}\]</span></p>
+&amp;=\Phi(\mu/2)-\Phi(-\mu/2). 
+\end{align*}\]</span>
+同様の計算を<span class="math inline">\(\mu&lt;0\)</span>の場合に施すことにより，結局一般の<span class="math inline">\(\mu\)</span>について，求める値は
+<span class="math display">\[
+|\Phi(\mu/2)-\Phi(-\mu/2)|=1-2\Phi(-|\mu|/2). 
+\]</span></p>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-81" class="exercise"><strong>Exercise 4.11  </strong></span>実数<span class="math inline">\(\sigma^2&gt;1\)</span>に対し，
