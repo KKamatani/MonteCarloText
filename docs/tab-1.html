@@ -209,7 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 1</span> 序論</h1>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-1" class="exercise"><strong>Exercise 1.1  </strong></span><span class="math inline">\(\mathbb{P}(A)&gt;0, \mathbb{P}(B)&gt;0\)</span>とする．
-<span class="math display">\[\mathbb{P}(A|B)=\mathbb{P}(B|A)\]</span>
+<span class="math display">\[\mathbb{P}(A\mid B)=\mathbb{P}(B\mid A)\]</span>
 が成り立つのために，<span class="math inline">\(\mathbb{P}(A), \mathbb{P}(B)\)</span>および<span class="math inline">\(\mathbb{P}(A\cap B)\)</span>が満たすべき条件を求めよ．</p>
 </div>
 <div class="solution">
@@ -219,15 +219,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math inline">\(\mathbb{P}(A\cap B)&gt;0\)</span>かつ<span class="math inline">\(\mathbb{P}(A)=\mathbb{P}(B)\)</span>のとき．もうひとつは<span class="math inline">\(\mathbb{P}(A\cap B)=0\)</span>となるときである．</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 1.2  </strong></span>事象<span class="math inline">\(A, B\)</span>は独立であり，<span class="math inline">\(\mathbb{P}(B)&gt;0\)</span>とする．また，<span class="math inline">\(\mathbb{P}(B|A\cup B)=2/3, \mathbb{P}(A|B)=1/2\)</span>とする．このとき<span class="math inline">\(\mathbb{P}(B)\)</span>を求めよ．</p>
+<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 1.2  </strong></span>事象<span class="math inline">\(A, B\)</span>は独立であり，<span class="math inline">\(\mathbb{P}(B)&gt;0\)</span>とする．また，<span class="math inline">\(\mathbb{P}(B\mid A\cup B)=2/3, \mathbb{P}(A\mid B)=1/2\)</span>とする．このとき<span class="math inline">\(\mathbb{P}(B)\)</span>を求めよ．</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-4" class="solution"><em>Solution</em>. </span><span class="math inline">\(A\)</span>と<span class="math inline">\(B\)</span>が独立だから，
-<span class="math display">\[\mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}=\frac{\mathbb{P}(A)\mathbb{P}(B)}{\mathbb{P}(B)}=\mathbb{P}(A)\]</span>
+<span class="math display">\[\mathbb{P}(A\mid B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}=\frac{\mathbb{P}(A)\mathbb{P}(B)}{\mathbb{P}(B)}=\mathbb{P}(A)\]</span>
 となる．したがって<span class="math inline">\(\mathbb{P}(A)=\mathbb{P}(A^c)=1/2\)</span>である．いっぽう，
 <span class="math display">\[\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(A^c\cap B)=\mathbb{P}(A)+\mathbb{P}(A^c)\mathbb{P}(B)=\frac{1}{2}(1+\mathbb{P}(B))\]</span>
 である．よって
-<span class="math display">\[\mathbb{P}(B|A\cup B)=\frac{\mathbb{P}(B)}{\mathbb{P}(A\cap B)}=\frac{\mathbb{P}(B)}{(1+\mathbb{P}(B))/2}=\frac{2}{3}\]</span>
+<span class="math display">\[\mathbb{P}(B\mid A\cup B)=\frac{\mathbb{P}(B)}{\mathbb{P}(A\cap B)}=\frac{\mathbb{P}(B)}{(1+\mathbb{P}(B))/2}=\frac{2}{3}\]</span>
 となり，かんたんな計算から<span class="math inline">\(\mathbb{P}(B)=1/2\)</span>を得る．</p>
 </div>
 <div class="exercise">
@@ -236,12 +236,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="solution">
 <p><span id="unlabeled-div-6" class="solution"><em>Solution</em>. </span>（20200312解答修正）
 大学の構成員を勝手に一人選んだとき，それが学生である事象を<span class="math inline">\(A\)</span>，スニーカーを履いている事象を<span class="math inline">\(B\)</span>とする．すると
-<span class="math display">\[\mathbb{P}(A)=0.6, \mathbb{P}(B|A)=0.6, \mathbb{P}(B|A^c)=0.2\]</span>
-である．また，求める確率は<span class="math inline">\(\mathbb{P}(A|B)\)</span>である．条件付き確率の定義から
+<span class="math display">\[\mathbb{P}(A)=0.6, \mathbb{P}(B\mid A)=0.6, \mathbb{P}(B\mid A^c)=0.2\]</span>
+である．また，求める確率は<span class="math inline">\(\mathbb{P}(A\mid B)\)</span>である．条件付き確率の定義から
 <span class="math display">\[\begin{align*}
-    \mathbb{P}(A|B)&amp;=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}\\
+    \mathbb{P}(A\mid B)&amp;=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}\\
 &amp;=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A\cap B)+\mathbb{P}(A^c\cap B)}\\
-&amp;=\frac{\mathbb{P}(B|A)\mathbb{P}(A)}{\mathbb{P}(B|A)\mathbb{P}(A)+\mathbb{P}(B|A^c)\mathbb{P}(A^c)}\\
+&amp;=\frac{\mathbb{P}(B\mid A)\mathbb{P}(A)}{\mathbb{P}(B\mid A)\mathbb{P}(A)+\mathbb{P}(B\mid A^c)\mathbb{P}(A^c)}\\
     &amp;=\frac{0.6\times 0.6}{0.6\times 0.6+0.2\times 0.4}=\frac{9}{11}. 
 \end{align*}\]</span></p>
 </div>
@@ -251,12 +251,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="solution">
 <p><span id="unlabeled-div-8" class="solution"><em>Solution</em>. </span>観測をまとめて<span class="math inline">\(x^N\)</span>と書くと，尤度は
 <span class="math display">\[\begin{align*}
-    p(x^N|\theta)&amp;=\prod_{n=1}^N\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x_n-\theta)^2}{2\sigma^2}\right)\\
+    p(x^N\mid \theta)&amp;=\prod_{n=1}^N\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x_n-\theta)^2}{2\sigma^2}\right)\\
     &amp;\propto \exp\left(-\frac{1}{2\sigma^2}\sum_{n=1}^N(x_n-\theta)^2\right)
 \end{align*}\]</span>
 となる．従って，事後確率密度関数は
 <span class="math display">\[\begin{align*}
-    p(\theta|x^N)&amp;\propto p(x^N|\theta)p(\theta)\\
+    p(\theta\mid x^N)&amp;\propto p(x^N\mid \theta)p(\theta)\\
     &amp;\propto
     \exp\left(-\frac{1}{2\sigma^2}\sum_{n=1}^N(x_n-\theta)^2-\frac{\theta^2}{2\sigma^2}\right)
 \end{align*}\]</span>
@@ -331,12 +331,12 @@ model {
 <div class="solution">
 <p><span id="unlabeled-div-13" class="solution"><em>Solution</em>. </span>尤度は
 <span class="math display">\[\begin{align*}
-    p(x^N|\tau)&amp;=\prod_{n=1}^N\sqrt{\frac{\tau}{2\pi}}\exp\left(-\frac{(x_n-\mu)^2}{2}\tau\right)\\
+    p(x^N\mid \tau)&amp;=\prod_{n=1}^N\sqrt{\frac{\tau}{2\pi}}\exp\left(-\frac{(x_n-\mu)^2}{2}\tau\right)\\
     &amp;\propto \tau^{N/2}\exp\left(-\sum_{n=1}^N\frac{(x_n-\mu)^2}{2}\tau\right)
 \end{align*}\]</span>
 となる．よって事後密度関数は
 <span class="math display">\[\begin{align*}
-    p(\tau|x^N)\propto \tau^{\alpha+N/2-1}\exp\left(-\left\{\beta+\sum_{n=1}^N\frac{(x_n-\mu)^2}{2}\right\}\tau\right)
+    p(\tau\mid x^N)\propto \tau^{\alpha+N/2-1}\exp\left(-\left\{\beta+\sum_{n=1}^N\frac{(x_n-\mu)^2}{2}\right\}\tau\right)
 \end{align*}\]</span>
 となる．よって事後密度関数の形から，事後分布は
 <span class="math display">\[\mathcal{G}\left(\alpha+\frac{N}{2}, \beta+\sum_{n=1}^N\frac{(x_n-\mu)^2}{2}\right). \]</span></p>
@@ -518,7 +518,7 @@ model {
 <p><span id="unlabeled-div-16" class="solution"><em>Solution</em>. </span>(a).
 事後密度関数は
 <span class="math display">\[\begin{align*}
-p(\theta|x)&amp;\propto  \theta e^{-\theta x} \theta^{\alpha-1}e^{-\beta\theta}\\
+p(\theta\mid x)&amp;\propto  \theta e^{-\theta x} \theta^{\alpha-1}e^{-\beta\theta}\\
 &amp;\propto \theta^\alpha e^{-(x+\beta)\theta}
 \end{align*}\]</span>
 となる．従って，事後密度関数の形から，事後分布は
@@ -528,7 +528,7 @@ p(\theta|x)&amp;\propto  \theta e^{-\theta x} \theta^{\alpha-1}e^{-\beta\theta}\
 <span class="math display">\[\frac{\alpha+1}{x+\beta}.\]</span></p>
 <p>(c). 正の実数<span class="math inline">\(x^*\)</span>を将来の観測とすると，事後予測分布の確率密度関数は
 <span class="math display">\[\begin{align*}
-p(x^*|x)&amp;=\int_0^\infty\theta e^{-\theta x^*}\frac{(x+\beta)^{\alpha+1}\theta^\alpha}{\Gamma(\alpha+1)} e^{-(x+\beta)\theta}\mathrm{d}\theta\\
+p(x^*\mid x)&amp;=\int_0^\infty\theta e^{-\theta x^*}\frac{(x+\beta)^{\alpha+1}\theta^\alpha}{\Gamma(\alpha+1)} e^{-(x+\beta)\theta}\mathrm{d}\theta\\
 &amp;=\int_0^\infty\frac{(x+\beta)^{\alpha+1}\theta^{\alpha+1}}{\Gamma(\alpha+1)} e^{-(x+x^*\beta)\theta}\mathrm{d}\theta\\
 &amp;=\frac{\Gamma(\alpha+2)}{(x+x^*+\beta)^{\alpha+2}}\frac{(x+\beta)^{\alpha+1}}{\Gamma(\alpha+1)}\\
 &amp;=\frac{(\alpha+1)(x+\beta)^{\alpha+1}}{(x+x^*+\beta)^{\alpha+2}}. 
@@ -542,21 +542,21 @@ p(x^*|x)&amp;=\int_0^\infty\theta e^{-\theta x^*}\frac{(x+\beta)^{\alpha+1}\thet
 <div class="solution">
 <p><span id="unlabeled-div-18" class="solution"><em>Solution</em>. </span>（20200312解答修正）
 (a). 尤度は
-<span class="math display">\[p(x|\theta_1,\theta_2)=\sqrt{\frac{\theta_2}{2\pi}}\exp\left(-\frac{(x-\theta_1)^2}{2}\theta_2\right)\]</span>
+<span class="math display">\[p(x\mid \theta_1,\theta_2)=\sqrt{\frac{\theta_2}{2\pi}}\exp\left(-\frac{(x-\theta_1)^2}{2}\theta_2\right)\]</span>
 と書ける．したがって事後分布の確率密度関数は
 <span class="math display">\[\begin{align*}
-p(\theta_1,\theta_2|x)
-&amp;\propto p(x|\theta_1,\theta_2)p(\theta_1|\theta_2)p(\theta_2)\\
+p(\theta_1,\theta_2\mid x)
+&amp;\propto p(x\mid \theta_1,\theta_2)p(\theta_1\mid \theta_2)p(\theta_2)\\
 &amp;= \sqrt{\frac{\theta_2}{2\pi}}\exp\left(-\frac{(x-\theta_1)^2}{2}\theta_2\right)\sqrt{\frac{\theta_2}{2\pi}}\exp\left(-\frac{\theta_1^2}{2}\theta_2\right)\exp(-\theta_2)\\
 &amp;\propto \theta_2\exp\left(-\left(\frac{(x-\theta_1)^2}{2}+\frac{\theta_1^2}{2}+1\right)\theta_2\right)
 \end{align*}\]</span>
-となる．すると<span class="math inline">\(p(\theta_2|x, \theta_1,)\propto p(\theta_1,\theta_2|x)\)</span>だから<span class="math inline">\(\theta_1\)</span>と<span class="math inline">\(x\)</span>で条件づけた<span class="math inline">\(\theta_2\)</span>の条件つき分布は
+となる．すると<span class="math inline">\(p(\theta_2\mid x, \theta_1,)\propto p(\theta_1,\theta_2\mid x)\)</span>だから<span class="math inline">\(\theta_1\)</span>と<span class="math inline">\(x\)</span>で条件づけた<span class="math inline">\(\theta_2\)</span>の条件つき分布は
 ガンマ分布とパラメータを見比べると，
 <span class="math display">\[\mathcal{G}_a\left(2,\frac{(x-\theta_1)^2}{2}+\frac{\theta_1^2}{2}+1\right)\]</span>
 であることがわかる．</p>
 <p>(b). ガンマ関数と見比べることで，
 <span class="math display">\[\begin{align*}
-p(\theta_1|x)&amp;=\int_0^\infty p(\theta_1,\theta_2|x)\mathrm{d}\theta_2\\
+p(\theta_1\mid x)&amp;=\int_0^\infty p(\theta_1,\theta_2\mid x)\mathrm{d}\theta_2\\
 &amp;=\left(\frac{(x-\theta_1)^2}{2}+\frac{\theta_1^2}{2}+1\right)^{-2}\int_0^\infty \left(\frac{(x-\theta_1)^2}{2}+\frac{\theta_1^2}{2}+1\right)^2\\
 &amp;\quad\theta_2\exp\left(-\left(\frac{(x-\theta_1)^2}{2}+\frac{\theta_1^2}{2}+1\right)\theta_2\right)\mathrm{d}\theta_2\\
 &amp;=\left(\frac{(x-\theta_1)^2}{2}+\frac{\theta_1^2}{2}+1\right)^{-2}\Gamma(2)
@@ -569,9 +569,9 @@ p(\theta_1|x)&amp;=\int_0^\infty p(\theta_1,\theta_2|x)\mathrm{d}\theta_2\\
 </div>
 <div class="remark">
 <p><span id="unlabeled-div-19" class="remark"><em>Remark</em>. </span>ここでは
-<span class="math display">\[p(\theta_2|x,\theta_1)\propto p(\theta_1,\theta_2|x) \]</span>
+<span class="math display">\[p(\theta_2\mid x,\theta_1)\propto p(\theta_1,\theta_2\mid x) \]</span>
 を用いた．なぜなら，
-<span class="math display">\[p(\theta_2|x,\theta_1)= \frac{p(\theta_1,\theta_2|x)}{p(\theta_1|x)}\]</span>
+<span class="math display">\[p(\theta_2\mid x,\theta_1)= \frac{p(\theta_1,\theta_2\mid x)}{p(\theta_1\mid x)}\]</span>
 であり，<span class="math inline">\(\theta_1\)</span>と<span class="math inline">\(x\)</span>で条件つけた分布を計算する際には左辺の分母を定数と見て良いからだ．この考え方は，あとでギブスサンプリングを構成する際に重要である．</p>
 </div>
 <p>これも<code>rstan</code>を使って確認しよう．今までとは違う方法で<code>rstan</code>を走らせてみよう．
@@ -642,15 +642,15 @@ p(\theta_1|x)&amp;=\int_0^\infty p(\theta_1,\theta_2|x)\mathrm{d}\theta_2\\
 をもつ．ただし，<span class="math inline">\(x=(x_1,\ldots, x_{K-1})\)</span>は正の整数で
 <span class="math display">\[x_K=x_K(x)=N-x_1-\cdots-x_{K-1}\]</span>
 とする．
-<span class="math inline">\(x|\theta\sim \mathcal{M}(N,\theta)\)</span>, <span class="math inline">\(\theta\sim \mathcal{D}(\alpha_1,\ldots,\alpha_K)\)</span>であるとき，<span class="math inline">\(\theta\)</span>の事後分布をもとめよ．</p>
+<span class="math inline">\(x\mid \theta\sim \mathcal{M}(N,\theta)\)</span>, <span class="math inline">\(\theta\sim \mathcal{D}(\alpha_1,\ldots,\alpha_K)\)</span>であるとき，<span class="math inline">\(\theta\)</span>の事後分布をもとめよ．</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-21" class="solution"><em>Solution</em>. </span>尤度が
-<span class="math display">\[p(x|\theta)\propto \theta_1^{x_1}\cdots \theta_K^{x_K}\]</span>
+<span class="math display">\[p(x\mid \theta)\propto \theta_1^{x_1}\cdots \theta_K^{x_K}\]</span>
 と書けるから事後分布の確率密度関数は
 <span class="math display">\[\begin{align*}
-p(\theta|x)&amp;\propto
-p(x|\theta)p(\theta)\\
+p(\theta\mid x)&amp;\propto
+p(x\mid \theta)p(\theta)\\
 &amp;\propto \theta_1^{x_1}\cdots \theta_K^{x_K}~\theta_1^{\alpha_1-1}\cdots\theta_K^{\alpha_K-1}\\
 &amp;= \theta_1^{\alpha_1+x_1-1}\cdots \theta_K^{\alpha_K+x_K-1}
 \end{align*}\]</span>
@@ -708,8 +708,8 @@ p(x|\theta)p(\theta)\\
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-26" class="exercise"><strong>Exercise 1.11  </strong></span><span class="math inline">\(N\)</span>は正の整数，<span class="math inline">\(\lambda_1,\lambda_2\)</span>は正の実数とする．
-<span class="math inline">\(x_1^1,\ldots, x_N^1|\lambda_1\sim\mathcal{P}(\lambda_1)\)</span>，
-<span class="math inline">\(x_1^2,\ldots, x_N^2|\lambda_2\sim\mathcal{P}(\lambda_2)\)</span>であり
+<span class="math inline">\(x_1^1,\ldots, x_N^1\mid \lambda_1\sim\mathcal{P}(\lambda_1)\)</span>，
+<span class="math inline">\(x_1^2,\ldots, x_N^2\mid \lambda_2\sim\mathcal{P}(\lambda_2)\)</span>であり
 すべて独立とする．二つのモデル
 <span class="math display">\[\mathcal{M}_1:\lambda_1,\lambda_2\sim \mathcal{E}(1), \mathcal{M}_0:\lambda_1=\lambda_2\sim\mathcal{E}(1)\]</span>
 を考える．二つのモデルへの事前確率は<span class="math inline">\(0.5\)</span>ずつとする．</p>
@@ -726,17 +726,17 @@ p(x|\theta)p(\theta)\\
 とし，全体の積を
 <span class="math display">\[T=T_1+T_2\]</span>
 としよう．すると，モデル<span class="math inline">\(\mathcal{M}_1\)</span>のもとの周辺事後確率密度関数は
-<span class="math display">\[p(x^N|1)=\int_0^\infty p(x_1^N|\lambda_1)p(\lambda_1)\mathrm{d}\lambda_1\times \int_0^\infty p(x_2^N|\lambda_2)p(\lambda_2)\mathrm{d}\lambda_2\]</span>
+<span class="math display">\[p(x^N\mid 1)=\int_0^\infty p(x_1^N\mid \lambda_1)p(\lambda_1)\mathrm{d}\lambda_1\times \int_0^\infty p(x_2^N\mid \lambda_2)p(\lambda_2)\mathrm{d}\lambda_2\]</span>
 となる．うえの２つの積分の積のうち，最初の一つは
 <span class="math display">\[\int_0^\infty\frac{\lambda_1^{S_1}}{T_1}e^{-N\lambda_1}~e^{-\lambda_1}\mathrm{d}\lambda_1=\frac{\Gamma(1+S_1)}{T_1(N+1)^{1+S_1}}\]</span>
 と計算できる．２つ目の積についても同じ計算をすれば
 <span class="math display">\[\int_0^\infty\frac{\lambda_2^{S_2}}{T_2}e^{-N\lambda_2}~e^{-\lambda_2}\mathrm{d}\lambda_2=\frac{\Gamma(1+S_2)}{T_2(N+1)^{1+S_2}}\]</span>
 となることがわかる．よってモデル<span class="math inline">\(\mathcal{M}_1\)</span>のもとの周辺事後確率密度関数は
-<span class="math display">\[p(x^N|1)=\frac{\Gamma(1+S_1)\Gamma(1+S_2)}{T(N+1)^{2+S}}\]</span>
+<span class="math display">\[p(x^N\mid 1)=\frac{\Gamma(1+S_1)\Gamma(1+S_2)}{T(N+1)^{2+S}}\]</span>
 となる．まったく同じ計算で，モデル<span class="math inline">\(\mathcal{M}_0\)</span>の場合は
-<span class="math display">\[p(x^N|0)=\int_0^\infty\frac{\lambda_1^{S}}{T}e^{-2N\lambda}~e^{-\lambda}\mathrm{d}\lambda=\frac{\Gamma(1+S)}{T(2N+1)^{1+S}}\]</span>
+<span class="math display">\[p(x^N\mid 0)=\int_0^\infty\frac{\lambda_1^{S}}{T}e^{-2N\lambda}~e^{-\lambda}\mathrm{d}\lambda=\frac{\Gamma(1+S)}{T(2N+1)^{1+S}}\]</span>
 を得る．したがって
-<span class="math display">\[\frac{p(x^N|0)}{p(x^N|1)}=\frac{(N+1)^{2+S}}{(2N+1)^{1+S}}\binom{S}{S_1}\]</span>
+<span class="math display">\[\frac{p(x^N\mid 0)}{p(x^N\mid 1)}=\frac{(N+1)^{2+S}}{(2N+1)^{1+S}}\binom{S}{S_1}\]</span>
 となる．よって</p>
 <p>(a). 事後確率は
 <span class="math display">\[\frac{(N+1)^{2+S}}{(2N+1)^{1+S}}\binom{S}{S_1}\left(1+\frac{(N+1)^{2+S}}{(2N+1)^{1+S}}\binom{S}{S_1}\right)^{-1}\]</span>.</p>

@@ -269,15 +269,15 @@ P(x,\cdot)=\mathcal{N}(\alpha x, (1+\beta x)^2\sigma^2)
 で定まる．定義式は自己回帰過程と少し違うだけだが，振る舞いはかなり違う．たとえば<span class="math inline">\(P(x,\cdot)\)</span>は正規分布だが，<span class="math inline">\(\beta\neq 0, x\neq 0\)</span>なら<span class="math inline">\(P^2(x,\cdot)\)</span>はもはや正規分布ではない．</p>
 <p>自己回帰過程のように，長期的な振る舞いを検討してみよう．まず，<span class="math inline">\(X_0=x\)</span>であるとき
 <span class="math display">\[\begin{equation}\label{eq:nonlinear_moment}
-\mathbb{E}[X_1|X_0=x]=\alpha x,\ \mathbb{E}[X_1^2|X_0=x]=\alpha^2x^2+(1+\beta x)^2\sigma^2
+\mathbb{E}[X_1\mid X_0=x]=\alpha x,\ \mathbb{E}[X_1^2\mid X_0=x]=\alpha^2x^2+(1+\beta x)^2\sigma^2
 \end{equation}\]</span>
 となる．したがって，うまく計算すれば，
 <span class="math display">\[\begin{align*}
-\mathbb{E}[X_1^2+\delta X_1|X_0=x]=\sigma^2 +\gamma(x^2+\delta x)
+\mathbb{E}[X_1^2+\delta X_1\mid X_0=x]=\sigma^2 +\gamma(x^2+\delta x)
 \end{align*}\]</span>
 となるのがわかるはずだ．ただし，<span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2\)</span>および<span class="math inline">\(\delta=2\beta\sigma^2/(\gamma-\alpha)\)</span>である．この関係式を再帰的に使えば
 <span class="math display">\[\begin{align*}
-\mathbb{E}[X_m^2+\delta X_m|X_0=x]&amp;=\sigma^2+\gamma~\mathbb{E}[X_{m-1}^2+\delta X_{m-1}|X_0=x]\\
+\mathbb{E}[X_m^2+\delta X_m\mid X_0=x]&amp;=\sigma^2+\gamma~\mathbb{E}[X_{m-1}^2+\delta X_{m-1}\mid X_0=x]\\
 &amp;=\cdots= \sum_{i=0}^{m-1} \gamma^i\sigma^2+\gamma^m~(x^2+\delta x)
 \end{align*}\]</span>
 である．だから，<span class="math inline">\(X_m^2+\delta X_m\)</span>の期待値が発散しないためには<span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>が必要十分だ．なお，<span class="math inline">\(X_m^2+\delta X_m\)</span>の期待値が発散しないこととと<span class="math inline">\(X_m^2\)</span>の期待値が発散しないことは同じことである．自己回帰過程の場合は，<span class="math inline">\(X_m^2\)</span>の期待値が発散しないための条件は<span class="math inline">\(\alpha^2&lt;1\)</span>だった．それよりよりやや厳しい条件が必要だ．</p>
@@ -296,8 +296,8 @@ P(x,\cdot)=\mathcal{N}(\alpha x, (1+\beta x)^2\sigma^2)
 </div>
 <div id="p144-例5.7-について-20210308" class="section level3" number="7.1.9">
 <h3><span class="header-section-number">7.1.9</span> p144 例5.7 について (20210308)</h3>
-<p>第12行目で<span class="math inline">\(p(x^N, y^N|\theta)\)</span>とあるのは
-<span class="math inline">\(p(x^N|y^N,\theta)\)</span>の誤り．</p>
+<p>第12行目で<span class="math inline">\(p(x^N, y^N\mid \theta)\)</span>とあるのは
+<span class="math inline">\(p(x^N\mid y^N,\theta)\)</span>の誤り．</p>
 <p>また，下から二行目，正規分布の分散の<span class="math inline">\(\tau^{-1}\)</span>を掛けるのを忘れている．</p>
 </div>
 <div id="p146-練習問題-5.10について-20210308" class="section level3" number="7.1.10">

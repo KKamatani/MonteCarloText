@@ -208,20 +208,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tab-5" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> ギブスサンプリング</h1>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-83" class="exercise"><strong>Exercise 5.1  </strong></span>実数<span class="math inline">\(\theta, q_0, q_1\)</span>は<span class="math inline">\(0&lt;\theta, q_0, q_1&lt;1\)</span>を満たすとする．
+<p><span id="exr:unlabeled-div-85" class="exercise"><strong>Exercise 5.1  </strong></span>実数<span class="math inline">\(\theta, q_0, q_1\)</span>は<span class="math inline">\(0&lt;\theta, q_0, q_1&lt;1\)</span>を満たすとする．
 <span class="math inline">\(P_0=\mathcal{B}(1,q_0), P_1=\mathcal{B}(1,q_1)\)</span>とするとき，混合分布<span class="math inline">\(P_\theta\)</span>をベルヌーイ分布を用いて表わせ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-84" class="solution"><em>Solution</em>. </span><span class="math inline">\(P_\theta=\mathcal{B}(1,(1-\theta) q_0+\theta q_1)\)</span>.</p>
+<p><span id="unlabeled-div-86" class="solution"><em>Solution</em>. </span><span class="math inline">\(P_\theta=\mathcal{B}(1,(1-\theta) q_0+\theta q_1)\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-85" class="remark"><em>Remark</em>. </span>すなわち，ベルヌーイの定理分布の混合も再びベルヌーイ分布になる．混合分布を考えても分布の世界が広がらないのである．</p>
+<p><span id="unlabeled-div-87" class="remark"><em>Remark</em>. </span>すなわち，ベルヌーイの定理分布の混合も再びベルヌーイ分布になる．混合分布を考えても分布の世界が広がらないのである．</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-86" class="exercise"><strong>Exercise 5.2  </strong></span>定理5.2を特性関数を用いて示せ．なお，<span class="math inline">\(\sigma_0, \sigma_1\)</span>は存在するものとする．</p>
+<p><span id="exr:unlabeled-div-88" class="exercise"><strong>Exercise 5.2  </strong></span>定理5.2を特性関数を用いて示せ．なお，<span class="math inline">\(\sigma_0, \sigma_1\)</span>は存在するものとする．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-87" class="solution"><em>Solution</em>. </span><span class="math inline">\(\varphi_0, \varphi_1\)</span>をそれぞれ<span class="math inline">\(P_0, P_1\)</span>の特性関数とする．このとき，<span class="math inline">\(P_\theta\)</span>の特性関数は
+<p><span id="unlabeled-div-89" class="solution"><em>Solution</em>. </span><span class="math inline">\(\varphi_0, \varphi_1\)</span>をそれぞれ<span class="math inline">\(P_0, P_1\)</span>の特性関数とする．このとき，<span class="math inline">\(P_\theta\)</span>の特性関数は
 <span class="math display">\[
 \varphi_\theta=(1-\theta)\varphi_0+\theta\varphi_1
 \]</span>
@@ -244,13 +244,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 となり，これを整理することで示せる．</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-88" class="exercise"><strong>Exercise 5.3  </strong></span>条件つき確率(5.1),
+<p><span id="exr:unlabeled-div-90" class="exercise"><strong>Exercise 5.3  </strong></span>条件つき確率(5.1),
 (5.2)を導出せよ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-89" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_n, I_n\)</span>の<span class="math inline">\(\theta\)</span>のもとでの結合分布の密度関数は
+<p><span id="unlabeled-div-91" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_n, I_n\)</span>の<span class="math inline">\(\theta\)</span>のもとでの結合分布の密度関数は
 <span class="math display">\[
-p(x_n, I_n=i|\theta)=
+p(x_n, I_n=i\mid \theta)=
   \begin{cases}
 \theta p_1(x_n)&amp;\mathrm{if}\ i=1\\
 (1-\theta) p_0(x_n)&amp;\mathrm{if}\ i=0
@@ -259,52 +259,52 @@ p(x_n, I_n=i|\theta)=
 である．したがって，
 情報<span class="math inline">\(I^N\)</span>があるばあいの尤度は
 <span class="math display">\[\begin{align*}
-p(x^N, I^N|\theta)=\prod_{n=1}^N(\theta p_1(x_n))^{I_n}((1-\theta) p_0(x_n))^{1-I_n}
+p(x^N, I^N\mid \theta)=\prod_{n=1}^N(\theta p_1(x_n))^{I_n}((1-\theta) p_0(x_n))^{1-I_n}
 \end{align*}\]</span>
 となる．事後分布の導出に，<span class="math inline">\(\theta\)</span>を含まない項を除くと
 <span class="math display">\[\begin{align*}
-p(x^N, I^N|\theta)\propto \prod_{n=1}^N \theta^{I_n}(1-\theta)^{1-I_n}=\theta^{m_1}(1-\theta_0)^{m_0}
+p(x^N, I^N\mid \theta)\propto \prod_{n=1}^N \theta^{I_n}(1-\theta)^{1-I_n}=\theta^{m_1}(1-\theta_0)^{m_0}
 \end{align*}\]</span>
 となる．よって，事前分布を<span class="math inline">\(p(\theta)=1\)</span>として入れると，事後密度関数は
 <span class="math display">\[\begin{align*}
-p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\theta_0)^{m_0}
+p(\theta\mid x^N, I^N)\propto p(x^N, I^N\mid \theta)p(\theta)\propto\theta^{m_1}(1-\theta_0)^{m_0}
 \end{align*}\]</span>
 となり，これはベータ分布<span class="math inline">\(\mathcal{B}(m_0+1,m_1+1)\)</span>の確率密度関数の形である．したがって
 <span class="math inline">\(I^N\)</span>の情報もあるときの事後分布はベータ分布<span class="math inline">\(\mathcal{B}e(m_0+1,m_1+1)\)</span>である.</p>
 <p>いっぽう，<span class="math inline">\(I_n\)</span>の条件付き確率は先程の結合分布から
 <span class="math display">\[
-\mathbb{P}(I_n=1|x_n,\theta)=\frac{p(x_n, I_n=1|\theta)}{p(x_n|\theta)}=\frac{\theta p_1(x_n)}{\theta p_1(x_n)+(1-\theta) p_0(x_n)}
+\mathbb{P}(I_n=1\mid x_n,\theta)=\frac{p(x_n, I_n=1\mid \theta)}{p(x_n\mid \theta)}=\frac{\theta p_1(x_n)}{\theta p_1(x_n)+(1-\theta) p_0(x_n)}
 \]</span>
-を得る．またこの値を<span class="math inline">\(1\)</span>から引くことにより<span class="math inline">\(\mathbb{P}(I_n=0|x_n,\theta)\)</span>もわかる．</p>
+を得る．またこの値を<span class="math inline">\(1\)</span>から引くことにより<span class="math inline">\(\mathbb{P}(I_n=0\mid x_n,\theta)\)</span>もわかる．</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-90" class="exercise"><strong>Exercise 5.4  </strong></span><span class="math inline">\(N, n\)</span>を正の整数，<span class="math inline">\(\theta\)</span>を実数で
+<p><span id="exr:unlabeled-div-92" class="exercise"><strong>Exercise 5.4  </strong></span><span class="math inline">\(N, n\)</span>を正の整数，<span class="math inline">\(\theta\)</span>を実数で
 <span class="math inline">\(1\le n\le N, 0&lt;\theta&lt;1\)</span>とする．また<span class="math inline">\(x_1,\ldots, x_N\)</span>は実数，<span class="math inline">\(I_1,\ldots, I_N\)</span>は<span class="math inline">\(0\)</span>もしくは<span class="math inline">\(1\)</span>とする．このとき，
 条件つき確率(5.1),
 (5.2)のもと，
-<span class="math inline">\(\mathbb{E}[~\theta~|x^N, I^N], \mathbb{E}[~I_n~|x^N,\theta]\)</span>を求めよ．</p>
+<span class="math inline">\(\mathbb{E}[~\theta~\mid x^N, I^N], \mathbb{E}[~I_n~\mid x^N,\theta]\)</span>を求めよ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-91" class="solution"><em>Solution</em>. </span>ベータ分布の性質から
+<p><span id="unlabeled-div-93" class="solution"><em>Solution</em>. </span>ベータ分布の性質から
 <span class="math display">\[
-\mathbb{E}[~\theta~|x^N, I^N]=\frac{m_1+1}{(m_0+1)+(m_1+1)}=\frac{m_1+1}{N+2}. 
+\mathbb{E}[~\theta~\mid x^N, I^N]=\frac{m_1+1}{(m_0+1)+(m_1+1)}=\frac{m_1+1}{N+2}. 
 \]</span>
 いっぽう，
 <span class="math display">\[
-\mathbb{E}[~I_n~|x^N,\theta]=\mathbb{P}(I_n=1|x_n,\theta)=\frac{\theta p_1(x_n)}{\theta p_1(x_n)+(1-\theta) p_0(x_n)}. 
+\mathbb{E}[~I_n~\mid x^N,\theta]=\mathbb{P}(I_n=1\mid x_n,\theta)=\frac{\theta p_1(x_n)}{\theta p_1(x_n)+(1-\theta) p_0(x_n)}. 
 \]</span></p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-92" class="exercise"><strong>Exercise 5.5  </strong></span>定理5.3を示せ．</p>
+<p><span id="exr:unlabeled-div-94" class="exercise"><strong>Exercise 5.5  </strong></span>定理5.3を示せ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-93" class="solution"><em>Solution</em>. </span>略．</p>
+<p><span id="unlabeled-div-95" class="solution"><em>Solution</em>. </span>略．</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-94" class="exercise"><strong>Exercise 5.6  </strong></span>実数<span class="math inline">\(\mu\)</span>に対し，<span class="math inline">\(X\sim\mathcal{N}^+(\mu,1)\)</span>のとき，<span class="math inline">\(\mathbb{E}[X]\)</span>を求めよ．</p>
+<p><span id="exr:unlabeled-div-96" class="exercise"><strong>Exercise 5.6  </strong></span>実数<span class="math inline">\(\mu\)</span>に対し，<span class="math inline">\(X\sim\mathcal{N}^+(\mu,1)\)</span>のとき，<span class="math inline">\(\mathbb{E}[X]\)</span>を求めよ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-95" class="solution"><em>Solution</em>. </span>仮定から
+<p><span id="unlabeled-div-97" class="solution"><em>Solution</em>. </span>仮定から
 <span class="math display">\[\begin{align*}
 \mathbb{E}[X]&amp;=\frac{\int_0^\infty x\phi(x-\mu)\mathrm{d}x}{\Phi(\mu)}\\
 &amp;=\mu+\frac{\int_0^\infty (x-\mu)\phi(x-\mu)\mathrm{d}x}{\Phi(\mu)}\\
@@ -314,10 +314,10 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 を得る．</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-96" class="exercise"><strong>Exercise 5.7  </strong></span>例5.1で定義されるマルコフカーネルについて，<span class="math inline">\(\mathcal{N}(0,1)\)</span>が不変分布であることを示せ．</p>
+<p><span id="exr:unlabeled-div-98" class="exercise"><strong>Exercise 5.7  </strong></span>例5.1で定義されるマルコフカーネルについて，<span class="math inline">\(\mathcal{N}(0,1)\)</span>が不変分布であることを示せ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-97" class="solution"><em>Solution</em>. </span><span class="math inline">\(X\sim \mathcal{N}(0,1)\)</span>かつ<span class="math inline">\(Y\sim \mathcal{N}(\rho^2X,1-\rho^4)\)</span>としたとき，
+<p><span id="unlabeled-div-99" class="solution"><em>Solution</em>. </span><span class="math inline">\(X\sim \mathcal{N}(0,1)\)</span>かつ<span class="math inline">\(Y\sim \mathcal{N}(\rho^2X,1-\rho^4)\)</span>としたとき，
 <span class="math inline">\(Y\sim \mathcal{N}(0,1)\)</span>であることを示せば良い．正規分布の再生性を使って示そう．
 <span class="math inline">\(\epsilon_1, \epsilon_2\)</span>は独立な標準正規乱数とする．すると上で定義される<span class="math inline">\(X,Y\)</span>の同時分布と
 <span class="math display">\[
@@ -326,16 +326,16 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 とおいたときの<span class="math inline">\(X,Y\)</span>の同時分布はおなじになる．後者であれば再生性からただちに<span class="math inline">\(Y\sim \mathcal{N}(0,1)\)</span>が得られる．よって<span class="math inline">\(\mathcal{N}(0,1)\)</span>は不変分布，</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-98" class="exercise"><strong>Exercise 5.8  </strong></span><span class="math inline">\(x\)</span>は正の整数，<span class="math inline">\(y\)</span>は正の実数とする．<span class="math inline">\(X\)</span>は<span class="math inline">\(Y=y\)</span>で条件づけたもと，<span class="math inline">\(\mathcal{P}(y)\)</span>に従う．また<span class="math inline">\(Y\)</span>は<span class="math inline">\(\mathcal{E}(1)\)</span>に従う．このとき<span class="math inline">\(Y\)</span>の<span class="math inline">\(X=x\)</span>を固定したもとでの条件つき分布を導出し，ギブスサンプリングを構成せよ．</p>
+<p><span id="exr:unlabeled-div-100" class="exercise"><strong>Exercise 5.8  </strong></span><span class="math inline">\(x\)</span>は正の整数，<span class="math inline">\(y\)</span>は正の実数とする．<span class="math inline">\(X\)</span>は<span class="math inline">\(Y=y\)</span>で条件づけたもと，<span class="math inline">\(\mathcal{P}(y)\)</span>に従う．また<span class="math inline">\(Y\)</span>は<span class="math inline">\(\mathcal{E}(1)\)</span>に従う．このとき<span class="math inline">\(Y\)</span>の<span class="math inline">\(X=x\)</span>を固定したもとでの条件つき分布を導出し，ギブスサンプリングを構成せよ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-99" class="solution"><em>Solution</em>. </span><span class="math inline">\(X, Y\)</span>の同時密度関数が
+<p><span id="unlabeled-div-101" class="solution"><em>Solution</em>. </span><span class="math inline">\(X, Y\)</span>の同時密度関数が
 <span class="math display">\[
- p(x, y)=p(x|y)p(y)=\left\{\frac{y^x}{x!}\exp(-y)\right\}\exp(-y)
+ p(x, y)=p(x\mid y)p(y)=\left\{\frac{y^x}{x!}\exp(-y)\right\}\exp(-y)
 \]</span>
 となる．したがって<span class="math inline">\(Y\)</span>の<span class="math inline">\(X=x\)</span>を固定したもとでの条件つき分布の確率密度関数は
 <span class="math display">\[
- p(y|x)\propto p(x,y)\propto y^x\exp(-2y)
+ p(y\mid x)\propto p(x,y)\propto y^x\exp(-2y)
 \]</span>
 となる．これはガンマ分布<span class="math inline">\(\mathcal{G}(x+1,2)\)</span>の確率密度関数だから，条件付き分布は<span class="math inline">\(\mathcal{G}(x+1,-2)\)</span>である．実際にプログラムしてみよう．</p>
 </div>
@@ -362,12 +362,12 @@ p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto\theta^{m_1}(1-\thet
 <span id="cb46-21"><a href="tab-5.html#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.fr, <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> value, <span class="at">color =</span> xy)) <span class="sc">+</span> <span class="fu">geom_path</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>( . <span class="sc">~</span> xy)<span class="sc">+</span> <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Trajectory plot&quot;</span>) </span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/exercise_5.8-1.png" width="672" /></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-100" class="exercise"><strong>Exercise 5.9  </strong></span>例5.2で定義されるギブスカーネル<span class="math inline">\(P(x,\cdot)\)</span>が負の超幾何分布
+<p><span id="exr:unlabeled-div-102" class="exercise"><strong>Exercise 5.9  </strong></span>例5.2で定義されるギブスカーネル<span class="math inline">\(P(x,\cdot)\)</span>が負の超幾何分布
 <span class="math inline">\(\mathcal{N}hg(2N+\alpha+\beta-1, N, x+\alpha)\)</span>
 であることを示せ．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-101" class="solution"><em>Solution</em>. </span><span class="math inline">\(P(x,\cdot)\)</span>の確率関数を<span class="math inline">\(p(x,y)\)</span>と書くと
+<p><span id="unlabeled-div-103" class="solution"><em>Solution</em>. </span><span class="math inline">\(P(x,\cdot)\)</span>の確率関数を<span class="math inline">\(p(x,y)\)</span>と書くと
 <span class="math display">\[\begin{align*}
 p(x,y)&amp;=\int_0^1\binom{N}{y}z^y(1-z)^{N-y}\frac{z^{x+\alpha-1}(1-z)^{N-x+\beta-1}}{B(x+\alpha, N-x+\beta)}\mathrm{d}z
 \end{align*}\]</span>
@@ -384,7 +384,7 @@ p(x,y)&amp;=\frac{N!}{y!(N-y)!}\frac{(x+y+\alpha-1)!(2N-x-y+\beta-1)!}{(2N+\alph
 となり，<span class="math inline">\(\mathcal{N}hg(2N+\alpha+\beta-1, N, x+\alpha)\)</span>の確率関数と一致する．</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-102" class="exercise"><strong>Exercise 5.10  </strong></span>練習問題1.8
+<p><span id="exr:unlabeled-div-104" class="exercise"><strong>Exercise 5.10  </strong></span>練習問題1.8
 を参考に，
 第5.1節の有限混合モデルのギブスサンプラーの拡張を考える．
 <span class="math inline">\(K\)</span>は正の整数，<span class="math inline">\(\theta_1,\ldots, \theta_{K-1}\)</span>は正の実数で，
@@ -395,24 +395,24 @@ p(x,y)&amp;=\frac{N!}{y!(N-y)!}\frac{(x+y+\alpha-1)!(2N-x-y+\beta-1)!}{(2N+\alph
 <span class="math display">\[
 p_\theta(x)=\theta_1 p_1(x)+\cdots+\theta_Kp_K(x)
 \]</span>
-を持つとする．ただし，<span class="math inline">\(\theta_K=1-\theta_1-\cdots-\theta_K\)</span>とする．ある正の整数<span class="math inline">\(N\)</span>にたいし観測<span class="math inline">\(x_1,\ldots, x_N|\theta\sim P_\theta\)</span>となり，<span class="math inline">\(\theta\sim\mathcal{D}(\alpha_1,\ldots,\alpha_K)\)</span>なる事前分布を入れる．このとき，ギブスサンプリングを構成せよ．なお，<span class="math inline">\(\alpha_1,\ldots,\alpha_K\)</span>は既知の正の実数とする．</p>
+を持つとする．ただし，<span class="math inline">\(\theta_K=1-\theta_1-\cdots-\theta_K\)</span>とする．ある正の整数<span class="math inline">\(N\)</span>にたいし観測<span class="math inline">\(x_1,\ldots, x_N\mid \theta\sim P_\theta\)</span>となり，<span class="math inline">\(\theta\sim\mathcal{D}(\alpha_1,\ldots,\alpha_K)\)</span>なる事前分布を入れる．このとき，ギブスサンプリングを構成せよ．なお，<span class="math inline">\(\alpha_1,\ldots,\alpha_K\)</span>は既知の正の実数とする．</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-103" class="solution"><em>Solution</em>. </span><span class="math inline">\(K=2\)</span>の場合と同様に，<span class="math inline">\(I_n=k, n=1,\ldots\)</span>が，のとき，分布<span class="math inline">\(P_k\)</span>からの乱数であることを明示する確率変数としよう．すると，
+<p><span id="unlabeled-div-105" class="solution"><em>Solution</em>. </span><span class="math inline">\(K=2\)</span>の場合と同様に，<span class="math inline">\(I_n=k, n=1,\ldots\)</span>が，のとき，分布<span class="math inline">\(P_k\)</span>からの乱数であることを明示する確率変数としよう．すると，
 <span class="math inline">\(I^N=\{I_1,\ldots, I_N\}\)</span>のもと，尤度は
 <span class="math display">\[
-p(x^N, I^N|\theta)\propto \prod_{k=1}^K \theta_k^{m_k}
+p(x^N, I^N\mid \theta)\propto \prod_{k=1}^K \theta_k^{m_k}
 \]</span>
 となる．ただし，<span class="math inline">\(m_k=\sum_{n=1}^N1_{\{I_n=k\}}\)</span>とする．したがって事前分布として
 <span class="math inline">\(\mathcal{D}(\alpha_1,\ldots,\alpha_K)\)</span>を入れると，事後密度関数は
 <span class="math display">\[
-p(\theta|x^N, I^N)\propto p(x^N, I^N|\theta)p(\theta)\propto \prod_{k=1}^K \theta_k^{m_k+\alpha_k-1}
+p(\theta\mid x^N, I^N)\propto p(x^N, I^N\mid \theta)p(\theta)\propto \prod_{k=1}^K \theta_k^{m_k+\alpha_k-1}
 \]</span>
 となり，これは<span class="math inline">\(\mathcal{D}(m_1+\alpha_1,\ldots,m_K+\alpha_K)\)</span>の確率密度関数である．したがって
 <span class="math inline">\(\theta\)</span>の<span class="math inline">\(I^N\)</span>も既知としたときの事後分布は<span class="math inline">\(\mathcal{D}(m_1+\alpha_1,\ldots,m_K+\alpha_K)\)</span>である．
 一方，<span class="math inline">\(\theta, x^N\)</span>のもとでの<span class="math inline">\(I_n\)</span>の事後分布は多項分布
 <span class="math display">\[
-\mathbb{P}(I_n=k|x_n,\theta)=\frac{\theta_k p_k(x_n)}{\sum_{l=1}^K\theta_l p_l(x_n)}\ (k=1,\ldots, K, n=1,\ldots, N)
+\mathbb{P}(I_n=k\mid x_n,\theta)=\frac{\theta_k p_k(x_n)}{\sum_{l=1}^K\theta_l p_l(x_n)}\ (k=1,\ldots, K, n=1,\ldots, N)
 \]</span>
 となる．したがってギブスサンプリングは
 <span class="math inline">\(\mathcal{D}(m_1+\alpha_1,\ldots,m_K+\alpha_K)\)</span>と，うえの<span class="math inline">\(I_n\)</span>の条件付き分布である多項分布を交互に繰り返すことで構成できる．</p>
