@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 エラータム | 練習問題 : モンテカルロ統計計算</title>
   <meta name="description" content="Chapter 7 エラータム | 練習問題 : モンテカルロ統計計算" />
-  <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 エラータム | 練習問題 : モンテカルロ統計計算" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="tab-6.html"/>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -99,7 +98,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -112,7 +111,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -126,6 +125,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -186,6 +189,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.8" data-path="tab-error.html"><a href="tab-error.html#p-159-6.3.2-について-20211125"><i class="fa fa-check"></i><b>7.2.8</b> p 159 6.3.2 について (20211125)</a></li>
 <li class="chapter" data-level="7.2.9" data-path="tab-error.html"><a href="tab-error.html#p-176-練習問題6.9-について-20211127"><i class="fa fa-check"></i><b>7.2.9</b> p 176 練習問題6.9 について (20211127)</a></li>
 </ul></li>
+<li class="chapter" data-level="7.3" data-path="tab-error.html"><a href="tab-error.html#tab-error3"><i class="fa fa-check"></i><b>7.3</b> エラータム第三刷</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="tab-error.html"><a href="tab-error.html#p-31-リスト1.5について"><i class="fa fa-check"></i><b>7.3.1</b> p 31 リスト1.5について</a></li>
+<li class="chapter" data-level="7.3.2" data-path="tab-error.html"><a href="tab-error.html#p-35-リスト1.6について"><i class="fa fa-check"></i><b>7.3.2</b> p 35 リスト1.6について</a></li>
+<li class="chapter" data-level="7.3.3" data-path="tab-error.html"><a href="tab-error.html#p-41-線形合同法について"><i class="fa fa-check"></i><b>7.3.3</b> p 41 線形合同法について</a></li>
+<li class="chapter" data-level="7.3.4" data-path="tab-error.html"><a href="tab-error.html#p62-2.2.3-近似累積分布関数による乱数生成"><i class="fa fa-check"></i><b>7.3.4</b> p62 2.2.3 近似累積分布関数による乱数生成</a></li>
+<li class="chapter" data-level="7.3.5" data-path="tab-error.html"><a href="tab-error.html#p75-例2.7-ガンマ乱数の生成"><i class="fa fa-check"></i><b>7.3.5</b> p75 例2.7 ガンマ乱数の生成</a></li>
+<li class="chapter" data-level="7.3.6" data-path="tab-error.html"><a href="tab-error.html#p82"><i class="fa fa-check"></i><b>7.3.6</b> p82</a></li>
+<li class="chapter" data-level="7.3.7" data-path="tab-error.html"><a href="tab-error.html#p84-定理3.6の証明"><i class="fa fa-check"></i><b>7.3.7</b> p84 定理3.6の証明</a></li>
+<li class="chapter" data-level="7.3.8" data-path="tab-error.html"><a href="tab-error.html#p93-3.1"><i class="fa fa-check"></i><b>7.3.8</b> p93 3.1</a></li>
+<li class="chapter" data-level="7.3.9" data-path="tab-error.html"><a href="tab-error.html#p145-例5.7"><i class="fa fa-check"></i><b>7.3.9</b> p145 例5.7</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://sites.google.com/view/kengokamatani/home">鎌谷研吾</a></li>
@@ -206,20 +221,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tab-error" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> エラータム</h1>
-<div id="tab-error1" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> エラータム第一刷</h2>
+<div id="tab-error" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> エラータム<a href="tab-error.html#tab-error" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tab-error1" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> エラータム第一刷<a href="tab-error.html#tab-error1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>残念ながら本書（第一刷）でいくつかの誤りが見つかっている．
 修正点の指摘について松野舜介氏に感謝します．</p>
-<div id="p44-例2.1について-20210308" class="section level3" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> p44 例2.1について　(20210308)</h3>
+<div id="p44-例2.1について-20210308" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> p44 例2.1について　(20210308)<a href="tab-error.html#p44-例2.1について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>図2.4のキャプション：「パラメータ<span class="math inline">\(p=2\)</span>の…」とあるのは「パラメータ<span class="math inline">\(\lambda=2\)</span>の指数乱数のヒストグラム．黒い実線は指数分布の確率密度関数」の誤り．</li>
 </ul>
 </div>
-<div id="p48-例2.3について-20200511" class="section level3" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> p48 例2.3について　(20200511)</h3>
+<div id="p48-例2.3について-20200511" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> p48 例2.3について　(20200511)<a href="tab-error.html#p48-例2.3について-20200511" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>実数の繰り上げ，繰り下げに関する議論に誤りがあった．
 <span class="math inline">\(\lceil x\rceil\)</span>で<span class="math inline">\(x\)</span>未満ではない最小の整数を表すとする．このとき<span class="math inline">\(1-(1-p)^x&lt;U\)</span>を満たす最大の整数は，
 <span class="math display">\[
@@ -234,9 +249,9 @@ x=\left\lceil\frac{\log(1-U)}{\log(1-p)}-1\right\rceil
 \left\lceil\frac{\log U}{\log(1-p)}-1\right\rceil
 \]</span>
 で生成できる．R言語では</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tab-error.html#cb53-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb53-2"><a href="tab-error.html#cb53-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb53-3"><a href="tab-error.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">log</span>(<span class="fu">runif</span>(n))<span class="sc">/</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tab-error.html#cb53-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb53-2"><a href="tab-error.html#cb53-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb53-3"><a href="tab-error.html#cb53-3" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">log</span>(<span class="fu">runif</span>(n))<span class="sc">/</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 1 0 1</code></pre>
 <p>とすべきだった．ただし，教科書にある
 <span class="math display">\[
@@ -244,20 +259,20 @@ x=\left\lceil\frac{\log(1-U)}{\log(1-p)}-1\right\rceil
 \]</span>
 と先程の値が異なる確率は<span class="math inline">\(0\)</span>だから，乱数生成の意味では問題を生じ得ない．</p>
 </div>
-<div id="p70-定理3.2について-20210308" class="section level3" number="7.1.3">
-<h3><span class="header-section-number">7.1.3</span> p70 定理3.2について　(20210308)</h3>
+<div id="p70-定理3.2について-20210308" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> p70 定理3.2について　(20210308)<a href="tab-error.html#p70-定理3.2について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(l_1(x)\)</span>と<span class="math inline">\(l_2(x)\)</span>の定義が逆．</p>
 </div>
-<div id="p93-練習問題3.2について-20210308" class="section level3" number="7.1.4">
-<h3><span class="header-section-number">7.1.4</span> p93 練習問題3.2について　(20210308)</h3>
+<div id="p93-練習問題3.2について-20210308" class="section level3 hasAnchor" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> p93 練習問題3.2について　(20210308)<a href="tab-error.html#p93-練習問題3.2について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(\int_a^b(x-a)^2\mathrm{d}x=\int_a^b(x-b)^2\mathrm{d}x=(b-a)^3/3\)</span>とすべき．</p>
 </div>
-<div id="p95-章のアブストラクト-20210308" class="section level3" number="7.1.5">
-<h3><span class="header-section-number">7.1.5</span> p95 章のアブストラクト　(20210308)</h3>
+<div id="p95-章のアブストラクト-20210308" class="section level3 hasAnchor" number="7.1.5">
+<h3><span class="header-section-number">7.1.5</span> p95 章のアブストラクト　(20210308)<a href="tab-error.html#p95-章のアブストラクト-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>第６行目；「マルコ連鎖」とあるのは「マルコフ連鎖」の誤り．</p>
 </div>
-<div id="p109-例4.6について-20210308" class="section level3" number="7.1.6">
-<h3><span class="header-section-number">7.1.6</span> p109 例4.6について　(20210308)</h3>
+<div id="p109-例4.6について-20210308" class="section level3 hasAnchor" number="7.1.6">
+<h3><span class="header-section-number">7.1.6</span> p109 例4.6について　(20210308)<a href="tab-error.html#p109-例4.6について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>恥ずかしながら一部計算ミスしていた．以下に差し替える．</p>
 <p>実数<span class="math inline">\(\alpha,\beta\)</span>および正の実数<span class="math inline">\(\sigma\)</span>を定める．<span class="math inline">\(\alpha^2+\beta^2\sigma^2\neq \alpha\)</span>とする．初期値<span class="math inline">\(X_0=x_0\)</span>にたいし，<span class="math inline">\(m=0,1,\ldots\)</span>として
 <span class="math display">\[\begin{equation}\label{eq:nonlinear}
@@ -277,51 +292,53 @@ P(x,\cdot)=\mathcal{N}(\alpha x, (1+\beta x)^2\sigma^2)
 \mathbb{E}[X_1^2+\delta X_1\mid X_0=x]=\sigma^2 +\gamma(x^2+\delta x)
 \end{align*}\]</span>
 となるのがわかるはずだ．ただし，<span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2\)</span>および<span class="math inline">\(\delta=2\beta\sigma^2/(\gamma-\alpha)\)</span>である．この関係式を再帰的に使えば
-<span class="math display">\[\begin{align*}
+<span class="math display">\[
+\begin{align*}
 \mathbb{E}[X_m^2+\delta X_m\mid X_0=x]&amp;=\sigma^2+\gamma~\mathbb{E}[X_{m-1}^2+\delta X_{m-1}\mid X_0=x]\\
 &amp;=\cdots= \sum_{i=0}^{m-1} \gamma^i\sigma^2+\gamma^m~(x^2+\delta x)
-\end{align*}\]</span>
+\end{align*}
+\]</span>
 である．だから，<span class="math inline">\(X_m^2+\delta X_m\)</span>の期待値が発散しないためには<span class="math inline">\(\gamma=\alpha^2+\beta^2\sigma^2&lt;1\)</span>が必要十分だ．なお，<span class="math inline">\(X_m^2+\delta X_m\)</span>の期待値が発散しないこととと<span class="math inline">\(X_m^2\)</span>の期待値が発散しないことは同じことである．自己回帰過程の場合は，<span class="math inline">\(X_m^2\)</span>の期待値が発散しないための条件は<span class="math inline">\(\alpha^2&lt;1\)</span>だった．それよりよりやや厳しい条件が必要だ．</p>
 </div>
-<div id="p139-定理5.7について-20210308" class="section level3" number="7.1.7">
-<h3><span class="header-section-number">7.1.7</span> p139 定理5.7について (20210308)</h3>
+<div id="p139-定理5.7について-20210308" class="section level3 hasAnchor" number="7.1.7">
+<h3><span class="header-section-number">7.1.7</span> p139 定理5.7について (20210308)<a href="tab-error.html#p139-定理5.7について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>「<span class="math inline">\(x\in, y\in F\)</span>」とあるのは
 「<span class="math inline">\(x\in E, y\in F\)</span>」の誤り．</p>
 <p>また，「練習問題4.13から」とあるのは「練習問題4.12から」の誤り．</p>
 </div>
-<div id="p140-5.3.3について-20210308" class="section level3" number="7.1.8">
-<h3><span class="header-section-number">7.1.8</span> p140 5.3.3について (20210308)</h3>
+<div id="p140-5.3.3について-20210308" class="section level3 hasAnchor" number="7.1.8">
+<h3><span class="header-section-number">7.1.8</span> p140 5.3.3について (20210308)<a href="tab-error.html#p140-5.3.3について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>「第5.1節であつかったギブスサンプリングは<span class="math inline">\(E=\mathbb{R}\)</span>」
 とあるのは
 「第5.1節であつかったギブスサンプリングは<span class="math inline">\(E=(0,1)\)</span>」の誤り．</p>
 </div>
-<div id="p144-例5.7-について-20210308" class="section level3" number="7.1.9">
-<h3><span class="header-section-number">7.1.9</span> p144 例5.7 について (20210308)</h3>
+<div id="p144-例5.7-について-20210308" class="section level3 hasAnchor" number="7.1.9">
+<h3><span class="header-section-number">7.1.9</span> p144 例5.7 について (20210308)<a href="tab-error.html#p144-例5.7-について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>第12行目で<span class="math inline">\(p(x^N, y^N\mid \theta)\)</span>とあるのは
 <span class="math inline">\(p(x^N\mid y^N,\theta)\)</span>の誤り．</p>
 <p>また，下から二行目，正規分布の分散の<span class="math inline">\(\tau^{-1}\)</span>を掛けるのを忘れている．</p>
 </div>
-<div id="p146-練習問題-5.10について-20210308" class="section level3" number="7.1.10">
-<h3><span class="header-section-number">7.1.10</span> p146 練習問題 5.10について (20210308)</h3>
+<div id="p146-練習問題-5.10について-20210308" class="section level3 hasAnchor" number="7.1.10">
+<h3><span class="header-section-number">7.1.10</span> p146 練習問題 5.10について (20210308)<a href="tab-error.html#p146-練習問題-5.10について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>「練習問題1.8」とあるのは「練習問題1.9」の誤り．</p>
 </div>
-<div id="p155-下から8行目-20210308" class="section level3" number="7.1.11">
-<h3><span class="header-section-number">7.1.11</span> p155 下から8行目 (20210308)</h3>
+<div id="p155-下から8行目-20210308" class="section level3 hasAnchor" number="7.1.11">
+<h3><span class="header-section-number">7.1.11</span> p155 下から8行目 (20210308)<a href="tab-error.html#p155-下から8行目-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[
 P(x,A)=(1-M^{-1})Q(x,A)+M^{-1}\Pi(A)
 \]</span>
 が正しい．</p>
 </div>
-<div id="p156-6.3.1について-20210308" class="section level3" number="7.1.12">
-<h3><span class="header-section-number">7.1.12</span> p156 6.3.1について (20210308)</h3>
+<div id="p156-6.3.1について-20210308" class="section level3 hasAnchor" number="7.1.12">
+<h3><span class="header-section-number">7.1.12</span> p156 6.3.1について (20210308)<a href="tab-error.html#p156-6.3.1について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>上から十行目
 <span class="math display">\[
 \min\left\{1,\frac{\pi(y)}{\pi(x)}\right\}
 \]</span>
 とすべき．</p>
 </div>
-<div id="p159-6.3.2について-20210308" class="section level3" number="7.1.13">
-<h3><span class="header-section-number">7.1.13</span> p159 6.3.2について (20210308)</h3>
+<div id="p159-6.3.2について-20210308" class="section level3 hasAnchor" number="7.1.13">
+<h3><span class="header-section-number">7.1.13</span> p159 6.3.2について (20210308)<a href="tab-error.html#p159-6.3.2について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>上から3行目
 <span class="math display">\[
 \frac{1}{M}\sum_{m=1}^N\|X_m-X_{m-1}\|^2
@@ -330,8 +347,8 @@ P(x,A)=(1-M^{-1})Q(x,A)+M^{-1}\Pi(A)
 <p>また，Step 2で<span class="math inline">\(U\le \alpha(X_{n-1}, Y_n)\)</span>とあるのは
 <span class="math inline">\(U_n\le \alpha(X_{n-1}, Y_n)\)</span>の誤り．</p>
 </div>
-<div id="p160-引き続き6.3.2について-20210308" class="section level3" number="7.1.14">
-<h3><span class="header-section-number">7.1.14</span> p160 引き続き6.3.2について (20210308)</h3>
+<div id="p160-引き続き6.3.2について-20210308" class="section level3 hasAnchor" number="7.1.14">
+<h3><span class="header-section-number">7.1.14</span> p160 引き続き6.3.2について (20210308)<a href="tab-error.html#p160-引き続き6.3.2について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>下から6,7行目</p>
 <p><span class="math display">\[
 \sum_{i=1}^n X_{0i}w_{1i},\quad
@@ -344,120 +361,229 @@ P(x,A)=(1-M^{-1})Q(x,A)+M^{-1}\Pi(A)
 \]</span>
 の誤り．</p>
 </div>
-<div id="p161-引き続き6.3.2について-20210308" class="section level3" number="7.1.15">
-<h3><span class="header-section-number">7.1.15</span> p161 引き続き6.3.2について (20210308)</h3>
+<div id="p161-引き続き6.3.2について-20210308" class="section level3 hasAnchor" number="7.1.15">
+<h3><span class="header-section-number">7.1.15</span> p161 引き続き6.3.2について (20210308)<a href="tab-error.html#p161-引き続き6.3.2について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>下から11行目
 <span class="math display">\[
 \sigma^2=\frac{l}{d}
 \]</span>
 ではなく
 <span class="math display">\[
-\sigma^2=\frac{l^2}{d}. 
+\sigma^2=\frac{l^2}{d}.
 \]</span></p>
 </div>
-<div id="p164-リスト6.3について-20210308" class="section level3" number="7.1.16">
-<h3><span class="header-section-number">7.1.16</span> p164 リスト6.3について (20210308)</h3>
+<div id="p164-リスト6.3について-20210308" class="section level3 hasAnchor" number="7.1.16">
+<h3><span class="header-section-number">7.1.16</span> p164 リスト6.3について (20210308)<a href="tab-error.html#p164-リスト6.3について-20210308" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>恥ずかしながら，プログラムにバグが有り，ニュートン・ラフソン法がよく見えているが，実際はもっと悪い．コードを直し，以下のように初期値を十分真値に近く取り直す．</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="tab-error.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb55-2"><a href="tab-error.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-3"><a href="tab-error.html#cb55-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb55-4"><a href="tab-error.html#cb55-4" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.4</span>)</span>
-<span id="cb55-5"><a href="tab-error.html#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-6"><a href="tab-error.html#cb55-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,N),<span class="fu">rnorm</span>(N)), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb55-7"><a href="tab-error.html#cb55-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x)))</span>
-<span id="cb55-8"><a href="tab-error.html#cb55-8" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">runif</span>(N)</span>
-<span id="cb55-9"><a href="tab-error.html#cb55-9" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(u <span class="sc">&lt;=</span> p)</span>
-<span id="cb55-10"><a href="tab-error.html#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-11"><a href="tab-error.html#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-12"><a href="tab-error.html#cb55-12" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
-<span id="cb55-13"><a href="tab-error.html#cb55-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x) <span class="sc">*</span> y)<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">log</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x))))</span>
-<span id="cb55-14"><a href="tab-error.html#cb55-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb55-15"><a href="tab-error.html#cb55-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-16"><a href="tab-error.html#cb55-16" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
-<span id="cb55-17"><a href="tab-error.html#cb55-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowSums</span>(<span class="fu">t</span>(<span class="fu">t</span>(x)<span class="sc">*</span>y)) <span class="sc">-</span> <span class="fu">rowSums</span>(<span class="fu">t</span>(<span class="fu">t</span>(x) <span class="sc">*</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x)))))</span>
-<span id="cb55-18"><a href="tab-error.html#cb55-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb55-19"><a href="tab-error.html#cb55-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-20"><a href="tab-error.html#cb55-20" aria-hidden="true" tabindex="-1"></a>ddf <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
-<span id="cb55-21"><a href="tab-error.html#cb55-21" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x)))</span>
-<span id="cb55-22"><a href="tab-error.html#cb55-22" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>x <span class="sc">%*%</span> <span class="fu">diag</span>(prob<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>prob))<span class="sc">%*%</span> <span class="fu">t</span>(x)</span>
-<span id="cb55-23"><a href="tab-error.html#cb55-23" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb55-24"><a href="tab-error.html#cb55-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-25"><a href="tab-error.html#cb55-25" aria-hidden="true" tabindex="-1"></a>data.grid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">s.1 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>, <span class="at">length.out=</span><span class="dv">200</span>), <span class="at">s.2 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">11</span>, <span class="at">length.out=</span><span class="dv">200</span>))</span>
-<span id="cb55-26"><a href="tab-error.html#cb55-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-27"><a href="tab-error.html#cb55-27" aria-hidden="true" tabindex="-1"></a>pv <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">0</span>)</span>
-<span id="cb55-28"><a href="tab-error.html#cb55-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">dim</span>(data.grid)[<span class="dv">1</span>])){</span>
-<span id="cb55-29"><a href="tab-error.html#cb55-29" aria-hidden="true" tabindex="-1"></a>  pv <span class="ot">&lt;-</span> <span class="fu">append</span>(pv,<span class="fu">f</span>(<span class="fu">as.numeric</span>(data.grid[i,])))</span>
-<span id="cb55-30"><a href="tab-error.html#cb55-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb55-31"><a href="tab-error.html#cb55-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-32"><a href="tab-error.html#cb55-32" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb55-33"><a href="tab-error.html#cb55-33" aria-hidden="true" tabindex="-1"></a>theta0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="dv">1</span>)</span>
-<span id="cb55-34"><a href="tab-error.html#cb55-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-35"><a href="tab-error.html#cb55-35" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> theta0</span>
-<span id="cb55-36"><a href="tab-error.html#cb55-36" aria-hidden="true" tabindex="-1"></a>theta_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow=</span>M, <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb55-37"><a href="tab-error.html#cb55-37" aria-hidden="true" tabindex="-1"></a>theta_mat[<span class="dv">1</span>,] <span class="ot">&lt;-</span> theta0</span>
-<span id="cb55-38"><a href="tab-error.html#cb55-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(m <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>M){</span>
-<span id="cb55-39"><a href="tab-error.html#cb55-39" aria-hidden="true" tabindex="-1"></a> theta <span class="ot">&lt;-</span> theta <span class="sc">-</span> <span class="fu">as.vector</span>(<span class="fu">solve</span>(<span class="fu">ddf</span>(<span class="fu">as.vector</span>(theta))) <span class="sc">%*%</span> <span class="fu">df</span>(theta))</span>
-<span id="cb55-40"><a href="tab-error.html#cb55-40" aria-hidden="true" tabindex="-1"></a> theta_mat[m,] <span class="ot">&lt;-</span> theta</span>
-<span id="cb55-41"><a href="tab-error.html#cb55-41" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb55-42"><a href="tab-error.html#cb55-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-43"><a href="tab-error.html#cb55-43" aria-hidden="true" tabindex="-1"></a>htheta <span class="ot">&lt;-</span>theta</span>
-<span id="cb55-44"><a href="tab-error.html#cb55-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-45"><a href="tab-error.html#cb55-45" aria-hidden="true" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>theta_mat[,<span class="dv">1</span>],<span class="at">y=</span>theta_mat[,<span class="dv">2</span>], <span class="at">z=</span><span class="dv">1</span><span class="sc">:</span>M)</span>
-<span id="cb55-46"><a href="tab-error.html#cb55-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-47"><a href="tab-error.html#cb55-47" aria-hidden="true" tabindex="-1"></a>q.samp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(data.grid, <span class="at">z =</span> pv))</span>
-<span id="cb55-48"><a href="tab-error.html#cb55-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-49"><a href="tab-error.html#cb55-49" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(q.samp, <span class="fu">aes</span>(<span class="at">x=</span>s<span class="fl">.1</span>, <span class="at">y=</span>s<span class="fl">.2</span>, <span class="at">z=</span>z)) <span class="sc">+</span> <span class="fu">geom_contour</span>(<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> </span>
-<span id="cb55-50"><a href="tab-error.html#cb55-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">data=</span>data.fr,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y),<span class="at">lty=</span><span class="dv">2</span>,<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data=</span>data.fr,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y),<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">size=</span><span class="fu">I</span>(<span class="fl">2.0</span>))<span class="sc">+</span><span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">11</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">theta_1$&quot;</span>)) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">theta_2$&quot;</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="tab-error.html#cb55-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb55-2"><a href="tab-error.html#cb55-2" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="tab-error.html#cb55-3" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb55-4"><a href="tab-error.html#cb55-4" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.4</span>)</span>
+<span id="cb55-5"><a href="tab-error.html#cb55-5" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="tab-error.html#cb55-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,N),<span class="fu">rnorm</span>(N)), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb55-7"><a href="tab-error.html#cb55-7" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x)))</span>
+<span id="cb55-8"><a href="tab-error.html#cb55-8" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">runif</span>(N)</span>
+<span id="cb55-9"><a href="tab-error.html#cb55-9" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(u <span class="sc">&lt;=</span> p)</span>
+<span id="cb55-10"><a href="tab-error.html#cb55-10" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="tab-error.html#cb55-11" tabindex="-1"></a></span>
+<span id="cb55-12"><a href="tab-error.html#cb55-12" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
+<span id="cb55-13"><a href="tab-error.html#cb55-13" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x) <span class="sc">*</span> y)<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">log</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x))))</span>
+<span id="cb55-14"><a href="tab-error.html#cb55-14" tabindex="-1"></a>}</span>
+<span id="cb55-15"><a href="tab-error.html#cb55-15" tabindex="-1"></a></span>
+<span id="cb55-16"><a href="tab-error.html#cb55-16" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
+<span id="cb55-17"><a href="tab-error.html#cb55-17" tabindex="-1"></a>  <span class="fu">rowSums</span>(<span class="fu">t</span>(<span class="fu">t</span>(x)<span class="sc">*</span>y)) <span class="sc">-</span> <span class="fu">rowSums</span>(<span class="fu">t</span>(<span class="fu">t</span>(x) <span class="sc">*</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta <span class="sc">%*%</span> x)))))</span>
+<span id="cb55-18"><a href="tab-error.html#cb55-18" tabindex="-1"></a>}</span>
+<span id="cb55-19"><a href="tab-error.html#cb55-19" tabindex="-1"></a></span>
+<span id="cb55-20"><a href="tab-error.html#cb55-20" tabindex="-1"></a>ddf <span class="ot">&lt;-</span> <span class="cf">function</span>(theta){</span>
+<span id="cb55-21"><a href="tab-error.html#cb55-21" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="fu">as.vector</span>(theta<span class="sc">%*%</span> x)))</span>
+<span id="cb55-22"><a href="tab-error.html#cb55-22" tabindex="-1"></a>  <span class="sc">-</span>x <span class="sc">%*%</span> <span class="fu">diag</span>(prob<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>prob))<span class="sc">%*%</span> <span class="fu">t</span>(x)</span>
+<span id="cb55-23"><a href="tab-error.html#cb55-23" tabindex="-1"></a>}</span>
+<span id="cb55-24"><a href="tab-error.html#cb55-24" tabindex="-1"></a></span>
+<span id="cb55-25"><a href="tab-error.html#cb55-25" tabindex="-1"></a>data.grid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">s.1 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>, <span class="at">length.out=</span><span class="dv">200</span>), <span class="at">s.2 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">11</span>, <span class="at">length.out=</span><span class="dv">200</span>))</span>
+<span id="cb55-26"><a href="tab-error.html#cb55-26" tabindex="-1"></a></span>
+<span id="cb55-27"><a href="tab-error.html#cb55-27" tabindex="-1"></a>pv <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">0</span>)</span>
+<span id="cb55-28"><a href="tab-error.html#cb55-28" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">dim</span>(data.grid)[<span class="dv">1</span>])){</span>
+<span id="cb55-29"><a href="tab-error.html#cb55-29" tabindex="-1"></a>  pv <span class="ot">&lt;-</span> <span class="fu">append</span>(pv,<span class="fu">f</span>(<span class="fu">as.numeric</span>(data.grid[i,])))</span>
+<span id="cb55-30"><a href="tab-error.html#cb55-30" tabindex="-1"></a>}</span>
+<span id="cb55-31"><a href="tab-error.html#cb55-31" tabindex="-1"></a></span>
+<span id="cb55-32"><a href="tab-error.html#cb55-32" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb55-33"><a href="tab-error.html#cb55-33" tabindex="-1"></a>theta0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="dv">1</span>)</span>
+<span id="cb55-34"><a href="tab-error.html#cb55-34" tabindex="-1"></a></span>
+<span id="cb55-35"><a href="tab-error.html#cb55-35" tabindex="-1"></a>theta <span class="ot">&lt;-</span> theta0</span>
+<span id="cb55-36"><a href="tab-error.html#cb55-36" tabindex="-1"></a>theta_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow=</span>M, <span class="at">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb55-37"><a href="tab-error.html#cb55-37" tabindex="-1"></a>theta_mat[<span class="dv">1</span>,] <span class="ot">&lt;-</span> theta0</span>
+<span id="cb55-38"><a href="tab-error.html#cb55-38" tabindex="-1"></a><span class="cf">for</span>(m <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>M){</span>
+<span id="cb55-39"><a href="tab-error.html#cb55-39" tabindex="-1"></a> theta <span class="ot">&lt;-</span> theta <span class="sc">-</span> <span class="fu">as.vector</span>(<span class="fu">solve</span>(<span class="fu">ddf</span>(<span class="fu">as.vector</span>(theta))) <span class="sc">%*%</span> <span class="fu">df</span>(theta))</span>
+<span id="cb55-40"><a href="tab-error.html#cb55-40" tabindex="-1"></a> theta_mat[m,] <span class="ot">&lt;-</span> theta</span>
+<span id="cb55-41"><a href="tab-error.html#cb55-41" tabindex="-1"></a>}</span>
+<span id="cb55-42"><a href="tab-error.html#cb55-42" tabindex="-1"></a></span>
+<span id="cb55-43"><a href="tab-error.html#cb55-43" tabindex="-1"></a>htheta <span class="ot">&lt;-</span>theta</span>
+<span id="cb55-44"><a href="tab-error.html#cb55-44" tabindex="-1"></a></span>
+<span id="cb55-45"><a href="tab-error.html#cb55-45" tabindex="-1"></a>data.fr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>theta_mat[,<span class="dv">1</span>],<span class="at">y=</span>theta_mat[,<span class="dv">2</span>], <span class="at">z=</span><span class="dv">1</span><span class="sc">:</span>M)</span>
+<span id="cb55-46"><a href="tab-error.html#cb55-46" tabindex="-1"></a></span>
+<span id="cb55-47"><a href="tab-error.html#cb55-47" tabindex="-1"></a>q.samp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(data.grid, <span class="at">z =</span> pv))</span>
+<span id="cb55-48"><a href="tab-error.html#cb55-48" tabindex="-1"></a></span>
+<span id="cb55-49"><a href="tab-error.html#cb55-49" tabindex="-1"></a><span class="fu">ggplot</span>(q.samp, <span class="fu">aes</span>(<span class="at">x=</span>s<span class="fl">.1</span>, <span class="at">y=</span>s<span class="fl">.2</span>, <span class="at">z=</span>z)) <span class="sc">+</span> <span class="fu">geom_contour</span>(<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb55-50"><a href="tab-error.html#cb55-50" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">data=</span>data.fr,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y),<span class="at">lty=</span><span class="dv">2</span>,<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data=</span>data.fr,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y),<span class="at">color=</span>black,<span class="at">alpha=</span><span class="fl">0.5</span>,<span class="at">size=</span><span class="fu">I</span>(<span class="fl">2.0</span>))<span class="sc">+</span><span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">11</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">theta_1$&quot;</span>)) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">theta_2$&quot;</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="bayes-computation_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<div id="定義6.1-p169-について-20200511" class="section level4" number="7.1.16.1">
-<h4><span class="header-section-number">7.1.16.1</span> 定義6.1 p169 について (20200511)</h4>
+<div id="定義6.1-p169-について-20200511" class="section level4 hasAnchor" number="7.1.16.1">
+<h4><span class="header-section-number">7.1.16.1</span> 定義6.1 p169 について (20200511)<a href="tab-error.html#定義6.1-p169-について-20200511" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>大事な定義だが間違っていた．たいへん大きなミスだ．文章はあっているが，その下の式が何から何まで間違っている．以下の式がただしい．
 <span class="math display">\[
-H(x,w)=-\log\pi(x)-\log\phi_\sigma(w)=-\log\pi(x)+\|w\|^2/2\sigma^2+\log(2\pi\sigma^2)/2. 
+H(x,w)=-\log\pi(x)-\log\phi_\sigma(w)=-\log\pi(x)+\|w\|^2/2\sigma^2+\log(2\pi\sigma^2)/2.
 \]</span></p>
 </div>
 </div>
 </div>
-<div id="tab-error-2" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> エラータム 第二刷</h2>
-<div id="p21-例1.8の後の文章-20200511" class="section level3" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> p21　例1.8の後の文章 (20200511)</h3>
+<div id="tab-error-2" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> エラータム 第二刷<a href="tab-error.html#tab-error-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="p21-例1.8の後の文章-20200511" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> p21　例1.8の後の文章 (20200511)<a href="tab-error.html#p21-例1.8の後の文章-20200511" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>事後確率の計算の直前「すなわち<span class="math inline">\(\theta&gt;0\)</span>」とあるのは「すなわち<span class="math inline">\(\theta&gt;0.5\)</span>」の誤り．</p>
 </div>
-<div id="p49-例2.4の後の文章-20211125" class="section level3" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> p49　例2.4の後の文章 (20211125)</h3>
+<div id="p49-例2.4の後の文章-20211125" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> p49　例2.4の後の文章 (20211125)<a href="tab-error.html#p49-例2.4の後の文章-20211125" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(F(n)\)</span>の式の分子の指数部は<span class="math inline">\(n\)</span>でなく，<span class="math inline">\(m\)</span>．</p>
 </div>
-<div id="p57-定理2.7の後の証明の途中式-20211125" class="section level3" number="7.2.3">
-<h3><span class="header-section-number">7.2.3</span> p57　定理2.7の後の証明の途中式 (20211125)</h3>
+<div id="p57-定理2.7の後の証明の途中式-20211125" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> p57　定理2.7の後の証明の途中式 (20211125)<a href="tab-error.html#p57-定理2.7の後の証明の途中式-20211125" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(p(z)\)</span>の式の<span class="math inline">\(p(y)\)</span>（青色)の部分は<span class="math inline">\(2^{\nu/2}\)</span>ではなく<span class="math inline">\(2^{-\nu/2}\)</span>.</p>
 </div>
-<div id="p66-練習問題2.8" class="section level3" number="7.2.4">
-<h3><span class="header-section-number">7.2.4</span> p66 練習問題2.8</h3>
+<div id="p66-練習問題2.8" class="section level3 hasAnchor" number="7.2.4">
+<h3><span class="header-section-number">7.2.4</span> p66 練習問題2.8<a href="tab-error.html#p66-練習問題2.8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>コードが一部違っている．</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="tab-error.html#cb56-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb56-2"><a href="tab-error.html#cb56-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> r, <span class="at">rate =</span> (<span class="dv">1</span><span class="sc">-</span>theta)<span class="sc">/</span>theta)</span>
-<span id="cb56-3"><a href="tab-error.html#cb56-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>, y)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="tab-error.html#cb56-1" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb56-2"><a href="tab-error.html#cb56-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> r, <span class="at">rate =</span> (<span class="dv">1</span><span class="sc">-</span>theta)<span class="sc">/</span>theta)</span>
+<span id="cb56-3"><a href="tab-error.html#cb56-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>, y)</span></code></pre></div>
 </div>
-<div id="p77-図3.7のキャプション-20211125" class="section level3" number="7.2.5">
-<h3><span class="header-section-number">7.2.5</span> p77　図3.7のキャプション (20211125)</h3>
+<div id="p77-図3.7のキャプション-20211125" class="section level3 hasAnchor" number="7.2.5">
+<h3><span class="header-section-number">7.2.5</span> p77　図3.7のキャプション (20211125)<a href="tab-error.html#p77-図3.7のキャプション-20211125" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>青色の <span class="math inline">\(f(x)\)</span>は<span class="math inline">\(g(x)\)</span>の誤り．</p>
 </div>
-<div id="p100-定理4.2のあとの解説-20211125" class="section level3" number="7.2.6">
-<h3><span class="header-section-number">7.2.6</span> p100　定理4.2のあとの解説 (20211125)</h3>
+<div id="p100-定理4.2のあとの解説-20211125" class="section level3 hasAnchor" number="7.2.6">
+<h3><span class="header-section-number">7.2.6</span> p100　定理4.2のあとの解説 (20211125)<a href="tab-error.html#p100-定理4.2のあとの解説-20211125" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>「さらに<span class="math inline">\(|\alpha|&gt;1\)</span>となると，<span class="math inline">\(x\neq \mu\)</span>なら平均も発散する」とあるが，<span class="math inline">\(x\)</span>ではなく<span class="math inline">\(x_0\)</span>とすべき．</p>
 </div>
-<div id="p-125-126-定理5.2のあとの解説-20211125" class="section level3" number="7.2.7">
-<h3><span class="header-section-number">7.2.7</span> p 125, 126 定理5.2のあとの解説 (20211125)</h3>
+<div id="p-125-126-定理5.2のあとの解説-20211125" class="section level3 hasAnchor" number="7.2.7">
+<h3><span class="header-section-number">7.2.7</span> p 125, 126 定理5.2のあとの解説 (20211125)<a href="tab-error.html#p-125-126-定理5.2のあとの解説-20211125" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>p125の(5.1)式およびp126の最初の式，さらにp126のギブスサンプリングStep2において<span class="math inline">\(m_0\)</span>と<span class="math inline">\(m_1\)</span>が反対になっている．</p>
 </div>
-<div id="p-159-6.3.2-について-20211125" class="section level3" number="7.2.8">
-<h3><span class="header-section-number">7.2.8</span> p 159 6.3.2 について (20211125)</h3>
+<div id="p-159-6.3.2-について-20211125" class="section level3 hasAnchor" number="7.2.8">
+<h3><span class="header-section-number">7.2.8</span> p 159 6.3.2 について (20211125)<a href="tab-error.html#p-159-6.3.2-について-20211125" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>アルゴリズムStep 2において<span class="math inline">\(X_{n+1}=X_n\)</span>は<span class="math inline">\(X_n=X_{n-1}\)</span>の誤り．</p>
 </div>
-<div id="p-176-練習問題6.9-について-20211127" class="section level3" number="7.2.9">
-<h3><span class="header-section-number">7.2.9</span> p 176 練習問題6.9 について (20211127)</h3>
+<div id="p-176-練習問題6.9-について-20211127" class="section level3 hasAnchor" number="7.2.9">
+<h3><span class="header-section-number">7.2.9</span> p 176 練習問題6.9 について (20211127)<a href="tab-error.html#p-176-練習問題6.9-について-20211127" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(h^2(-x_0^2+w_h^2)\)</span>ではなく，<span class="math inline">\(\frac{h^2(-x_0^2+w_h^2)}{2}\)</span>.</p>
+</div>
+</div>
+<div id="tab-error3" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> エラータム第三刷<a href="tab-error.html#tab-error3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="p-31-リスト1.5について" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> p 31 リスト1.5について<a href="tab-error.html#p-31-リスト1.5について" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>13行目の <code>sqrt</code> の適用範囲が誤り．正しくは下記．</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="tab-error.html#cb57-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;ToothGrowth&quot;</span>)</span>
+<span id="cb57-2"><a href="tab-error.html#cb57-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> ToothGrowth<span class="sc">$</span>len</span>
+<span id="cb57-3"><a href="tab-error.html#cb57-3" tabindex="-1"></a>y <span class="ot">&lt;-</span> ToothGrowth<span class="sc">$</span>supp</span>
+<span id="cb57-4"><a href="tab-error.html#cb57-4" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
+<span id="cb57-5"><a href="tab-error.html#cb57-5" tabindex="-1"></a>n1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(y<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>)</span>
+<span id="cb57-6"><a href="tab-error.html#cb57-6" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x[y<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>]</span>
+<span id="cb57-7"><a href="tab-error.html#cb57-7" tabindex="-1"></a>mu1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x1) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> n1)</span>
+<span id="cb57-8"><a href="tab-error.html#cb57-8" tabindex="-1"></a>sd1 <span class="ot">&lt;-</span>  sd <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">sum</span>(y<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>))</span>
+<span id="cb57-9"><a href="tab-error.html#cb57-9" tabindex="-1"></a>n2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(y<span class="sc">==</span><span class="st">&quot;VC&quot;</span>)</span>
+<span id="cb57-10"><a href="tab-error.html#cb57-10" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> x[y<span class="sc">==</span><span class="st">&quot;VC&quot;</span>]</span>
+<span id="cb57-11"><a href="tab-error.html#cb57-11" tabindex="-1"></a>mu2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x2) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> n2)</span>
+<span id="cb57-12"><a href="tab-error.html#cb57-12" tabindex="-1"></a>sd2 <span class="ot">&lt;-</span>  sd <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">sum</span>(y<span class="sc">==</span><span class="st">&quot;VC&quot;</span>))</span>
+<span id="cb57-13"><a href="tab-error.html#cb57-13" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">sqrt</span>((<span class="dv">1</span> <span class="sc">+</span> n1 <span class="sc">+</span> n2) <span class="sc">/</span> ((<span class="dv">1</span> <span class="sc">+</span> n1) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> n2))) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>n1<span class="sc">+</span>n2) <span class="sc">-</span> <span class="fu">sum</span>(x1<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>n1)<span class="sc">-</span><span class="fu">sum</span>(x2<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>n2))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>sd<span class="sc">^</span><span class="dv">2</span>))) <span class="co"># Model Posterior probability of Model mu1=mu0</span></span>
+<span id="cb57-14"><a href="tab-error.html#cb57-14" tabindex="-1"></a><span class="fu">log10</span>(q<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>q)) <span class="co"># BayesFactor</span></span></code></pre></div>
+</div>
+<div id="p-35-リスト1.6について" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> p 35 リスト1.6について<a href="tab-error.html#p-35-リスト1.6について" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>説明変数の中心化が抜けている．対応する図も少し変わる．</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="tab-error.html#cb58-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;airquality&quot;</span>)</span>
+<span id="cb58-2"><a href="tab-error.html#cb58-2" tabindex="-1"></a>airquality</span>
+<span id="cb58-3"><a href="tab-error.html#cb58-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> airquality<span class="sc">$</span>Solar.R[<span class="fu">is.na</span>(airquality<span class="sc">$</span>Solar.R)<span class="sc">+</span><span class="fu">is.na</span>(airquality<span class="sc">$</span>Ozone)<span class="sc">==</span><span class="dv">0</span>]</span>
+<span id="cb58-4"><a href="tab-error.html#cb58-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">-</span> <span class="fu">mean</span>(x) <span class="co">#&lt;&lt;</span></span>
+<span id="cb58-5"><a href="tab-error.html#cb58-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> airquality<span class="sc">$</span>Ozone[<span class="fu">is.na</span>(airquality<span class="sc">$</span>Solar.R)<span class="sc">+</span><span class="fu">is.na</span>(airquality<span class="sc">$</span>Ozone)<span class="sc">==</span><span class="dv">0</span>]</span>
+<span id="cb58-6"><a href="tab-error.html#cb58-6" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">31.33</span></span>
+<span id="cb58-7"><a href="tab-error.html#cb58-7" tabindex="-1"></a><span class="fu">ggplot</span>(airquality,<span class="fu">aes</span>(<span class="at">x =</span> Ozone)) <span class="sc">+</span> </span>
+<span id="cb58-8"><a href="tab-error.html#cb58-8" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun=</span>dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">sum</span>(y)<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">length</span>(y)), <span class="at">sd =</span> sd<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">length</span>(y))),<span class="at">color =</span> <span class="st">&quot;blue&quot;</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">xlim</span>(<span class="dv">35</span>,<span class="dv">50</span>) </span>
+<span id="cb58-9"><a href="tab-error.html#cb58-9" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="tab-error.html#cb58-10" tabindex="-1"></a><span class="fu">ggplot</span>(airquality,<span class="fu">aes</span>(<span class="at">x =</span> Ozone)) <span class="sc">+</span> </span>
+<span id="cb58-11"><a href="tab-error.html#cb58-11" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun=</span>dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">sum</span>(x<span class="sc">*</span>y)<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)), <span class="at">sd =</span> sd<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>))),<span class="at">color =</span> <span class="st">&quot;blue&quot;</span>)<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span><span class="fu">xlim</span>(<span class="dv">0</span>,<span class="fl">0.28</span>)</span>
+<span id="cb58-12"><a href="tab-error.html#cb58-12" tabindex="-1"></a><span class="fu">log10</span>(<span class="fu">exp</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>sd<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">sum</span>(x<span class="sc">*</span>y)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)))<span class="sc">*</span><span class="dv">1</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)))<span class="co">#Bayes Factor</span></span></code></pre></div>
+</div>
+<div id="p-41-線形合同法について" class="section level3 hasAnchor" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> p 41 線形合同法について<a href="tab-error.html#p-41-線形合同法について" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>「擬似乱数法RANDUは
+<span class="math inline">\(a=65539, b=0, n=2^{31}-1\)</span>とした線形合同法」とあるのは，
+「擬似乱数法RANDUは
+<span class="math inline">\(a=65539, b=0, \color{red}{n=2^{31}}\)</span>とした線形合同法」の誤り．</p>
+</div>
+<div id="p62-2.2.3-近似累積分布関数による乱数生成" class="section level3 hasAnchor" number="7.3.4">
+<h3><span class="header-section-number">7.3.4</span> p62 2.2.3 近似累積分布関数による乱数生成<a href="tab-error.html#p62-2.2.3-近似累積分布関数による乱数生成" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>rnorm</code>の出力が，<code>runif</code>の出力を<code>qnorm</code>関数で変換した逆関数法にように記述しているが，正確には異なる．</p>
+<p>実際の<code>rnorm</code>の<a href="https://github.com/wch/r-source/blob/776708efe6003e36f02587ad47b2eaaaa19e2f69/src/nmath/snorm.c">コード</a>によると</p>
+<pre><code>#define BIG 134217728 /* 2^27 */
+    /* unif_rand() alone is not of high enough precision */
+    u1 = unif_rand();
+    u1 = (int)(BIG*u1) + unif_rand();
+    return qnorm5(u1/BIG, 0.0, 1.0, 1, 0);</code></pre>
+<p>と書かれており，内部で二つの擬似一様乱数を生成して精度を担保している．二つの疑似乱数のうち最初の項が主要項なので，奇数番目に生成した乱数に逆変換法を用いた値は<code>rnorm</code>にほとんど一致するが，細かいところでは異なる．以下のように，細かく見ると差を確認できる．</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="tab-error.html#cb60-1" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb60-2"><a href="tab-error.html#cb60-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb60-3"><a href="tab-error.html#cb60-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">rnorm</span>( m ), <span class="at">digits =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] -0.6264538107  0.1836433242 -0.8356286124</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="tab-error.html#cb62-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb62-2"><a href="tab-error.html#cb62-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">qnorm</span>( <span class="fu">c</span>( <span class="fu">runif</span>(<span class="dv">2</span><span class="sc">*</span>m)[ <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">2</span><span class="sc">*</span>m <span class="sc">-</span> <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">2</span>) ] ) ), <span class="at">digits =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] -0.6264538071  0.1836433242 -0.8356286213</code></pre>
+</div>
+<div id="p75-例2.7-ガンマ乱数の生成" class="section level3 hasAnchor" number="7.3.5">
+<h3><span class="header-section-number">7.3.5</span> p75 例2.7 ガンマ乱数の生成<a href="tab-error.html#p75-例2.7-ガンマ乱数の生成" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ガンマ分布<span class="math inline">\(\mathcal{G}(\nu, 1)\)</span>からの乱数の生成において，<span class="math inline">\(\nu &gt;0\)</span>の場合の乱数生成を<span class="math inline">\(\mathcal{G}([\nu],1)\)</span>からの乱数による棄却法で生成できるように書いているが誤り．</p>
+<p><span class="math inline">\(\nu&lt;1\)</span>の場合はこの方法は使えない．</p>
+</div>
+<div id="p82" class="section level3 hasAnchor" number="7.3.6">
+<h3><span class="header-section-number">7.3.6</span> p82<a href="tab-error.html#p82" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>５行目は「ラグランジュ多項式」ではなく「ルジャンドル多項式」</p>
+</div>
+<div id="p84-定理3.6の証明" class="section level3 hasAnchor" number="7.3.7">
+<h3><span class="header-section-number">7.3.7</span> p84 定理3.6の証明<a href="tab-error.html#p84-定理3.6の証明" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(Y_M/Z_M\)</span>とすべきところが<span class="math inline">\(Z_M/Y_M\)</span>となっていた．
+<span class="math display">\[
+I_M=I~\frac{Y_M}{Z_M}\approx I~\left(1-(Z_M-1)+(Y_M-1)\right)
+\]</span>
+とすべき．合わせて次の式も
+<span class="math display">\[
+M^{1/2}(I_M-I)\approx I~\left(
+-M^{1/2}(Z_M-1)+M^{1/2}(Y_M-1)\right)=M^{\color{red}{-}1/2} I\sum_{m=1}^M(-\overline{g}(X_m)+\overline{f}(X_m))
+\]</span>
+とする．<span class="math inline">\(M\)</span>の指数も誤り．次の式も以下のようになる．
+<span class="math display">\[\begin{align*}
+\sigma^2&amp;=I^2\operatorname{Var}(-\overline{g}(X_1)+\overline{f}(X_1))\\
+&amp;=I^2\left\{\operatorname{Var}(\overline{f}(X_1))-2
+\operatorname{Cov}(\overline{f}(X_1),\overline{g}(X_1))
++\operatorname{Var}(\overline{g}(X_1))\right\}
+\end{align*}\]</span></p>
+</div>
+<div id="p93-3.1" class="section level3 hasAnchor" number="7.3.8">
+<h3><span class="header-section-number">7.3.8</span> p93 3.1<a href="tab-error.html#p93-3.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(\Gamma(n)=(n-1)!\)</span>とすべき．</p>
+</div>
+<div id="p145-例5.7" class="section level3 hasAnchor" number="7.3.9">
+<h3><span class="header-section-number">7.3.9</span> p145 例5.7<a href="tab-error.html#p145-例5.7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(y_n\sim\chi^2_\nu\)</span>の部分等で誤りがあった．第六行目は
+<span class="math display">\[
+p(y_n\mid x_n,\theta)\propto p(x_n,y_n\mid\theta)\propto y_n^{1/2}\exp\left(-\left\{\frac{(x_n-\mu)^2}{2\nu} \tau\right\}y_n\right)
+\color{red}{y_n^{\nu/2-1}\exp\left(-\frac{y_n}{2}\right)}
+\]</span>
+とし，次の式とStep 1のガンマ分布は
+<span class="math display">\[
+\mathcal{G}\left(\frac{1+\nu}{2}, \frac{(x_n-\mu)^2}{2\nu} \tau+\frac{1}{2}\right)
+\]</span>
+とすべき．またStep 2は<span class="math inline">\(\tau\)</span>が抜けている．</p>
+<p><span class="math inline">\(\mu\sim \mathcal{N}\left(\frac{\left(\nu^{-1} \sum_{n=1}^Nx_n y_n\right)}{1+\nu^{-1}\sum_{n=1}^N y_n},\left(1+\nu^{-1}\sum_{n=1}^N y_n\right)^{-1}~\color{red}{\tau^{-1}}\right)\)</span></p>
+<p>第3刷の修正に関し，岩重文也氏，橋本真太郎准教授（広島大学），千葉航平助教（大阪大学）に貴重なご意見を頂いた．この場をお借りして感謝いたします．注：所属はご指摘いただいた当時．</p>
 
 </div>
 </div>
@@ -528,7 +654,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
