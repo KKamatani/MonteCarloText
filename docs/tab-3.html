@@ -274,11 +274,11 @@ l_3(x)
 \end{align*}\]</span>
 となる．したがって
 <span class="math display">\[\begin{align*}
-w_1=\int_a^bl_1(x)\mathrm{d}x&amp;=\int_a^b\frac{\left\{(x-a)+(x-b)\right\}(x-b)}{(a-b)^2}\\
-&amp;=\left(-\frac{1}{6}+\frac{1}{2}\right)(b-a)\\
-&amp;=\frac{1}{3}(b-a)
+w_1=\int_a^bl_1(x)\mathrm{d}x&amp;=\int_a^b\frac{\left\{(x-a)+(x-b)\right\}(x-b)}{(a-b)^2}\mathrm{d}x\\
+&amp;=\left(-\frac{1}{6}+\frac{1}{3}\right)(b-a)\\
+&amp;=\frac{1}{6}(b-a)
 \end{align*}\]</span>
-となり，同様の計算で<span class="math inline">\(w_3=w_1=(b-a)/3\)</span>となる．また，
+となり，同様の計算で<span class="math inline">\(w_3=w_1=(b-a)/6\)</span>となる．また，
 <span class="math display">\[\begin{align*}
 w_2=\int_a^bl_2(x)\mathrm{d}x&amp;=\frac{2}{3}(b-a).
 \end{align*}\]</span></p>
@@ -424,14 +424,14 @@ I=\int_{-\infty}^\infty \exp\left(-\sqrt{|x|}\right)(\sin x)^2\mathrm{d}x
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-60" class="solution"><em>Solution</em>. </span>以下で数値実験を見れば，正規分布の方法が不安定なのがわかるだろう．なぜだろか．じつは，例3.10と同じように，正規分布を使った方法では分散が発散してしまう．計算はやや煩雑であるが，<span class="math inline">\(M=1\)</span>としたときの推定量の分散は, <span class="math inline">\(f(x)=\exp\left(-\sqrt{|x|}\right)(\sin x)^2\)</span>, <span class="math inline">\(q(x)=\exp(-x^2/2)/\sqrt{2\pi}\)</span>として，
-<span class="math display">\[\int_{-\infty}^\infty\left(\frac{f(x)}{q(x)}\right)^2q(x)\mathrm{d}x-I^2=\sqrt{2\pi}\int_{-\infty}^\infty\exp(x^2/2-x)\sin(x)^4\mathrm{d}x-I^2\]</span>
+<span class="math display">\[\int_{-\infty}^\infty\left(\frac{f(x)}{q(x)}\right)^2q(x)\mathrm{d}x-I^2=\sqrt{2\pi}\int_{-\infty}^\infty\exp\left(x^2/2-2\sqrt{|x|}\right)\sin(x)^4\mathrm{d}x-I^2\]</span>
 となる．正弦関数は<span class="math inline">\(0\)</span>になることもあるのでわかりにくいが，右辺の積分は<span class="math inline">\(+\infty\)</span>となる．積分の不等式評価は本書の範囲を超えるから，数値的に大きさを確認できれば良い．</p>
 <p>しっかりとしめすには，まず
 <span class="math display">\[
   J_k:=\int_{k\pi}^{(k+1)\pi}\sin(x)^4\mathrm{d}x
 \]</span>
 が正であり，<span class="math inline">\(k\)</span>に依存しないことに注意する．そして，
-<span class="math inline">\(x\ge 2\)</span>のとき<span class="math inline">\(x^2/2-x\ge 0\)</span>だから，
+<span class="math inline">\(x\ge 2^{4/3}\)</span>のとき<span class="math inline">\(x^2/2-2\sqrt{|x|}\ge 0\)</span>であり，<span class="math inline">\(\pi&gt;2^{4/3}\)</span>だから，
 <span class="math display">\[\begin{align*}
 \int_{-\infty}^\infty\exp(x^2/2-x)\sin(x)^4\mathrm{d}x&amp;=
 2\int_0^\infty\exp(x^2/2-x)\sin(x)^4\mathrm{d}x\\
